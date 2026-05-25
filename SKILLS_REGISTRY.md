@@ -39,6 +39,10 @@
 | 26 | [quant-research](#26-quant-research) | Quant | Backtesting, Sharpe, Monte Carlo, walk-forward |
 | 27 | [testing-e2e](#27-testing-e2e) | Testing | Pytest, Playwright, factories, fixtures |
 | 28 | [testing-load](#28-testing-load) | Testing | Locust, k6, SLA validation, bottlenecks |
+| 29 | [change-detective](#29-change-detective) | DevProcess | Autonomous git diff analysis, auto-documentation |
+| 30 | [interactive-dev](#30-interactive-dev) | DevProcess | Full-stack live debug — browser, backends, DB |
+| 31 | [software-product-tester](#31-software-product-tester) | Testing | QA, accessibility, regression, bug reports |
+| 32 | [mt5-scalability](#32-mt5-scalability) | Trading | 10k+ concurrent MT5 users, worker pools, Redis queue |
 
 ---
 
@@ -354,6 +358,50 @@
 
 ---
 
+### 29. change-detective
+**Path:** `skills/change-detective/SKILL.md`
+**Layer:** DevProcess
+**Activation triggers:** change detection, detect changes, what changed, diff analysis, auto-document, schema drift, API drift, type drift, undocumented change, changelog, audit trail, memory update, codebase drift, breaking change, regression risk
+**Depends on:** *(none — observes git history)*
+**Used by:** software-developer, testing-e2e, devops-engineer
+**Platform layers touched:** software-factory/memory/, git history
+**Example task:** "Detect and document all changes since the last merge to main."
+
+---
+
+### 30. interactive-dev
+**Path:** `skills/interactive-dev/SKILL.md`
+**Layer:** DevProcess
+**Activation triggers:** interactive dev, live debugging, full-stack debug, run all services, capture logs, browser logs, backend logs, postgres logs, reproduce bug, end-to-end debug, dev runner, watch mode, hot reload, inspect network, inspect error, dev session, stack trace, frontend error, backend error
+**Depends on:** devops-engineer, software-product-tester
+**Used by:** All implementation skills (debugging support)
+**Platform layers touched:** All running services, browser, PostgreSQL logs
+**Example task:** "Run the full stack and capture the error logs when the broker connect fails."
+
+---
+
+### 31. software-product-tester
+**Path:** `skills/software-product-tester/SKILL.md`
+**Layer:** Testing
+**Activation triggers:** product testing, software testing, QA, test plan, regression test, bug report, bug reproduction, acceptance test, UAT, UI test, browser test, API test, integration test, smoke test, accessibility, a11y, WCAG, cross-browser, visual regression, test coverage, playwright, pytest, locust, write tests, verify this works
+**Depends on:** testing-e2e, testing-load, interactive-dev
+**Used by:** *(quality gate across all layers)*
+**Platform layers touched:** tests/, e2e/, all service endpoints
+**Example task:** "Write the full QA test plan for the Google OAuth login flow."
+
+---
+
+### 32. mt5-scalability
+**Path:** `skills/mt5-scalability/SKILL.md`
+**Layer:** Trading
+**Activation triggers:** MT5 scalability, metatrader5 scale, 10000 users, concurrent MT5, broker connection pool, MT5 worker, MT5 queue, MT5 sync, MT5 bridge, trading account sync, copy trading scale, broker gateway scale, MT5 connection limit, MT5 horizontal scaling, Redis queue MT5, WebSocket MT5, position sync, order sync, MT5 circuit breaker
+**Depends on:** mt5-integration, redis-streams, websocket-realtime, devops-engineer
+**Used by:** copytrading-engine, frontend-trading-ui
+**Platform layers touched:** integral-expert-backend/app/workers/, broker_connections schema, Redis queue
+**Example task:** "Scale the MT5 sync worker to handle 10,000 concurrent broker accounts."
+
+---
+
 ## Skill Dependency Graph
 
 ```
@@ -392,11 +440,19 @@
                           ┌──────────────────────────┐
                           ▼                          ▼
                [testing-e2e]              [testing-load]
+                          │                          │
+               [software-product-tester]─────────────┘
+                          │
+                [interactive-dev] ←→ [change-detective]
                           ┌──────────────────────────┐
                           ▼                          ▼
                [prompt-engineering]       [ai-optimization]
                           │
                 [context-engineering]
+
+              [mt5-scalability]
+                  (depends on: mt5-integration, redis-streams,
+                   websocket-realtime, devops-engineer)
 ```
 
 ---

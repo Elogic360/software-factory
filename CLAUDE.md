@@ -244,12 +244,13 @@ ALWAYS:
 | Trading UI (imCharts/Journal/Copying) | `skills/frontend-trading-ui/SKILL.md`            |
 | UI/UX design                | `skills/ui-ux-premium/SKILL.md`                             |
 | Database schema / migration | `skills/database-postgresql/SKILL.md`                       |
-| Docker / K8s / CI           | `skills/devops-engineer/SKILL.md`                           |
+| Docker / Podman / CI        | `skills/devops-engineer/SKILL.md`                           |
 | Security audit              | `skills/security-audit/SKILL.md`                            |
 | Structured logging / metrics| `skills/observability/SKILL.md`                             |
 | Slow query / N+1 / cache    | `skills/performance-engineering/SKILL.md`                   |
 | SEO / meta tags             | `skills/seo-optimizer/SKILL.md`                             |
 | MT5 integration             | `skills/mt5-integration/SKILL.md`                           |
+| MT5 scale / 10k+ users      | `skills/mt5-scalability/SKILL.md`                           |
 | Copy trading engine         | `skills/copytrading-engine/SKILL.md`                        |
 | Journal analytics           | `skills/journal-analytics/SKILL.md`                         |
 | TradingView charts          | `skills/tradingview-integration/SKILL.md`                   |
@@ -257,6 +258,9 @@ ALWAYS:
 | Redis / rate limiting       | `skills/redis-streams/SKILL.md`                             |
 | Domain events / sagas       | `skills/event-driven-architecture/SKILL.md`                 |
 | Service boundaries / Kong   | `skills/microservices/SKILL.md`                             |
+| Detect / document changes   | `skills/change-detective/SKILL.md`                          |
+| Full-stack live debug       | `skills/interactive-dev/SKILL.md`                           |
+| QA / product testing        | `skills/software-product-tester/SKILL.md`                   |
 | LLM prompt design           | `skills/prompt-engineering/SKILL.md`                        |
 | AI cost / model selection   | `skills/ai-optimization/SKILL.md`                           |
 | Context compression / RAG   | `skills/context-engineering/SKILL.md`                       |

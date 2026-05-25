@@ -1,8 +1,9 @@
 # SKILL: DevOps Engineer
-## Domain: Docker, CI/CD, Kubernetes, Infrastructure as Code
+## Domain: Docker, Podman, CI/CD, Kubernetes, Infrastructure as Code
 
-**Activation triggers:** Dockerfile, docker-compose, CI pipeline, deployment,
-environment config, service startup, health checks, scaling.
+**Activation triggers:** Dockerfile, docker-compose, podman compose, podman run,
+podman build, CI pipeline, deployment, environment config, service startup,
+health checks, scaling, container runtime, ppc Linux, macOS container.
 
 ---
 
@@ -22,37 +23,121 @@ services:
 
 ---
 
+## Container Runtime — Docker vs Podman
+
+```
+Platform              | Runtime   | Notes
+─────────────────────────────────────────────────────────────────────
+Linux (x86)           | Docker    | Standard docker compose
+Linux (ppc64le/arm)   | Podman    | docker not available on ppc
+macOS                 | Podman    | Podman Desktop recommended
+CI (GitHub Actions)   | Docker    | ubuntu-latest includes Docker
+```
+
+**Always detect the runtime before running container commands:**
+```bash
+RUNTIME=$(command -v podman &>/dev/null && echo podman || echo docker)
+echo "Using: $RUNTIME"
+```
+
+---
+
+## Podman Cheat Sheet (Expert Backend)
+
+```bash
+ROOT="/home/elogic360/Desktop/little QUANTUM/Integral Market"
+cd "$ROOT/integral-expert-backend"
+
+# Build image
+podman build -t integral-expert-backend:latest .
+
+# Run with env file (dev — mounts code for hot reload)
+podman run -d \
+  --name integral-expert-backend \
+  --env-file .env \
+  -p 8002:8002 \
+  -v "$(pwd)":/app \
+  integral-expert-backend:latest
+
+# Run with compose (recommended)
+podman compose up -d expert-backend
+
+# View logs
+podman logs -f integral-expert-backend
+
+# Execute into container
+podman exec -it integral-expert-backend bash
+
+# Rebuild after code change
+podman compose build expert-backend && podman compose up -d expert-backend
+
+# Stop and remove
+podman compose down
+# OR:
+podman stop integral-expert-backend && podman rm integral-expert-backend
+
+# List running containers
+podman ps
+
+# Inspect network (container → PostgreSQL host)
+podman inspect integral-expert-backend | grep -i network
+```
+
+**Podman networking (ppc / Linux — no docker network):**
+```yaml
+# docker-compose.yml — use host network if DB is on host
+services:
+  expert-backend:
+    network_mode: host   # direct host networking
+    # OR use extra_hosts:
+    extra_hosts:
+      - "host.containers.internal:host-gateway"
+    environment:
+      DATABASE_URL: "postgresql+asyncpg://user:pass@host.containers.internal:5432/integral_market"
+```
+
+---
+
 ## Dev Start Script
 
 ```bash
 #!/bin/bash
 # dev-start.sh — start all services for local development
+# Preferred: use dev_runner.py instead for full log streaming
 set -e
 
 ROOT="/home/elogic360/Desktop/little QUANTUM/Integral Market"
-MARKET="$ROOT/integral-market-backend"
-EXPERT="$ROOT/integral-expert-backend"
+RUNTIME=$(command -v podman &>/dev/null && echo podman || echo docker)
 
-# Kill existing processes on our ports
-lsof -ti:8000,8002,8003,5173 2>/dev/null | xargs kill -9 2>/dev/null || true
+# Kill existing processes on venv ports
+lsof -ti:8000,8003,5173 2>/dev/null | xargs kill -TERM 2>/dev/null || true
 sleep 1
 
-# Market backend
-cd "$MARKET" && source venv/bin/activate
-nohup uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload > /tmp/market-backend.log 2>&1 &
-echo "Market backend starting on :8000"
+# Market backend (venv)
+cd "$ROOT/integral-market-backend" && source venv/bin/activate
+nohup uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload \
+  > /tmp/market-backend.log 2>&1 &
+echo "Market backend :8000 (PID $!)"
 
-# Expert backend
-cd "$EXPERT" && source venv/bin/activate
-nohup uvicorn app.main:app --host 0.0.0.0 --port 8002 --reload > /tmp/expert-backend.log 2>&1 &
-echo "Expert backend starting on :8002"
+# Expert backend (container)
+cd "$ROOT/integral-expert-backend"
+$RUNTIME compose up -d expert-backend
+echo "Expert backend :8002 ($RUNTIME compose)"
+
+# IMI backend (venv)
+cd "$ROOT/integral-market-intelligence" && source venv/bin/activate
+nohup uvicorn app.main:app --host 0.0.0.0 --port 8003 --reload \
+  > /tmp/imi-backend.log 2>&1 &
+echo "IMI backend :8003 (PID $!)"
 
 # Frontend
 cd "$ROOT/app"
 nohup pnpm dev > /tmp/frontend.log 2>&1 &
-echo "Frontend starting on :5173"
+echo "Frontend :5173 (PID $!)"
 
-echo "All services started. Check /tmp/*.log for output."
+echo ""
+echo "All services started. Check /tmp/*.log or use:"
+echo "  python3 software-factory/context-engine/dev_runner.py --health"
 ```
 
 ---

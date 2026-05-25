@@ -320,6 +320,55 @@ SKILLS: list[dict] = [
             "bottleneck", "latency under load", "sla validation", "p99",
         ],
     },
+    {
+        "dir": "change-detective",
+        "name": "Change Detective",
+        "layer": "DevProcess",
+        "triggers": [
+            "change detection", "detect changes", "what changed", "diff analysis",
+            "auto-document", "schema drift", "api drift", "type drift",
+            "undocumented change", "changelog", "audit trail", "memory update",
+            "codebase drift", "breaking change", "regression risk", "change_detector",
+        ],
+    },
+    {
+        "dir": "interactive-dev",
+        "name": "Interactive Development",
+        "layer": "DevProcess",
+        "triggers": [
+            "interactive dev", "live debugging", "full-stack debug", "run all services",
+            "capture logs", "browser logs", "backend logs", "postgres logs",
+            "reproduce bug", "end-to-end debug", "dev runner", "watch mode",
+            "hot reload", "inspect network", "inspect error", "dev session",
+            "stack trace", "frontend error", "backend error", "500 error",
+            "cors debug", "websocket debug", "ui bug",
+        ],
+    },
+    {
+        "dir": "software-product-tester",
+        "name": "Software & Product Tester",
+        "layer": "Testing",
+        "triggers": [
+            "product testing", "software testing", "qa", "test plan", "regression test",
+            "bug report", "bug reproduction", "acceptance test", "uat", "ui test",
+            "browser test", "api test", "integration test", "smoke test",
+            "accessibility", "a11y", "wcag", "cross-browser", "visual regression",
+            "test coverage", "test suite", "playwright", "verify this works",
+        ],
+    },
+    {
+        "dir": "mt5-scalability",
+        "name": "MT5 Scalability Architecture",
+        "layer": "Trading",
+        "triggers": [
+            "mt5 scalability", "metatrader5 scale", "10000 users", "concurrent mt5",
+            "broker connection pool", "mt5 worker", "mt5 queue", "mt5 sync",
+            "mt5 bridge", "trading account sync", "copy trading scale",
+            "broker gateway scale", "mt5 connection limit", "mt5 horizontal scaling",
+            "redis queue mt5", "websocket mt5", "position sync", "order sync",
+            "mt5 circuit breaker", "10k users",
+        ],
+    },
 ]
 
 
