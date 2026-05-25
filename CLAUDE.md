@@ -45,7 +45,9 @@ software-factory/constitution/CONSTITUTION.md
 ```
 STEP 1 → Read .specify/memory/constitution.md
 STEP 2 → Query Graphify: codegraph_context("domain or feature name")
-STEP 3 → Load relevant skill from software-factory/skills/<domain>/SKILL.md
+STEP 3 → Run: python3 software-factory/context-engine/skill_selector.py --query "<task description>"
+          Then load the top-ranked SKILL.md files (usually top 2–3)
+          Reference: software-factory/SKILLS_REGISTRY.md for full skill index
 STEP 4 → Load relevant spec from software-factory/specs/active/<feature>.md
 STEP 5 → Identify ALL service boundaries affected
 STEP 6 → Identify ALL API contracts (FastAPI routes, TypeScript types)
@@ -227,29 +229,40 @@ ALWAYS:
 
 ## 11. Skill Activation Matrix
 
-When working on a feature, activate the relevant skill agent:
+> **Automated routing:** `python3 software-factory/context-engine/skill_selector.py --query "<task>"`
+> **Full index:** `software-factory/SKILLS_REGISTRY.md`
+> **Create a new skill:** load `skills/skill-builder/SKILL.md` first
 
-| Feature Area          | Skill File                                              |
-|-----------------------|---------------------------------------------------------|
-| Architecture decisions| `skills/architect-principal/SKILL.md`                  |
-| FastAPI endpoint      | `skills/backend-fastapi/SKILL.md`                      |
-| React page/component  | `skills/frontend-react/SKILL.md`                       |
-| Trading UI            | `skills/frontend-trading-ui/SKILL.md`                  |
-| Database schema       | `skills/database-postgresql/SKILL.md`                  |
-| Docker/K8s/CI         | `skills/devops-engineer/SKILL.md`                      |
-| Security audit        | `skills/security-audit/SKILL.md`                       |
-| MT5 integration       | `skills/mt5-integration/SKILL.md`                      |
-| Copy trading          | `skills/copytrading-engine/SKILL.md`                   |
-| Journal analytics     | `skills/journal-analytics/SKILL.md`                    |
-| AI prompt design      | `skills/prompt-engineering/SKILL.md`                   |
-| Context compression   | `skills/context-engineering/SKILL.md`                  |
-| SEO                   | `skills/seo-optimizer/SKILL.md`                        |
-| Performance           | `skills/performance-engineering/SKILL.md`              |
-| WebSocket/realtime    | `skills/websocket-realtime/SKILL.md`                   |
-| UI/UX design          | `skills/ui-ux-premium/SKILL.md`                        |
-| TradingView           | `skills/tradingview-integration/SKILL.md`              |
-| Testing               | `skills/testing-e2e/SKILL.md`                          |
-| Observability         | `skills/observability/SKILL.md`                        |
+| Feature Area               | Skill File                                                   |
+|----------------------------|--------------------------------------------------------------|
+| **Create / audit a skill** | `skills/skill-builder/SKILL.md`                             |
+| Product requirements / PRD | `skills/software-product-architect/SKILL.md`                |
+| Architecture decisions     | `skills/architect-principal/SKILL.md`                       |
+| Code review / refactoring  | `skills/software-developer/SKILL.md`                        |
+| FastAPI endpoint            | `skills/backend-fastapi/SKILL.md`                           |
+| React page / component      | `skills/frontend-react/SKILL.md`                            |
+| Trading UI (imCharts/Journal/Copying) | `skills/frontend-trading-ui/SKILL.md`            |
+| UI/UX design                | `skills/ui-ux-premium/SKILL.md`                             |
+| Database schema / migration | `skills/database-postgresql/SKILL.md`                       |
+| Docker / K8s / CI           | `skills/devops-engineer/SKILL.md`                           |
+| Security audit              | `skills/security-audit/SKILL.md`                            |
+| Structured logging / metrics| `skills/observability/SKILL.md`                             |
+| Slow query / N+1 / cache    | `skills/performance-engineering/SKILL.md`                   |
+| SEO / meta tags             | `skills/seo-optimizer/SKILL.md`                             |
+| MT5 integration             | `skills/mt5-integration/SKILL.md`                           |
+| Copy trading engine         | `skills/copytrading-engine/SKILL.md`                        |
+| Journal analytics           | `skills/journal-analytics/SKILL.md`                         |
+| TradingView charts          | `skills/tradingview-integration/SKILL.md`                   |
+| WebSocket / realtime        | `skills/websocket-realtime/SKILL.md`                        |
+| Redis / rate limiting       | `skills/redis-streams/SKILL.md`                             |
+| Domain events / sagas       | `skills/event-driven-architecture/SKILL.md`                 |
+| Service boundaries / Kong   | `skills/microservices/SKILL.md`                             |
+| LLM prompt design           | `skills/prompt-engineering/SKILL.md`                        |
+| AI cost / model selection   | `skills/ai-optimization/SKILL.md`                           |
+| Context compression / RAG   | `skills/context-engineering/SKILL.md`                       |
+| Backtesting / quant models  | `skills/quant-research/SKILL.md`                            |
+| API / E2E / unit tests      | `skills/testing-e2e/SKILL.md`                               |
+| Load testing / SLA          | `skills/testing-load/SKILL.md`                              |
 
 ---
 
