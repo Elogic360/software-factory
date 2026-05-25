@@ -6,20 +6,36 @@
 
 ---
 
+## System Configuration (this machine)
+
+```
+OS:           Fedora Linux (ppc64le)
+PostgreSQL:   version 18  (service: postgresql-18)
+Redis:        Valkey 9  (binary: valkey-server, client: redis-cli/valkey-cli)
+Redis port:   6379 (market + IMI backends)  |  6380 with password (expert backend)
+Container:    Podman  (podman compose)
+Python:       3.12.13 (market backend venv)  |  3.14.x (expert + IMI venvs — compatible)
+Node:         ≥ 20   |  pnpm ≥ 8
+pg_isready:   NOT installed — use TCP probe or psql -h 127.0.0.1
+```
+
 ## Prerequisites
 
 ```bash
-# Verify all tools are installed
-python3 --version      # must be 3.12.13
-node --version         # must be ≥ 20.0.0
-pnpm --version         # must be ≥ 8.0.0
+# Verify tools
+python3 --version      # market backend: 3.12.13
+node --version         # ≥ 20.0.0
+pnpm --version         # ≥ 8.0.0
+podman --version       # container runtime
 
-# Check infrastructure
-pg_isready -h localhost -p 5432    # PostgreSQL running?
-redis-cli -p 6380 ping             # Redis running? → should print PONG
+# Check PostgreSQL (service name is postgresql-18)
+systemctl is-active postgresql-18    # → active
+# OR TCP probe (pg_isready not in PATH):
+python3 -c "import socket; s=socket.create_connection(('localhost',5432),2); print('PG OK'); s.close()"
 
-# Check container runtime (expert-backend only)
-podman --version    # OR: docker --version
+# Check Valkey/Redis
+redis-cli -p 6379 ping      # market + IMI → PONG
+redis-cli -p 6380 -a redisPASS ping  # expert backend → PONG
 ```
 
 ---
@@ -43,35 +59,28 @@ docker logs -f integral-expert-backend
 
 ---
 
-## 1. Infrastructure (PostgreSQL + Redis)
+## 1. Infrastructure (PostgreSQL + Valkey/Redis)
 
-PostgreSQL and Redis must be running before any backend starts.
+PostgreSQL and Redis/Valkey must be running before any backend starts.
 
 ```bash
 # Check if already running
-pg_isready -h localhost -p 5432
-redis-cli -p 6380 ping
+systemctl is-active postgresql-18
+redis-cli -p 6379 ping   # market + IMI
+redis-cli -p 6380 -a redisPASS ping  # expert backend
 
-# Start if not running (systemd)
-sudo systemctl start postgresql
-sudo systemctl start redis
+# Start if not running (systemd — requires sudo)
+sudo systemctl start postgresql-18
+sudo systemctl start valkey      # OR: sudo systemctl start redis
 
-# Start if using Docker/Podman
-podman run -d \
-  --name postgres \
-  -e POSTGRES_PASSWORD=your_password \
-  -e POSTGRES_DB=integral_market \
-  -p 5432:5432 \
-  timescale/timescaledb:latest-pg15
+# Start Valkey without sudo (user-space, dev only):
+valkey-server --port 6379 --daemonize yes --logfile /tmp/valkey.log
+valkey-server --port 6380 --requirepass redisPASS --daemonize yes --logfile /tmp/valkey-6380.log
 
-podman run -d \
-  --name redis \
-  -p 6380:6379 \
-  redis:7 redis-server --requirepass your_redis_password
-
-# Verify
-pg_isready -h localhost -p 5432   # → "accepting connections"
-redis-cli -p 6380 -a your_redis_password ping   # → PONG
+# Verify connectivity
+python3 -c "import socket; s=socket.create_connection(('localhost',5432),2); print('✅ PostgreSQL :5432'); s.close()"
+redis-cli -p 6379 ping && echo "✅ Valkey :6379"
+redis-cli -p 6380 -a redisPASS ping && echo "✅ Valkey :6380"
 ```
 
 ---
