@@ -123,22 +123,41 @@ SERVICES: list[ServiceConfig] = [
 # ── Infrastructure checks ─────────────────────────────────────────────────────
 
 def check_postgres() -> bool:
-    result = subprocess.run(
-        ["pg_isready", "-h", "localhost", "-p", "5432"],
-        capture_output=True, text=True
-    )
-    return result.returncode == 0
+    """TCP probe for PostgreSQL — works even when pg_isready is not in PATH."""
+    import socket
+    try:
+        with socket.create_connection(("localhost", 5432), timeout=3):
+            return True
+    except OSError:
+        return False
 
 
 def check_redis() -> bool:
-    result = subprocess.run(
-        ["redis-cli", "-p", "6380", "ping"],
-        capture_output=True, text=True, timeout=3
-    )
-    return "PONG" in result.stdout
+    """Try redis-cli on 6380 first, then valkey-cli, then raw TCP."""
+    for cmd in (
+        ["redis-cli", "-p", "6380", "-a", "redisPASS", "ping"],
+        ["valkey-cli", "-p", "6380", "-a", "redisPASS", "ping"],
+        ["redis-cli", "-p", "6379", "ping"],
+        ["valkey-cli", "-p", "6379", "ping"],
+    ):
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=3)
+            if "PONG" in result.stdout:
+                return True
+        except (FileNotFoundError, subprocess.TimeoutExpired):
+            continue
+    # Final fallback: raw TCP
+    import socket
+    for port in (6380, 6379):
+        try:
+            with socket.create_connection(("localhost", port), timeout=2):
+                return True
+        except OSError:
+            continue
+    return False
 
 
-def check_http(url: str, timeout: int = 3) -> bool:
+def check_http(url: str, timeout: int = 15) -> bool:
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "dev-runner/1.0"})
         with urllib.request.urlopen(req, timeout=timeout) as r:
@@ -356,7 +375,7 @@ def watch_mode(follow: bool) -> None:
     try:
         while True:
             for svc in SERVICES:
-                if not check_http(svc.health_url, timeout=2):
+                if not check_http(svc.health_url, timeout=15):
                     warn(f"{svc.name} is down — attempting restart…")
                     start_service(svc)
                     time.sleep(3)
