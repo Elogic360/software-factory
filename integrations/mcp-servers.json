@@ -1,0 +1,49 @@
+{
+  "mcpServers": {
+    "codegraph": {
+      "command": "codegraph",
+      "args": ["serve"],
+      "env": {}
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-github"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-playwright"]
+    },
+    "firecrawl": {
+      "command": "npx",
+      "args": ["-y", "@mendableai/firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}"
+      }
+    },
+    "fastapi": {
+      "command": "python3",
+      "args": ["-m", "fastapi_mcp"],
+      "env": {}
+    },
+    "prowler": {
+      "command": "python3",
+      "args": ["-m", "prowler.mcp_server"],
+      "env": {
+        "AWS_ACCESS_KEY_ID": "${AWS_ACCESS_KEY_ID}",
+        "AWS_SECRET_ACCESS_KEY": "${AWS_SECRET_ACCESS_KEY}"
+      }
+    },
+    "linux-mcp": {
+      "command": "python3",
+      "args": ["-m", "linux_mcp_server"],
+      "env": {}
+    }
+  }
+}

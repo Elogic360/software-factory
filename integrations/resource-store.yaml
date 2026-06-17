@@ -1,0 +1,285 @@
+# Software Factory — Resource Store
+# All repositories, tools, and resources available for use
+
+repositories:
+  # ================================================================
+  # AGENT HARNESSES
+  # ================================================================
+  agent_harnesses:
+    - name: CodeWhale
+      url: https://github.com/Hmbown/CodeWhale
+      stars: 38500
+      category: agent
+      priority: high
+      install: npm i -g codewhale
+      mcp: true
+      description: "Rust TUI/CLI agent harness, 25 providers, OS sandboxing"
+    - name: Mercury Agent
+      url: https://github.com/cosmicstack-labs/mercury-agent
+      stars: 2600
+      category: agent
+      priority: high
+      install: npm i -g @cosmicstack/mercury-agent
+      mcp: false
+      description: "24/7 daemon, Telegram, Second Brain memory, Kanban"
+    - name: Claw Code
+      url: https://github.com/ultraworkers/claw-code
+      stars: 194000
+      category: agent
+      priority: medium
+      install: cargo install --path .
+      mcp: false
+      description: "Rust CLI agent harness, Gajae-Code ecosystem"
+    - name: Archon
+      url: https://github.com/coleam00/Archon
+      stars: 22400
+      category: agent
+      priority: high
+      install: curl -fsSL https://archon.diy/install | bash
+      mcp: false
+      description: "Deterministic AI coding workflows, YAML DAGs"
+
+  # ================================================================
+  # CODE INTELLIGENCE
+  # ================================================================
+  code_intelligence:
+    - name: CodeGraph
+      url: https://github.com/colbymchenry/codegraph
+      stars: 50300
+      category: intelligence
+      priority: critical
+      install: curl -fsSL https://raw.githubusercontent.com/colbymchenry/codegraph/main/install.sh | sh
+      mcp: true
+      description: "Pre-indexed code graph, 20+ languages, auto-sync"
+    - name: Gortex
+      url: https://github.com/zzet/gortex
+      stars: 255
+      category: intelligence
+      priority: high
+      install: curl -fsSL https://get.gortex.dev | sh
+      mcp: true
+      description: "257 languages, 100+ MCP tools, 50x token savings"
+
+  # ================================================================
+  # TOKEN OPTIMIZATION
+  # ================================================================
+  token_optimization:
+    - name: RTK
+      url: https://github.com/rtk-ai/rtk
+      stars: 62900
+      category: optimization
+      priority: critical
+      install: brew install rtk
+      mcp: false
+      description: "60-90% token reduction on dev commands"
+    - name: Caveman
+      url: https://github.com/JuliusBrussee/caveman
+      stars: 73500
+      category: optimization
+      priority: critical
+      install: curl -fsSL https://raw.githubusercontent.com/JuliusBrussee/caveman/main/install.sh | bash
+      mcp: false
+      description: "75% output token reduction via caveman speech"
+    - name: OpenWolf
+      url: https://github.com/cytostack/openwolf
+      stars: 2000
+      category: optimization
+      priority: high
+      install: npm i -g openwolf
+      mcp: false
+      description: "File index + learning memory + token ledger"
+
+  # ================================================================
+  # SKILL LIBRARIES
+  # ================================================================
+  skill_libraries:
+    - name: Anthropic Skills
+      url: https://github.com/anthropics/skills
+      stars: 152000
+      category: skills
+      priority: critical
+      install: /plugin marketplace add anthropics/skills
+      mcp: false
+      description: "Official Anthropic skills, document creation"
+    - name: ECC
+      url: https://github.com/affaan-m/ECC
+      stars: 217000
+      category: skills
+      priority: critical
+      install: /plugin install ecc@ecc
+      mcp: false
+      description: "271 skills, cross-harness, instincts, memory"
+    - name: Claude Skills (secondsky)
+      url: https://github.com/secondsky/claude-skills
+      stars: 173
+      category: skills
+      priority: high
+      install: /plugin marketplace add secondsky/claude-skills
+      mcp: false
+      description: "170 production skills, Cloudflare, React, Tailwind"
+    - name: Claude Skills (Jeffallan)
+      url: https://github.com/Jeffallan/claude-skills
+      stars: 9900
+      category: skills
+      priority: high
+      install: /plugin marketplace add Jeffallan/claude-skills
+      mcp: false
+      description: "66 fullstack skills, 12 categories"
+    - name: Antigravity Awesome Skills
+      url: https://github.com/sickn33/antigravity-awesome-skills
+      stars: 40900
+      category: skills
+      priority: high
+      install: npx antigravity-awesome-skills
+      mcp: false
+      description: "1500+ skills, CLI installer"
+    - name: Mercury Agent Skills
+      url: https://github.com/cosmicstack-labs/mercury-agent-skills
+      stars: 352
+      category: skills
+      priority: medium
+      install: mercury skills install
+      mcp: false
+      description: "132 skills, developer workflows"
+    - name: Goose Skills
+      url: https://github.com/gooseworks-ai/goose-skills
+      stars: 733
+      category: skills
+      priority: medium
+      install: npx gooseworks install
+      mcp: false
+      description: "108 GTM skills, sales/marketing"
+    - name: UI/UX Pro Max
+      url: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+      stars: 92500
+      category: skills
+      priority: high
+      install: npm i -g uipro-cli && uipro init --ai claude
+      mcp: false
+      description: "67 styles, 96 palettes, 57 font pairings"
+    - name: NotFair
+      url: https://github.com/nowork-studio/notfair
+      stars: 2900
+      category: skills
+      priority: medium
+      install: /plugin install notfair@nowork-studio
+      mcp: true
+      description: "SEO, Google Ads, Meta Ads skills"
+    - name: OpenSkills
+      url: https://github.com/numman-ali/openskills
+      stars: 10400
+      category: skills
+      priority: medium
+      install: npx openskills install
+      mcp: false
+      description: "Universal skill loader for all agents"
+
+  # ================================================================
+  # SECURITY
+  # ================================================================
+  security:
+    - name: Prowler
+      url: https://github.com/prowler-cloud/prowler
+      stars: 14000
+      category: security
+      priority: high
+      install: pip install prowler
+      mcp: false
+      description: "Cloud security, 1000+ checks, compliance"
+    - name: Pentest-ai
+      url: https://github.com/0xSteph/pentest-ai
+      stars: 836
+      category: security
+      priority: medium
+      install: pip install ptai
+      mcp: true
+      description: "OWASP Top 10, 205 tools, MCP server"
+
+  # ================================================================
+  # MEMORY
+  # ================================================================
+  memory:
+    - name: Claude-Mem
+      url: https://github.com/thedotmack/claude-mem
+      stars: 82700
+      category: memory
+      priority: critical
+      install: npx claude-mem install
+      mcp: false
+      description: "Cross-session memory, SQLite + ChromaDB"
+
+  # ================================================================
+  # WEB SCRAPING
+  # ================================================================
+  web_scraping:
+    - name: Scrapling
+      url: https://github.com/D4Vinci/Scrapling
+      stars: 64300
+      category: scraping
+      priority: medium
+      install: pip install scrapling
+      mcp: false
+      description: "Adaptive scraping, anti-detection"
+
+  # ================================================================
+  # RESOURCES
+  # ================================================================
+  resources:
+    - name: Prompt Engineering Guide
+      url: https://github.com/dair-ai/Prompt-Engineering-Guide
+      stars: 75700
+      category: reference
+      priority: medium
+      description: "Comprehensive prompt engineering reference"
+    - name: Awesome Generative AI Guide
+      url: https://github.com/aishwaryanr/awesome-generative-ai-guide
+      stars: 27100
+      category: reference
+      priority: medium
+      description: "GenAI resources and research"
+
+  # ================================================================
+  # TOOLS
+  # ================================================================
+  tools:
+    - name: Zoxide
+      url: https://github.com/ajeetdsouza/zoxide
+      category: tool
+      priority: low
+      install: curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+      description: "Smarter cd command"
+    - name: Starship
+      url: https://github.com/starship/starship
+      stars: 58300
+      category: tool
+      priority: low
+      install: curl -sS https://starship.rs/install.sh | sh
+      description: "Cross-shell prompt"
+    - name: Linux MCP Server
+      url: https://github.com/rhel-lightspeed/linux-mcp-server
+      stars: 245
+      category: mcp
+      priority: low
+      install: pip install linux-mcp-server
+      description: "Read-only Linux administration MCP"
+
+  # ================================================================
+  # TEMPLATES
+  # ================================================================
+  templates:
+    - name: Landing Page Boilerplate
+      url: https://github.com/weijunext/landing-page-boilerplate
+      category: template
+      priority: low
+      description: "Next.js landing page template"
+    - name: Next.js Postgres Auth
+      url: https://github.com/vercel/nextjs-postgres-auth-starter
+      category: template
+      priority: low
+      description: "Auth starter template"
+    - name: Aether Nexus Dashboard
+      url: https://github.com/bymilon/aether-nexus-dashboard
+      stars: 9
+      category: template
+      priority: low
+      description: "React dashboard template"
