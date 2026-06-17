@@ -1,0 +1,19 @@
+{
+  "name": "react-native-skills",
+  "description": "React Native and Expo best practices for building performant mobile apps. Use when building React Native components, optimizing list performance, implementing animations, or working with native modules.",
+  "version": "3.3.1",
+  "author": {
+    "name": "Claude Skills Maintainers",
+    "email": "maintainers@example.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/secondsky/claude-skills",
+  "keywords": [
+    "react-native-skills",
+    "react",
+    "native",
+    "skills",
+    "frontend",
+    "components"
+  ]
+}

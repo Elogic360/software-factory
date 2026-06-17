@@ -1,0 +1,15 @@
+.git
+.gitignore
+.DS_Store
+node_modules/
+src/
+tests/
+.github/
+*.log
+.vscode/
+.idea/
+tsconfig.json
+tsup.config.ts
+vitest.config.ts
+.claude/
+AGENTS.md

@@ -1,0 +1,60 @@
+{
+  "name": "openskills",
+  "version": "1.5.0",
+  "description": "Universal skills loader for AI coding agents - install and load Anthropic SKILL.md format skills in any agent",
+  "type": "module",
+  "main": "./dist/cli.js",
+  "bin": {
+    "openskills": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "examples"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build && npm test"
+  },
+  "keywords": [
+    "anthropic",
+    "claude",
+    "claude-code",
+    "skills",
+    "ai",
+    "agents",
+    "coding-agent",
+    "cursor",
+    "windsurf",
+    "aider",
+    "progressive-disclosure",
+    "automation",
+    "developer-tools"
+  ],
+  "author": "OpenSkills Contributors",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numman-ali/openskills.git"
+  },
+  "homepage": "https://github.com/numman-ali/openskills#readme",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.9.0",
+    "chalk": "^5.6.2",
+    "commander": "^12.1.0",
+    "ora": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.3"
+  }
+}

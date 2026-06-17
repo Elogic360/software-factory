@@ -1,0 +1,24 @@
+{
+  "name": "plan-interview",
+  "description": "Adaptive interview-driven spec generation with quality review. Automatically adjusts depth based on plan complexity.",
+  "version": "3.3.1",
+  "author": {
+    "name": "Claude Skills Maintainers",
+    "email": "maintainers@example.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/secondsky/claude-skills",
+  "keywords": [
+    "plan-interview",
+    "plan",
+    "interview",
+    "tooling",
+    "workflow"
+  ],
+  "agents": [
+    "./agents/spec-reviewer.md"
+  ],
+  "commands": [
+    "./commands/interview.md"
+  ]
+}

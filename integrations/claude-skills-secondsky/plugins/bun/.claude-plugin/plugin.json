@@ -1,0 +1,34 @@
+{
+  "name": "bun",
+  "version": "3.3.1",
+  "description": "Comprehensive Bun runtime toolkit covering runtime, package manager, bundler, testing, HTTP servers, WebSockets, databases, framework integrations (Hono, Next.js, Nuxt, TanStack Start, SvelteKit), deployment, and Node.js compatibility.",
+  "author": {
+    "name": "Claude Skills",
+    "email": "maintainers@example.com"
+  },
+  "homepage": "https://github.com/secondsky/claude-skills",
+  "repository": "https://github.com/secondsky/claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "bun",
+    "tooling",
+    "workflow",
+    "http",
+    "sveltekit",
+    "tanstack",
+    "websockets"
+  ],
+  "agents": [
+    "./agents/bun-migration-assistant.md",
+    "./agents/bun-performance-analyzer.md",
+    "./agents/bun-troubleshooter.md"
+  ],
+  "commands": [
+    "./commands/bun-debug.md",
+    "./commands/bun-deploy.md",
+    "./commands/bun-init.md",
+    "./commands/bun-migrate.md",
+    "./commands/bun-optimize.md",
+    "./commands/bun-upgrade.md"
+  ]
+}

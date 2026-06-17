@@ -43,6 +43,8 @@ software-factory/constitution/CONSTITUTION.md
 ## 3. Pre-Implementation Protocol (Always run ALL steps)
 
 ```
+STEP 0 → claude-mem auto-injects session context (architecture decisions, patterns)
+          Live: http://localhost:37702 | Guide: software-factory/memory/claude-mem-bridge.md
 STEP 1 → Read .specify/memory/constitution.md
 STEP 2 → Query Graphify: codegraph_context("domain or feature name")
 STEP 3 → Run: python3 software-factory/context-engine/skill_selector.py --query "<task description>"

@@ -1,0 +1,145 @@
+{
+  "generatedAt": "2026-01-17T19:26:09.772Z",
+  "nodes": [
+    {
+      "id": "issue:35",
+      "type": "issue",
+      "title": "[I NEED YOU!] Request for a Core Contributor!",
+      "priorityScore": 9,
+      "actionability": "ready"
+    },
+    {
+      "id": "issue:50",
+      "type": "issue",
+      "title": "now i have skills and model api ,but i can' use claude ,should i write workflow to let the model use skill or how can i create a project like claude to use the skills",
+      "priorityScore": 7,
+      "actionability": "ready"
+    },
+    {
+      "id": "issue:47",
+      "type": "issue",
+      "title": "[FEATURE]",
+      "priorityScore": 5,
+      "actionability": "ready"
+    },
+    {
+      "id": "issue:41",
+      "type": "issue",
+      "title": "[FEATURE] support multiple skill reads at once OR explain that they should be read sparately",
+      "priorityScore": 5,
+      "actionability": "ready"
+    },
+    {
+      "id": "issue:32",
+      "type": "issue",
+      "title": "[FEATURE] Project version requirements management",
+      "priorityScore": 5,
+      "actionability": "ready"
+    },
+    {
+      "id": "issue:24",
+      "type": "issue",
+      "title": "[FEATURE] AugmentCode",
+      "priorityScore": 5,
+      "actionability": "ready"
+    },
+    {
+      "id": "issue:13",
+      "type": "issue",
+      "title": "[FEATURE] Support skill switch",
+      "priorityScore": 5,
+      "actionability": "ready"
+    },
+    {
+      "id": "issue:19",
+      "type": "issue",
+      "title": "[FEATURE] Support gitlab",
+      "priorityScore": 0,
+      "actionability": "ready"
+    },
+    {
+      "id": "pr:30",
+      "type": "pr",
+      "title": "fix: switch to async spawn to unblock spinner animation and switch fr…",
+      "priorityScore": 0,
+      "implementationScore": 8,
+      "actionability": "needs-analysis"
+    },
+    {
+      "id": "pr:39",
+      "type": "pr",
+      "title": "feat: implement safe deletion with trash/recycle bin suppor",
+      "priorityScore": 0,
+      "implementationScore": 5,
+      "actionability": "needs-analysis"
+    },
+    {
+      "id": "pr:31",
+      "type": "pr",
+      "title": "feat: support installing local skills via symlinks with --symlink flag",
+      "priorityScore": 0,
+      "implementationScore": 25,
+      "actionability": "needs-analysis"
+    },
+    {
+      "id": "pr:25",
+      "type": "pr",
+      "title": "feat: add Nix flake for declarative builds and development",
+      "priorityScore": 0,
+      "implementationScore": 20,
+      "actionability": "needs-analysis"
+    }
+  ],
+  "edges": [
+    {
+      "from": "issue:47",
+      "to": "issue:41",
+      "type": "possible_duplicate"
+    },
+    {
+      "from": "issue:47",
+      "to": "issue:32",
+      "type": "possible_duplicate"
+    },
+    {
+      "from": "issue:47",
+      "to": "issue:24",
+      "type": "possible_duplicate"
+    },
+    {
+      "from": "issue:47",
+      "to": "issue:19",
+      "type": "possible_duplicate"
+    },
+    {
+      "from": "issue:47",
+      "to": "issue:13",
+      "type": "possible_duplicate"
+    },
+    {
+      "from": "issue:32",
+      "to": "issue:45",
+      "type": "mentions"
+    },
+    {
+      "from": "issue:32",
+      "to": "issue:38",
+      "type": "mentions"
+    },
+    {
+      "from": "issue:13",
+      "to": "issue:41",
+      "type": "possible_duplicate"
+    },
+    {
+      "from": "issue:19",
+      "to": "issue:41",
+      "type": "possible_duplicate"
+    },
+    {
+      "from": "issue:19",
+      "to": "issue:13",
+      "type": "possible_duplicate"
+    }
+  ]
+}

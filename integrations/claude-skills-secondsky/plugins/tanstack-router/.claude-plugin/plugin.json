@@ -1,0 +1,18 @@
+{
+  "name": "tanstack-router",
+  "description": "TanStack Router type-safe file-based routing for React. Use for SPAs, TanStack Query integration, Cloudflare Workers, or encountering devtools, type safety, loader, Vite bundling errors.",
+  "version": "3.3.1",
+  "author": {
+    "name": "Claude Skills Maintainers",
+    "email": "maintainers@example.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/secondsky/claude-skills",
+  "keywords": [
+    "tanstack-router",
+    "tanstack",
+    "router",
+    "frontend",
+    "components"
+  ]
+}

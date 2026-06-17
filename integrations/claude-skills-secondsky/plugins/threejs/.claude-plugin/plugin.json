@@ -1,0 +1,16 @@
+{
+  "name": "threejs",
+  "version": "3.3.1",
+  "description": "Comprehensive Three.js skills for building 3D web experiences",
+  "author": {
+    "name": "Claude Skills Maintainers",
+    "email": "maintainers@claude-skills.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/secondsky/claude-skills",
+  "keywords": [
+    "threejs",
+    "tooling",
+    "workflow"
+  ]
+}
