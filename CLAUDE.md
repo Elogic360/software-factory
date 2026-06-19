@@ -310,5 +310,61 @@ Send the compressed snapshot — not the full repo dump.
 
 ---
 
+## GSTACK INTEGRATION (Garry Tan's Software Factory)
+
+Gstack is installed at `~/.claude/skills/gstack/` with 44 skills.
+All gstack skills are symlinked and available as slash commands.
+
+### Assembly Line (Sprint Lifecycle)
+
+```
+/think → /plan → /build → /review → /test → /ship → /reflect
+
+/office-hours → /autoplan → implement → /review → /qa → /ship → /retro → /learn
+```
+
+### Web Integration
+
+```
+/browse <url>          # Headless browser — screenshots, clicks, assertions
+/scrape <url>          # Extract structured data from pages
+/webfetch <url>        # Simple content retrieval
+```
+
+### Key Skills
+
+| Skill | Purpose |
+|---|---|
+| /office-hours | Product interrogation, 6 forcing questions |
+| /autoplan | Auto CEO → design → eng review pipeline |
+| /review | Staff-level code review with auto-fix |
+| /qa | Browser-based testing with bug fixes |
+| /ship | Tests + PR + deploy |
+| /cso | Security audit (OWASP + STRIDE) |
+| /investigate | Root-cause debugging |
+| /learn | Persistent cross-session memory |
+| /spec | Executable spec authoring |
+| /diagram | English → mermaid/excalidraw |
+| /make-pdf | Markdown → publication-quality document |
+
+### Memory-Driven Assembly Line
+
+```
+User Prompt
+  ↓
+1. Memory Search → Check what we already know
+2. Skill Select → Load relevant SKILL.md
+3. Decompose → Split into independent tasks
+4. Parallelize → Spawn sub-agents
+5. Implement → One file at a time
+6. Review → /review
+7. Test → /qa
+8. Ship → /ship
+9. Reflect → /retro
+10. Learn → /learn → Memory updated
+```
+
+---
+
 *This file is enforced by CI. Agents that violate these rules will have their
 PRs auto-rejected by the validation pipeline.*
