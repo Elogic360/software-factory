@@ -3,47 +3,106 @@
     "codegraph": {
       "command": "codegraph",
       "args": ["serve"],
-      "env": {}
+      "env": {},
+      "priority": "critical",
+      "skill_mapping": ["software-developer", "architect-principal", "change-detective"],
+      "description": "Pre-indexed AST code graph, 20+ languages, auto-sync"
     },
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp@latest"]
+      "args": ["-y", "@upstash/context7-mcp@latest"],
+      "env": {},
+      "priority": "critical",
+      "skill_mapping": ["context-engineering", "prompt-engineering"],
+      "description": "Up-to-date documentation lookup for LLMs"
     },
     "github": {
       "command": "npx",
       "args": ["-y", "@anthropic-ai/mcp-server-github"],
-      "env": {
-        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
-      }
+      "env": { "GITHUB_TOKEN": "${GITHUB_TOKEN}" },
+      "priority": "critical",
+      "skill_mapping": ["change-detective", "devops-engineer"],
+      "description": "PR/issue automation, repository management"
     },
     "playwright": {
       "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-server-playwright"]
+      "args": ["-y", "@anthropic-ai/mcp-server-playwright"],
+      "env": {},
+      "priority": "high",
+      "skill_mapping": ["testing-e2e", "software-product-tester"],
+      "description": "Browser automation for E2E testing"
     },
     "firecrawl": {
       "command": "npx",
       "args": ["-y", "@mendableai/firecrawl-mcp"],
-      "env": {
-        "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}"
-      }
+      "env": { "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}" },
+      "priority": "high",
+      "skill_mapping": ["context-engineering", "quant-research"],
+      "description": "Web scraping for data extraction"
     },
     "fastapi": {
       "command": "python3",
       "args": ["-m", "fastapi_mcp"],
-      "env": {}
-    },
-    "prowler": {
-      "command": "python3",
-      "args": ["-m", "prowler.mcp_server"],
-      "env": {
-        "AWS_ACCESS_KEY_ID": "${AWS_ACCESS_KEY_ID}",
-        "AWS_SECRET_ACCESS_KEY": "${AWS_SECRET_ACCESS_KEY}"
-      }
+      "env": {},
+      "priority": "high",
+      "skill_mapping": ["backend-fastapi", "microservices"],
+      "description": "FastAPI endpoint exposure via MCP"
     },
     "linux-mcp": {
       "command": "python3",
       "args": ["-m", "linux_mcp_server"],
-      "env": {}
+      "env": {},
+      "priority": "medium",
+      "skill_mapping": ["devops-engineer"],
+      "description": "Read-only Linux administration MCP"
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "env": {},
+      "priority": "medium",
+      "skill_mapping": ["software-developer", "architect-principal"],
+      "description": "Structured reasoning and problem decomposition"
+    },
+    "cloudflare": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://docs.mcp.cloudflare.com/sse"],
+      "env": {},
+      "priority": "high",
+      "skill_mapping": ["devops-engineer", "frontend-react"],
+      "description": "Cloudflare Workers, R2, KV, Zero Trust docs"
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"],
+      "env": {},
+      "priority": "medium",
+      "skill_mapping": ["interactive-dev", "frontend-react"],
+      "description": "Browser control and debugging"
+    },
+    "lucide-icons": {
+      "command": "npx",
+      "args": ["-y", "lucide-icons-mcp", "--stdio"],
+      "env": {},
+      "priority": "medium",
+      "skill_mapping": ["frontend-react", "ui-ux-premium"],
+      "description": "Icon search and retrieval"
+    },
+    "time": {
+      "command": "uvx",
+      "args": ["mcp-server-time"],
+      "env": {},
+      "priority": "low",
+      "skill_mapping": ["backend-fastapi"],
+      "description": "Time and timezone utilities"
+    },
+    "grep": {
+      "command": "uvx",
+      "args": ["grep-mcp"],
+      "env": {},
+      "priority": "low",
+      "skill_mapping": ["software-developer"],
+      "description": "Code search via MCP"
     }
   }
 }

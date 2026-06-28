@@ -1,0 +1,848 @@
+{
+  "nodes": [
+    {
+      "id": "software-factory_GRAPHIFY",
+      "label": "Graphify Integration",
+      "file_type": "document",
+      "source_file": "software-factory/GRAPHIFY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_SDD_PIPELINE",
+      "label": "Spec-Driven Development Pipeline",
+      "file_type": "document",
+      "source_file": "software-factory/SDD_PIPELINE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_ROLES",
+      "label": "Roles and Ownership",
+      "file_type": "document",
+      "source_file": "software-factory/ROLES.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_CONTEXT_ENGINEERING",
+      "label": "Context Engineering",
+      "file_type": "document",
+      "source_file": "software-factory/CONTEXT_ENGINEERING.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_MASTER_PROMPT",
+      "label": "Software Factory Master Prompt",
+      "file_type": "document",
+      "source_file": "software-factory/MASTER_PROMPT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_OPERATIONS",
+      "label": "Operations",
+      "file_type": "document",
+      "source_file": "software-factory/OPERATIONS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_START_HERE",
+      "label": "Universal Architecture System — START HERE",
+      "file_type": "document",
+      "source_file": "software-factory/START_HERE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_UNIVERSAL_EXECUTION_GUIDE",
+      "label": "Universal Execution Guide",
+      "file_type": "document",
+      "source_file": "software-factory/UNIVERSAL_EXECUTION_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_UNIVERSAL_PROJECT_SCAFFOLD",
+      "label": "Universal Project Scaffold System",
+      "file_type": "document",
+      "source_file": "software-factory/UNIVERSAL_PROJECT_SCAFFOLD.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_ARCHITECTURE_DISCOVERY",
+      "label": "Architecture Discovery & Living Documentation System",
+      "file_type": "document",
+      "source_file": "software-factory/ARCHITECTURE_DISCOVERY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_ARCHITECTURE_QUICKSTART",
+      "label": "Architecture Discovery Quick Start",
+      "file_type": "document",
+      "source_file": "software-factory/ARCHITECTURE_QUICKSTART.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_ARCHITECTURE_SYSTEM_INDEX",
+      "label": "Architecture Discovery System Index",
+      "file_type": "document",
+      "source_file": "software-factory/ARCHITECTURE_SYSTEM_INDEX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_COMPLETE_SYSTEM_OVERVIEW",
+      "label": "Complete Architecture System Overview",
+      "file_type": "document",
+      "source_file": "software-factory/COMPLETE_SYSTEM_OVERVIEW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_SCALABLE_MEMORY_FRAMEWORK",
+      "label": "Scalable Memory Framework",
+      "file_type": "document",
+      "source_file": "software-factory/SCALABLE_MEMORY_FRAMEWORK.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_AGENT_INTEGRATION",
+      "label": "Multi-Agent Integration Guide",
+      "file_type": "document",
+      "source_file": "software-factory/AGENT_INTEGRATION.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_README",
+      "label": "Software Factory README",
+      "file_type": "document",
+      "source_file": "software-factory/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_LAUNCH",
+      "label": "Integral Market — Complete Launch Guide",
+      "file_type": "document",
+      "source_file": "software-factory/LAUNCH.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_constitution_CONSTITUTION",
+      "label": "Integral Market — Engineering Constitution",
+      "file_type": "document",
+      "source_file": "software-factory/constitution/CONSTITUTION.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "software-factory_context-engine_skill_selector",
+      "label": "Agentic Skill Router",
+      "file_type": "code",
+      "source_file": "software-factory/context-engine/skill_selector.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_SDD_Pipeline",
+      "label": "Spec-Driven Development (SDD) Pipeline",
+      "file_type": "document",
+      "source_file": "software-factory/SDD_PIPELINE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_Graphify",
+      "label": "Graphify Semantic Memory Engine",
+      "file_type": "document",
+      "source_file": "software-factory/GRAPHIFY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_Constitution",
+      "label": "Engineering Constitution",
+      "file_type": "document",
+      "source_file": "software-factory/constitution/CONSTITUTION.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_Architecture_Discovery",
+      "label": "Architecture Discovery System",
+      "file_type": "document",
+      "source_file": "software-factory/ARCHITECTURE_DISCOVERY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_Universal_Project_Scaffold",
+      "label": "Universal Project Scaffold System",
+      "file_type": "document",
+      "source_file": "software-factory/UNIVERSAL_PROJECT_SCAFFOLD.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_Scalable_Memory_Framework",
+      "label": "Scalable Memory Framework",
+      "file_type": "document",
+      "source_file": "software-factory/SCALABLE_MEMORY_FRAMEWORK.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_Agent_Integration",
+      "label": "Multi-Agent Integration",
+      "file_type": "document",
+      "source_file": "software-factory/AGENT_INTEGRATION.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_Context_Engineering",
+      "label": "Context Engineering",
+      "file_type": "document",
+      "source_file": "software-factory/CONTEXT_ENGINEERING.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_Master_Prompt",
+      "label": "Master Orchestration Prompt",
+      "file_type": "document",
+      "source_file": "software-factory/MASTER_PROMPT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "concept_Skill_Selector",
+      "label": "Agentic Skill Router",
+      "file_type": "code",
+      "source_file": "software-factory/context-engine/skill_selector.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "software-factory_README",
+      "target": "software-factory_MASTER_PROMPT",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_README",
+      "target": "software-factory_SDD_PIPELINE",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_README",
+      "target": "software-factory_GRAPHIFY",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_README",
+      "target": "software-factory_ROLES",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_README",
+      "target": "software-factory_OPERATIONS",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_MASTER_PROMPT",
+      "target": "concept_Constitution",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/MASTER_PROMPT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_MASTER_PROMPT",
+      "target": "concept_SDD_Pipeline",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/MASTER_PROMPT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_MASTER_PROMPT",
+      "target": "concept_Graphify",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/MASTER_PROMPT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_MASTER_PROMPT",
+      "target": "software-factory_ROLES",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/MASTER_PROMPT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_SDD_PIPELINE",
+      "target": "concept_Constitution",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/SDD_PIPELINE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_GRAPHIFY",
+      "target": "concept_Graphify",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/GRAPHIFY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_GRAPHIFY",
+      "target": "software-factory_context-engine_skill_selector",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/GRAPHIFY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_CONTEXT_ENGINEERING",
+      "target": "concept_Graphify",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/CONTEXT_ENGINEERING.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_CONTEXT_ENGINEERING",
+      "target": "concept_Constitution",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/CONTEXT_ENGINEERING.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_OPERATIONS",
+      "target": "concept_SDD_Pipeline",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/OPERATIONS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_START_HERE",
+      "target": "concept_Architecture_Discovery",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/START_HERE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_START_HERE",
+      "target": "concept_Universal_Project_Scaffold",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/START_HERE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_START_HERE",
+      "target": "concept_Scalable_Memory_Framework",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/START_HERE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_START_HERE",
+      "target": "concept_Agent_Integration",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/START_HERE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_UNIVERSAL_EXECUTION_GUIDE",
+      "target": "concept_Universal_Project_Scaffold",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/UNIVERSAL_EXECUTION_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_UNIVERSAL_EXECUTION_GUIDE",
+      "target": "concept_Architecture_Discovery",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/UNIVERSAL_EXECUTION_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_UNIVERSAL_EXECUTION_GUIDE",
+      "target": "concept_Scalable_Memory_Framework",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/UNIVERSAL_EXECUTION_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_UNIVERSAL_EXECUTION_GUIDE",
+      "target": "concept_Agent_Integration",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/UNIVERSAL_EXECUTION_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_UNIVERSAL_PROJECT_SCAFFOLD",
+      "target": "concept_Architecture_Discovery",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/UNIVERSAL_PROJECT_SCAFFOLD.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_UNIVERSAL_PROJECT_SCAFFOLD",
+      "target": "concept_Agent_Integration",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/UNIVERSAL_PROJECT_SCAFFOLD.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_ARCHITECTURE_DISCOVERY",
+      "target": "concept_Architecture_Discovery",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/ARCHITECTURE_DISCOVERY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_ARCHITECTURE_QUICKSTART",
+      "target": "concept_Architecture_Discovery",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/ARCHITECTURE_QUICKSTART.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_ARCHITECTURE_QUICKSTART",
+      "target": "concept_Agent_Integration",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/ARCHITECTURE_QUICKSTART.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_ARCHITECTURE_SYSTEM_INDEX",
+      "target": "concept_Architecture_Discovery",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/ARCHITECTURE_SYSTEM_INDEX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_ARCHITECTURE_SYSTEM_INDEX",
+      "target": "concept_Agent_Integration",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/ARCHITECTURE_SYSTEM_INDEX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_COMPLETE_SYSTEM_OVERVIEW",
+      "target": "concept_Architecture_Discovery",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/COMPLETE_SYSTEM_OVERVIEW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_COMPLETE_SYSTEM_OVERVIEW",
+      "target": "concept_Universal_Project_Scaffold",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/COMPLETE_SYSTEM_OVERVIEW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_COMPLETE_SYSTEM_OVERVIEW",
+      "target": "concept_Scalable_Memory_Framework",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/COMPLETE_SYSTEM_OVERVIEW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_COMPLETE_SYSTEM_OVERVIEW",
+      "target": "concept_Agent_Integration",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/COMPLETE_SYSTEM_OVERVIEW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_SCALABLE_MEMORY_FRAMEWORK",
+      "target": "concept_Scalable_Memory_Framework",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/SCALABLE_MEMORY_FRAMEWORK.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_SCALABLE_MEMORY_FRAMEWORK",
+      "target": "concept_Architecture_Discovery",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/SCALABLE_MEMORY_FRAMEWORK.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_SCALABLE_MEMORY_FRAMEWORK",
+      "target": "concept_Agent_Integration",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/SCALABLE_MEMORY_FRAMEWORK.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_AGENT_INTEGRATION",
+      "target": "concept_Agent_Integration",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/AGENT_INTEGRATION.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_AGENT_INTEGRATION",
+      "target": "concept_Architecture_Discovery",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/AGENT_INTEGRATION.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_LAUNCH",
+      "target": "concept_Constitution",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/LAUNCH.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_constitution_CONSTITUTION",
+      "target": "concept_Constitution",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/constitution/CONSTITUTION.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "software-factory_context-engine_skill_selector",
+      "target": "concept_Skill_Selector",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/context-engine/skill_selector.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_SDD_Pipeline",
+      "target": "concept_Constitution",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/SDD_PIPELINE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_Graphify",
+      "target": "concept_Context_Engineering",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "software-factory/GRAPHIFY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_Architecture_Discovery",
+      "target": "concept_Scalable_Memory_Framework",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "software-factory/ARCHITECTURE_DISCOVERY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_Universal_Project_Scaffold",
+      "target": "concept_Architecture_Discovery",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "software-factory/UNIVERSAL_PROJECT_SCAFFOLD.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_Agent_Integration",
+      "target": "concept_Scalable_Memory_Framework",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "software-factory/AGENT_INTEGRATION.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_Context_Engineering",
+      "target": "concept_Graphify",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "software-factory/CONTEXT_ENGINEERING.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_Master_Prompt",
+      "target": "concept_Constitution",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/MASTER_PROMPT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_Master_Prompt",
+      "target": "concept_SDD_Pipeline",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "software-factory/MASTER_PROMPT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_Skill_Selector",
+      "target": "concept_Context_Engineering",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "software-factory/context-engine/skill_selector.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "concept_Skill_Selector",
+      "target": "concept_Graphify",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "software-factory/context-engine/skill_selector.py",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

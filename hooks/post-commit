@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# ═══════════════════════════════════════════════════════════════════════════════
+#  Software Factory — post-commit hook
+#  Keeps the skill library, memory, and knowledge graph growing with the code.
+#  Runs scripts/update_skills.py in the BACKGROUND so commits are never blocked.
+# ═══════════════════════════════════════════════════════════════════════════════
+set -uo pipefail
+
+HOOK_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || cd "$HOOK_DIR/../.." && pwd)"
+SCRIPT="$PROJECT_ROOT/software-factory/scripts/update_skills.py"
+LOG="$PROJECT_ROOT/software-factory/.skills_sync.log"
+
+[ -f "$SCRIPT" ] || exit 0
+
+# Non-blocking: detach so the commit returns immediately.
+nohup python3 "$SCRIPT" >>"$LOG" 2>&1 &
+disown 2>/dev/null || true
+exit 0

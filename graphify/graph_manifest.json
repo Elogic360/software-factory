@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-05-31T05:35:55.585470+00:00",
+  "since": "66c5599b2a6c3f3e29b7dd77e45f56bce3d3768e",
+  "head": "c72ae0e0648902adb8a63464fc2cc0c1aa1ac22e",
+  "changed_file_count": 216,
+  "skills_touched": [
+    "architect-principal",
+    "backend-fastapi",
+    "change-detective",
+    "copytrading-engine",
+    "database-postgresql",
+    "devops-engineer",
+    "frontend-react",
+    "frontend-trading-ui",
+    "journal-analytics",
+    "microservices",
+    "mt5-integration",
+    "security-audit",
+    "tradingview-integration",
+    "ui-ux-premium"
+  ],
+  "graph_json": "/home/elogic360/Desktop/little QUANTUM/Integral Market/graphify-out/graph.json",
+  "note": "Run `/graphify .` (or `graphify . --update`) to (re)build graph.json."
+}
