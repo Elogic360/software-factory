@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "Organization",
+    "EducationalOrganization"
+  ],
+  "@id": "https://integralmarket.com/#organization",
+  "name": "Integral Market",
+  "url": "https://integralmarket.com",
+  "sameAs": [
+    "https://github.com/integral-market",
+    "https://x.com/integralmarket",
+    "https://linkedin.com/company/integral-market"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Trading Journal",
+  "description": "Institutional-grade trading journal with broker sync and analytics.",
+  "url": "https://integralmarket.tech/expert/journal",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@id": "https://integralmarket.tech/#organization"
+  }
+}

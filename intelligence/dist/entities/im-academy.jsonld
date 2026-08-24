@@ -1,0 +1,19 @@
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "@id": "https://integralmarket.com/academy",
+  "name": "IM Academy",
+  "description": "Structured trading education with expert-led courses on forex, stocks, cryptocurrency, and AI-assisted trading strategies.",
+  "url": "https://integralmarket.com/academy",
+  "isPartOf": {
+    "@id": "https://integralmarket.com/#organization"
+  },
+  "provider": {
+    "@id": "https://integralmarket.com/#organization"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}

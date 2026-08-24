@@ -33,6 +33,35 @@ rtk pytest
 
 ## Agent-Specific Setup
 
+### Grok Build (xAI) — Primary integrated harness (2026-07)
+
+```bash
+# Entry points (auto-loaded / must-read):
+#   CLAUDE.md                          — project skill routing + platform rules
+#   software-factory/AGENTS.md         — universal agent bootstrap
+#   software-factory/CLAUDE.md         — full orchestrator OS
+#   software-factory/constitution/     — supreme law
+
+# Bootstrap every task:
+python3 software-factory/context-engine/skill_selector.py --query "<task>" --top 3
+# then: Read software-factory/skills/<match>/SKILL.md
+
+# Code intelligence
+codegraph status
+codegraph query "<symbol>"
+codegraph context "<task description>"
+
+# MCP: project .mcp.json (codegraph, context7, github, playwright, …)
+# gstack skills: .claude/skills/ + ~/.claude/skills/ for /ship /qa /review /autoplan
+# Domain skills also under .claude/skills/ (drawio, k8s, snippe, roles, …)
+
+# Memory
+#   software-factory/memory/decisions/
+#   software-factory/memory/patterns/
+
+# Ready checklist: software-factory/AGENTS.md → "Grok pre-build checklist"
+```
+
 ### Claude Code
 
 ```bash
@@ -46,7 +75,7 @@ rtk pytest
 
 ```bash
 # Skills via AGENTS.md
-cat software-factory/AGENTS.md >> AGENTS.md
+# Prefer: software-factory/AGENTS.md as the single source (do not duplicate drift)
 
 # Memory via claude-mem (if installed)
 npx claude-mem install

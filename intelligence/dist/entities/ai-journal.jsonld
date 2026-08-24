@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://integralmarket.com/journal",
+  "name": "AI Journal",
+  "description": "AI-powered trading journal with automated trade logging and analytics.",
+  "url": "https://integralmarket.com/journal",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "isPartOf": {
+    "@id": "https://integralmarket.com/#organization"
+  },
+  "provider": {
+    "@id": "https://integralmarket.com/#organization"
+  }
+}

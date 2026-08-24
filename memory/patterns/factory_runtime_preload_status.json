@@ -1,0 +1,1086 @@
+{
+  "generated_at": "2026-08-04T15:50:33.318890+00:00",
+  "mcp": {
+    "catalog_count": 13,
+    "active_count": 14,
+    "servers": {
+      "chrome-devtools": {
+        "command": "npx",
+        "priority": "medium",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
+      "cloudflare": {
+        "command": "npx",
+        "priority": "high",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
+      "codegraph": {
+        "command": "codegraph",
+        "priority": "critical",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
+      "context7": {
+        "command": "npx",
+        "priority": "critical",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
+      "drawio": {
+        "command": "npx",
+        "priority": "medium",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
+      "fastapi": {
+        "command": "python3",
+        "priority": "high",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
+      "firecrawl": {
+        "command": "npx",
+        "priority": "high",
+        "command_found": true,
+        "required_env_vars": [
+          "FIRECRAWL_API_KEY"
+        ],
+        "missing_env_vars": [
+          "FIRECRAWL_API_KEY"
+        ]
+      },
+      "github": {
+        "command": "npx",
+        "priority": "critical",
+        "command_found": true,
+        "required_env_vars": [
+          "GITHUB_TOKEN"
+        ],
+        "missing_env_vars": [
+          "GITHUB_TOKEN"
+        ]
+      },
+      "grep": {
+        "command": "uvx",
+        "priority": "low",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
+      "linux-mcp": {
+        "command": "python3",
+        "priority": "medium",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
+      "lucide-icons": {
+        "command": "npx",
+        "priority": "medium",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
+      "playwright": {
+        "command": "npx",
+        "priority": "high",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
+      "sequential-thinking": {
+        "command": "npx",
+        "priority": "medium",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
+      "time": {
+        "command": "uvx",
+        "priority": "low",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      }
+    }
+  },
+  "skills": {
+    "count": 236,
+    "entries": [
+      {
+        "path": "software-factory/skills/ai-optimization/SKILL.md",
+        "skill": "ai-optimization"
+      },
+      {
+        "path": "software-factory/skills/architect-discovery/SKILL.md",
+        "skill": "architect-discovery"
+      },
+      {
+        "path": "software-factory/skills/architect-principal/SKILL.md",
+        "skill": "architect-principal"
+      },
+      {
+        "path": "software-factory/skills/backend-fastapi/SKILL.md",
+        "skill": "backend-fastapi"
+      },
+      {
+        "path": "software-factory/skills/change-detective/SKILL.md",
+        "skill": "change-detective"
+      },
+      {
+        "path": "software-factory/skills/context-engineering/SKILL.md",
+        "skill": "context-engineering"
+      },
+      {
+        "path": "software-factory/skills/copytrading-engine/SKILL.md",
+        "skill": "copytrading-engine"
+      },
+      {
+        "path": "software-factory/skills/database-postgresql/SKILL.md",
+        "skill": "database-postgresql"
+      },
+      {
+        "path": "software-factory/skills/devops-engineer/SKILL.md",
+        "skill": "devops-engineer"
+      },
+      {
+        "path": "software-factory/skills/event-driven-architecture/SKILL.md",
+        "skill": "event-driven-architecture"
+      },
+      {
+        "path": "software-factory/skills/frontend-react/SKILL.md",
+        "skill": "frontend-react"
+      },
+      {
+        "path": "software-factory/skills/frontend-trading-ui/SKILL.md",
+        "skill": "frontend-trading-ui"
+      },
+      {
+        "path": "software-factory/skills/interactive-dev/SKILL.md",
+        "skill": "interactive-dev"
+      },
+      {
+        "path": "software-factory/skills/journal-analytics/SKILL.md",
+        "skill": "journal-analytics"
+      },
+      {
+        "path": "software-factory/skills/kubernetes-ops/SKILL.md",
+        "skill": "kubernetes-ops"
+      },
+      {
+        "path": "software-factory/skills/microservices/SKILL.md",
+        "skill": "microservices"
+      },
+      {
+        "path": "software-factory/skills/mt5-integration/SKILL.md",
+        "skill": "mt5-integration"
+      },
+      {
+        "path": "software-factory/skills/mt5-scalability/SKILL.md",
+        "skill": "mt5-scalability"
+      },
+      {
+        "path": "software-factory/skills/nvidia/accelerated-computing-cudf/SKILL.md",
+        "skill": "accelerated-computing-cudf"
+      },
+      {
+        "path": "software-factory/skills/nvidia/aiq-deploy/SKILL.md",
+        "skill": "aiq-deploy"
+      },
+      {
+        "path": "software-factory/skills/nvidia/aiq-research/SKILL.md",
+        "skill": "aiq-research"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cudaq-guide/SKILL.md",
+        "skill": "cudaq-guide"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cufolio/SKILL.md",
+        "skill": "cufolio"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cuopt-developer/SKILL.md",
+        "skill": "cuopt-developer"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cuopt-install/SKILL.md",
+        "skill": "cuopt-install"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cuopt-numerical-optimization-api-c/SKILL.md",
+        "skill": "cuopt-numerical-optimization-api-c"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cuopt-numerical-optimization-api-cli/SKILL.md",
+        "skill": "cuopt-numerical-optimization-api-cli"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cuopt-numerical-optimization-api-python/SKILL.md",
+        "skill": "cuopt-numerical-optimization-api-python"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cuopt-numerical-optimization-formulation/SKILL.md",
+        "skill": "cuopt-numerical-optimization-formulation"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cuopt-routing-api-python/SKILL.md",
+        "skill": "cuopt-routing-api-python"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cuopt-routing-formulation/SKILL.md",
+        "skill": "cuopt-routing-formulation"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cuopt-server-api-python/SKILL.md",
+        "skill": "cuopt-server-api-python"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cuopt-server-common/SKILL.md",
+        "skill": "cuopt-server-common"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cuopt-skill-evolution/SKILL.md",
+        "skill": "cuopt-skill-evolution"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cuopt-user-rules/SKILL.md",
+        "skill": "cuopt-user-rules"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cupynumeric-hdf5/SKILL.md",
+        "skill": "cupynumeric-hdf5"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cupynumeric-install/SKILL.md",
+        "skill": "cupynumeric-install"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cupynumeric-migration-readiness/SKILL.md",
+        "skill": "cupynumeric-migration-readiness"
+      },
+      {
+        "path": "software-factory/skills/nvidia/cupynumeric-parallel-data-load/SKILL.md",
+        "skill": "cupynumeric-parallel-data-load"
+      },
+      {
+        "path": "software-factory/skills/nvidia/dali-dynamic-mode/SKILL.md",
+        "skill": "dali-dynamic-mode"
+      },
+      {
+        "path": "software-factory/skills/nvidia/data-designer/SKILL.md",
+        "skill": "data-designer"
+      },
+      {
+        "path": "software-factory/skills/nvidia/deepstream-dev/SKILL.md",
+        "skill": "deepstream-dev"
+      },
+      {
+        "path": "software-factory/skills/nvidia/deepstream-import-vision-model/SKILL.md",
+        "skill": "deepstream-import-vision-model"
+      },
+      {
+        "path": "software-factory/skills/nvidia/dicom-metadata-extract/SKILL.md",
+        "skill": "dicom-metadata-extract"
+      },
+      {
+        "path": "software-factory/skills/nvidia/dicom-series-preflight/SKILL.md",
+        "skill": "dicom-series-preflight"
+      },
+      {
+        "path": "software-factory/skills/nvidia/dicom-series-to-volume/SKILL.md",
+        "skill": "dicom-series-to-volume"
+      },
+      {
+        "path": "software-factory/skills/nvidia/digital-health-clinical-asr-build/SKILL.md",
+        "skill": "digital-health-clinical-asr-build"
+      },
+      {
+        "path": "software-factory/skills/nvidia/digital-health-clinical-asr-eval/SKILL.md",
+        "skill": "digital-health-clinical-asr-eval"
+      },
+      {
+        "path": "software-factory/skills/nvidia/digital-health-clinical-asr-finetune/SKILL.md",
+        "skill": "digital-health-clinical-asr-finetune"
+      },
+      {
+        "path": "software-factory/skills/nvidia/digital-health-clinical-asr-setup/SKILL.md",
+        "skill": "digital-health-clinical-asr-setup"
+      },
+      {
+        "path": "software-factory/skills/nvidia/dynamo-interconnect-check/SKILL.md",
+        "skill": "dynamo-interconnect-check"
+      },
+      {
+        "path": "software-factory/skills/nvidia/dynamo-recipe-runner/SKILL.md",
+        "skill": "dynamo-recipe-runner"
+      },
+      {
+        "path": "software-factory/skills/nvidia/dynamo-router-starter/SKILL.md",
+        "skill": "dynamo-router-starter"
+      },
+      {
+        "path": "software-factory/skills/nvidia/dynamo-troubleshoot/SKILL.md",
+        "skill": "dynamo-troubleshoot"
+      },
+      {
+        "path": "software-factory/skills/nvidia/earth2studio-data-fetch/SKILL.md",
+        "skill": "earth2studio-data-fetch"
+      },
+      {
+        "path": "software-factory/skills/nvidia/earth2studio-deterministic-forecast/SKILL.md",
+        "skill": "earth2studio-deterministic-forecast"
+      },
+      {
+        "path": "software-factory/skills/nvidia/earth2studio-discover/SKILL.md",
+        "skill": "earth2studio-discover"
+      },
+      {
+        "path": "software-factory/skills/nvidia/earth2studio-install/SKILL.md",
+        "skill": "earth2studio-install"
+      },
+      {
+        "path": "software-factory/skills/nvidia/holoscan-install-conda/SKILL.md",
+        "skill": "holoscan-install-conda"
+      },
+      {
+        "path": "software-factory/skills/nvidia/holoscan-install-container/SKILL.md",
+        "skill": "holoscan-install-container"
+      },
+      {
+        "path": "software-factory/skills/nvidia/holoscan-install-debian/SKILL.md",
+        "skill": "holoscan-install-debian"
+      },
+      {
+        "path": "software-factory/skills/nvidia/holoscan-install-source/SKILL.md",
+        "skill": "holoscan-install-source"
+      },
+      {
+        "path": "software-factory/skills/nvidia/holoscan-install-wheel/SKILL.md",
+        "skill": "holoscan-install-wheel"
+      },
+      {
+        "path": "software-factory/skills/nvidia/holoscan-setup/SKILL.md",
+        "skill": "holoscan-setup"
+      },
+      {
+        "path": "software-factory/skills/nvidia/hsb-app/SKILL.md",
+        "skill": "hsb-app"
+      },
+      {
+        "path": "software-factory/skills/nvidia/hsb-flash/SKILL.md",
+        "skill": "hsb-flash"
+      },
+      {
+        "path": "software-factory/skills/nvidia/hsb-setup/SKILL.md",
+        "skill": "hsb-setup"
+      },
+      {
+        "path": "software-factory/skills/nvidia/hsb-test/SKILL.md",
+        "skill": "hsb-test"
+      },
+      {
+        "path": "software-factory/skills/nvidia/launch-nemo-rl/SKILL.md",
+        "skill": "launch-nemo-rl"
+      },
+      {
+        "path": "software-factory/skills/nvidia/mcore-create-issue/SKILL.md",
+        "skill": "mcore-create-issue"
+      },
+      {
+        "path": "software-factory/skills/nvidia/mcore-linting-and-formatting/SKILL.md",
+        "skill": "mcore-linting-and-formatting"
+      },
+      {
+        "path": "software-factory/skills/nvidia/mcore-run-on-slurm/SKILL.md",
+        "skill": "mcore-run-on-slurm"
+      },
+      {
+        "path": "software-factory/skills/nvidia/mcore-split-pr/SKILL.md",
+        "skill": "mcore-split-pr"
+      },
+      {
+        "path": "software-factory/skills/nvidia/mcore-testing/SKILL.md",
+        "skill": "mcore-testing"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-automodel-distributed-training/SKILL.md",
+        "skill": "nemo-automodel-distributed-training"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-automodel-launcher-config/SKILL.md",
+        "skill": "nemo-automodel-launcher-config"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-automodel-model-onboarding/SKILL.md",
+        "skill": "nemo-automodel-model-onboarding"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-automodel-recipe-development/SKILL.md",
+        "skill": "nemo-automodel-recipe-development"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-data-designer-plugin/SKILL.md",
+        "skill": "nemo-data-designer-plugin"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-evaluator-plugin/SKILL.md",
+        "skill": "nemo-evaluator-plugin"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-mlm-bridge-training/SKILL.md",
+        "skill": "nemo-mbridge-mlm-bridge-training"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-multi-node-slurm/SKILL.md",
+        "skill": "nemo-mbridge-multi-node-slurm"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-activation-recompute/SKILL.md",
+        "skill": "nemo-mbridge-perf-activation-recompute"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-cpu-offloading/SKILL.md",
+        "skill": "nemo-mbridge-perf-cpu-offloading"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-cuda-graphs/SKILL.md",
+        "skill": "nemo-mbridge-perf-cuda-graphs"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-expert-parallel-overlap/SKILL.md",
+        "skill": "nemo-mbridge-perf-expert-parallel-overlap"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-hierarchical-context-parallel/SKILL.md",
+        "skill": "nemo-mbridge-perf-hierarchical-context-parallel"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-megatron-fsdp/SKILL.md",
+        "skill": "nemo-mbridge-perf-megatron-fsdp"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-memory-tuning/SKILL.md",
+        "skill": "nemo-mbridge-perf-memory-tuning"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-moe-comm-overlap/SKILL.md",
+        "skill": "nemo-mbridge-perf-moe-comm-overlap"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-moe-dispatcher-selection/SKILL.md",
+        "skill": "nemo-mbridge-perf-moe-dispatcher-selection"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-moe-hardware-configs/SKILL.md",
+        "skill": "nemo-mbridge-perf-moe-hardware-configs"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-moe-long-context/SKILL.md",
+        "skill": "nemo-mbridge-perf-moe-long-context"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-moe-optimization-workflow/SKILL.md",
+        "skill": "nemo-mbridge-perf-moe-optimization-workflow"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-moe-vlm-training/SKILL.md",
+        "skill": "nemo-mbridge-perf-moe-vlm-training"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-parallelism-strategies/SKILL.md",
+        "skill": "nemo-mbridge-perf-parallelism-strategies"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-sequence-packing/SKILL.md",
+        "skill": "nemo-mbridge-perf-sequence-packing"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-perf-tp-dp-comm-overlap/SKILL.md",
+        "skill": "nemo-mbridge-perf-tp-dp-comm-overlap"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-recipe-recommender/SKILL.md",
+        "skill": "nemo-mbridge-recipe-recommender"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-mbridge-resiliency/SKILL.md",
+        "skill": "nemo-mbridge-resiliency"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-retriever/SKILL.md",
+        "skill": "nemo-retriever"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-rl-auto-research/SKILL.md",
+        "skill": "nemo-rl-auto-research"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-rl-brev-etiquette/SKILL.md",
+        "skill": "nemo-rl-brev-etiquette"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-rl-docs/SKILL.md",
+        "skill": "nemo-rl-docs"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemo-rl-session-memory/SKILL.md",
+        "skill": "nemo-rl-session-memory"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemoclaw-user-agent-skills/SKILL.md",
+        "skill": "nemoclaw-user-agent-skills"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemoclaw-user-configure-inference/SKILL.md",
+        "skill": "nemoclaw-user-configure-inference"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemoclaw-user-configure-security/SKILL.md",
+        "skill": "nemoclaw-user-configure-security"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemoclaw-user-deploy-remote/SKILL.md",
+        "skill": "nemoclaw-user-deploy-remote"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemoclaw-user-get-started/SKILL.md",
+        "skill": "nemoclaw-user-get-started"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemoclaw-user-manage-policy/SKILL.md",
+        "skill": "nemoclaw-user-manage-policy"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemoclaw-user-manage-sandboxes/SKILL.md",
+        "skill": "nemoclaw-user-manage-sandboxes"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemoclaw-user-monitor-sandbox/SKILL.md",
+        "skill": "nemoclaw-user-monitor-sandbox"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemoclaw-user-overview/SKILL.md",
+        "skill": "nemoclaw-user-overview"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemoclaw-user-reference/SKILL.md",
+        "skill": "nemoclaw-user-reference"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemotron-customize/SKILL.md",
+        "skill": "nemotron-customize"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemotron-policy-generator/SKILL.md",
+        "skill": "nemotron-policy-generator"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemotron-retrieval-recipes/SKILL.md",
+        "skill": "nemotron-retrieval-recipes"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nemotron-speech/SKILL.md",
+        "skill": "nemotron-speech"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nv-generate-ct-rflow/SKILL.md",
+        "skill": "nv-generate-ct-rflow"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nv-generate-mr/SKILL.md",
+        "skill": "nv-generate-mr"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nv-generate-mr-brain/SKILL.md",
+        "skill": "nv-generate-mr-brain"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nv-generate-mr-brain-finetune/SKILL.md",
+        "skill": "nv-generate-mr-brain-finetune"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nv-generate-vae-finetune/SKILL.md",
+        "skill": "nv-generate-vae-finetune"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nv-reason-cxr/SKILL.md",
+        "skill": "nv-reason-cxr"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nv-segment-ct/SKILL.md",
+        "skill": "nv-segment-ct"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nv-segment-ct-finetune/SKILL.md",
+        "skill": "nv-segment-ct-finetune"
+      },
+      {
+        "path": "software-factory/skills/nvidia/nv-segment-ctmr/SKILL.md",
+        "skill": "nv-segment-ctmr"
+      },
+      {
+        "path": "software-factory/skills/nvidia/omniverse-cad-to-simready/SKILL.md",
+        "skill": "omniverse-cad-to-simready"
+      },
+      {
+        "path": "software-factory/skills/nvidia/omniverse-realtime-viewer/SKILL.md",
+        "skill": "omniverse-realtime-viewer"
+      },
+      {
+        "path": "software-factory/skills/nvidia/omniverse-usd-performance-tuning/SKILL.md",
+        "skill": "omniverse-usd-performance-tuning"
+      },
+      {
+        "path": "software-factory/skills/nvidia/physical-ai-defect-image-generation/SKILL.md",
+        "skill": "physical-ai-defect-image-generation"
+      },
+      {
+        "path": "software-factory/skills/nvidia/physical-ai-infrastructure-setup-and-resilient-scaling/SKILL.md",
+        "skill": "physical-ai-infrastructure-setup-and-resilient-scaling"
+      },
+      {
+        "path": "software-factory/skills/nvidia/physical-ai-neural-reconstruction/SKILL.md",
+        "skill": "physical-ai-neural-reconstruction"
+      },
+      {
+        "path": "software-factory/skills/nvidia/physical-ai-video-data-augmentation/SKILL.md",
+        "skill": "physical-ai-video-data-augmentation"
+      },
+      {
+        "path": "software-factory/skills/nvidia/physicsnemo-discover/SKILL.md",
+        "skill": "physicsnemo-discover"
+      },
+      {
+        "path": "software-factory/skills/nvidia/rag-blueprint/SKILL.md",
+        "skill": "rag-blueprint"
+      },
+      {
+        "path": "software-factory/skills/nvidia/rag-eval/SKILL.md",
+        "skill": "rag-eval"
+      },
+      {
+        "path": "software-factory/skills/nvidia/rag-perf/SKILL.md",
+        "skill": "rag-perf"
+      },
+      {
+        "path": "software-factory/skills/nvidia/skill-card-generator/SKILL.md",
+        "skill": "skill-card-generator"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-analyze-changenet-rca/SKILL.md",
+        "skill": "tao-analyze-changenet-rca"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-analyze-gaps-visual-changenet/SKILL.md",
+        "skill": "tao-analyze-gaps-visual-changenet"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-analyze-gaps-vlm-bcq/SKILL.md",
+        "skill": "tao-analyze-gaps-vlm-bcq"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-convert-dataset-format/SKILL.md",
+        "skill": "tao-convert-dataset-format"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-finetune-clip/SKILL.md",
+        "skill": "tao-finetune-clip"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-finetune-cosmos-embed/SKILL.md",
+        "skill": "tao-finetune-cosmos-embed"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-finetune-cosmos-reason/SKILL.md",
+        "skill": "tao-finetune-cosmos-reason"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-finetune-huggingface-model/SKILL.md",
+        "skill": "tao-finetune-huggingface-model"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-generate-image-grounding/SKILL.md",
+        "skill": "tao-generate-image-grounding"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-generate-referring-expressions/SKILL.md",
+        "skill": "tao-generate-referring-expressions"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-generate-video-reasoning-annotations/SKILL.md",
+        "skill": "tao-generate-video-reasoning-annotations"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-launch-workflow/SKILL.md",
+        "skill": "tao-launch-workflow"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-list-capabilities/SKILL.md",
+        "skill": "tao-list-capabilities"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-mine-aoi-images/SKILL.md",
+        "skill": "tao-mine-aoi-images"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-port-huggingface-model/SKILL.md",
+        "skill": "tao-port-huggingface-model"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-route-visual-changenet-samples/SKILL.md",
+        "skill": "tao-route-visual-changenet-samples"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-run-automl/SKILL.md",
+        "skill": "tao-run-automl"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-run-automl-deft-pipeline/SKILL.md",
+        "skill": "tao-run-automl-deft-pipeline"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-run-deft-aoi/SKILL.md",
+        "skill": "tao-run-deft-aoi"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-run-inference-service/SKILL.md",
+        "skill": "tao-run-inference-service"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-run-on-brev/SKILL.md",
+        "skill": "tao-run-on-brev"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-run-on-kubernetes/SKILL.md",
+        "skill": "tao-run-on-kubernetes"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-run-on-lepton/SKILL.md",
+        "skill": "tao-run-on-lepton"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-run-on-local-docker/SKILL.md",
+        "skill": "tao-run-on-local-docker"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-run-on-slurm/SKILL.md",
+        "skill": "tao-run-on-slurm"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-run-platform/SKILL.md",
+        "skill": "tao-run-platform"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-setup-nvidia-gpu-host/SKILL.md",
+        "skill": "tao-setup-nvidia-gpu-host"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-action-recognition/SKILL.md",
+        "skill": "tao-train-action-recognition"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-bevfusion/SKILL.md",
+        "skill": "tao-train-bevfusion"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-centerpose/SKILL.md",
+        "skill": "tao-train-centerpose"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-deformable-detr/SKILL.md",
+        "skill": "tao-train-deformable-detr"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-depth-anything-v2/SKILL.md",
+        "skill": "tao-train-depth-anything-v2"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-dino/SKILL.md",
+        "skill": "tao-train-dino"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-fast-foundation-stereo/SKILL.md",
+        "skill": "tao-train-fast-foundation-stereo"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-foundation-stereo/SKILL.md",
+        "skill": "tao-train-foundation-stereo"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-grounding-dino/SKILL.md",
+        "skill": "tao-train-grounding-dino"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-image-classification/SKILL.md",
+        "skill": "tao-train-image-classification"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-mask-auto-encoder/SKILL.md",
+        "skill": "tao-train-mask-auto-encoder"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-mask-auto-label/SKILL.md",
+        "skill": "tao-train-mask-auto-label"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-mask-grounding-dino/SKILL.md",
+        "skill": "tao-train-mask-grounding-dino"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-mask2former/SKILL.md",
+        "skill": "tao-train-mask2former"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-metric-learning-recognition/SKILL.md",
+        "skill": "tao-train-metric-learning-recognition"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-nvdinov2/SKILL.md",
+        "skill": "tao-train-nvdinov2"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-nvpanoptix3d/SKILL.md",
+        "skill": "tao-train-nvpanoptix3d"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-ocdnet/SKILL.md",
+        "skill": "tao-train-ocdnet"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-ocrnet/SKILL.md",
+        "skill": "tao-train-ocrnet"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-oneformer/SKILL.md",
+        "skill": "tao-train-oneformer"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-optical-inspection/SKILL.md",
+        "skill": "tao-train-optical-inspection"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-pointpillars/SKILL.md",
+        "skill": "tao-train-pointpillars"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-pose-classification/SKILL.md",
+        "skill": "tao-train-pose-classification"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-reid/SKILL.md",
+        "skill": "tao-train-reid"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-rtdetr/SKILL.md",
+        "skill": "tao-train-rtdetr"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-segformer/SKILL.md",
+        "skill": "tao-train-segformer"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-single-step/SKILL.md",
+        "skill": "tao-train-single-step"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-sparse4d/SKILL.md",
+        "skill": "tao-train-sparse4d"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-train-visual-changenet/SKILL.md",
+        "skill": "tao-train-visual-changenet"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tao-validate-dataset-format/SKILL.md",
+        "skill": "tao-validate-dataset-format"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tilegym-adding-cutile-kernel/SKILL.md",
+        "skill": "tilegym-adding-cutile-kernel"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tilegym-converting-cutile-to-julia/SKILL.md",
+        "skill": "tilegym-converting-cutile-to-julia"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tilegym-converting-cutile-to-triton/SKILL.md",
+        "skill": "tilegym-converting-cutile-to-triton"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tilegym-cutile-autotuning/SKILL.md",
+        "skill": "tilegym-cutile-autotuning"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tilegym-cutile-python/SKILL.md",
+        "skill": "tilegym-cutile-python"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tilegym-improve-cutile-kernel-perf/SKILL.md",
+        "skill": "tilegym-improve-cutile-kernel-perf"
+      },
+      {
+        "path": "software-factory/skills/nvidia/tilegym-monkey-patch-kernels-to-transformers/SKILL.md",
+        "skill": "tilegym-monkey-patch-kernels-to-transformers"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-ask-video/SKILL.md",
+        "skill": "vss-ask-video"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-deploy-dense-captioning/SKILL.md",
+        "skill": "vss-deploy-dense-captioning"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-deploy-detection-tracking-2d/SKILL.md",
+        "skill": "vss-deploy-detection-tracking-2d"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-deploy-detection-tracking-3d/SKILL.md",
+        "skill": "vss-deploy-detection-tracking-3d"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-deploy-profile/SKILL.md",
+        "skill": "vss-deploy-profile"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-deploy-video-embedding/SKILL.md",
+        "skill": "vss-deploy-video-embedding"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-generate-video-calibration/SKILL.md",
+        "skill": "vss-generate-video-calibration"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-generate-video-report/SKILL.md",
+        "skill": "vss-generate-video-report"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-manage-alerts/SKILL.md",
+        "skill": "vss-manage-alerts"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-manage-video-io-storage/SKILL.md",
+        "skill": "vss-manage-video-io-storage"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-query-analytics/SKILL.md",
+        "skill": "vss-query-analytics"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-search-archive/SKILL.md",
+        "skill": "vss-search-archive"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-setup-behavior-analytics/SKILL.md",
+        "skill": "vss-setup-behavior-analytics"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-setup-video-analytics-api/SKILL.md",
+        "skill": "vss-setup-video-analytics-api"
+      },
+      {
+        "path": "software-factory/skills/nvidia/vss-summarize-video/SKILL.md",
+        "skill": "vss-summarize-video"
+      },
+      {
+        "path": "software-factory/skills/observability/SKILL.md",
+        "skill": "observability"
+      },
+      {
+        "path": "software-factory/skills/performance-engineering/SKILL.md",
+        "skill": "performance-engineering"
+      },
+      {
+        "path": "software-factory/skills/prompt-engineering/SKILL.md",
+        "skill": "prompt-engineering"
+      },
+      {
+        "path": "software-factory/skills/quant-research/SKILL.md",
+        "skill": "quant-research"
+      },
+      {
+        "path": "software-factory/skills/redis-streams/SKILL.md",
+        "skill": "redis-streams"
+      },
+      {
+        "path": "software-factory/skills/security-audit/SKILL.md",
+        "skill": "security-audit"
+      },
+      {
+        "path": "software-factory/skills/seo-optimizer/SKILL.md",
+        "skill": "seo-optimizer"
+      },
+      {
+        "path": "software-factory/skills/skill-builder/SKILL.md",
+        "skill": "skill-builder"
+      },
+      {
+        "path": "software-factory/skills/snippe-integration/SKILL.md",
+        "skill": "snippe-integration"
+      },
+      {
+        "path": "software-factory/skills/software-developer/SKILL.md",
+        "skill": "software-developer"
+      },
+      {
+        "path": "software-factory/skills/software-product-architect/SKILL.md",
+        "skill": "software-product-architect"
+      },
+      {
+        "path": "software-factory/skills/software-product-tester/SKILL.md",
+        "skill": "software-product-tester"
+      },
+      {
+        "path": "software-factory/skills/testing-e2e/SKILL.md",
+        "skill": "testing-e2e"
+      },
+      {
+        "path": "software-factory/skills/testing-load/SKILL.md",
+        "skill": "testing-load"
+      },
+      {
+        "path": "software-factory/skills/tradingview-integration/SKILL.md",
+        "skill": "tradingview-integration"
+      },
+      {
+        "path": "software-factory/skills/ui-ux-premium/SKILL.md",
+        "skill": "ui-ux-premium"
+      },
+      {
+        "path": "software-factory/skills/websocket-realtime/SKILL.md",
+        "skill": "websocket-realtime"
+      }
+    ]
+  },
+  "memory": {
+    "paths": [
+      "software-factory/memory",
+      "software-factory/memory/decisions",
+      "software-factory/memory/patterns",
+      "software-factory/memory/api-evolution",
+      ".specify/memory"
+    ]
+  },
+  "toolchain": {
+    "git": true,
+    "python3": true,
+    "node": true,
+    "npx": true,
+    "uvx": true,
+    "gh": true,
+    "curl": true
+  },
+  "ready": false,
+  "blocking_issues": [
+    "github: missing env vars GITHUB_TOKEN"
+  ]
+}

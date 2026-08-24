@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Topic",
+  "@id": "https://integralmarket.com/learn/stocks",
+  "name": "Stock Trading",
+  "description": "Equity market trading — stock analysis, portfolio management, and strategies.",
+  "url": "https://integralmarket.com/learn/stocks",
+  "isPartOf": {
+    "@id": "https://integralmarket.com/academy"
+  }
+}

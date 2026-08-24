@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Integral Market",
+  "url": "https://integralmarket.tech",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://integralmarket.tech/academy?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}

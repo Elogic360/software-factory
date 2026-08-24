@@ -2,7 +2,7 @@
   "mcpServers": {
     "codegraph": {
       "command": "codegraph",
-      "args": ["serve"],
+      "args": ["serve", "--mcp"],
       "env": {},
       "priority": "critical",
       "skill_mapping": ["software-developer", "architect-principal", "change-detective"],
@@ -18,7 +18,7 @@
     },
     "github": {
       "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-server-github"],
+      "args": ["-y", "@modelcontextprotocol/server-github"],
       "env": { "GITHUB_TOKEN": "${GITHUB_TOKEN}" },
       "priority": "critical",
       "skill_mapping": ["change-detective", "devops-engineer"],
@@ -26,7 +26,7 @@
     },
     "playwright": {
       "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-server-playwright"],
+      "args": ["-y", "@playwright/mcp"],
       "env": {},
       "priority": "high",
       "skill_mapping": ["testing-e2e", "software-product-tester"],
@@ -34,7 +34,7 @@
     },
     "firecrawl": {
       "command": "npx",
-      "args": ["-y", "@mendableai/firecrawl-mcp"],
+      "args": ["-y", "firecrawl-mcp"],
       "env": { "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}" },
       "priority": "high",
       "skill_mapping": ["context-engineering", "quant-research"],

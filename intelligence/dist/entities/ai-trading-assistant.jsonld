@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://integralmarket.com/ai-assistant",
+  "name": "AI Trading Assistant",
+  "description": "LLM-powered assistant for trade analysis and market Q&A.",
+  "url": "https://integralmarket.com/ai-assistant",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "isPartOf": {
+    "@id": "https://integralmarket.com/#organization"
+  },
+  "provider": {
+    "@id": "https://integralmarket.com/#organization"
+  }
+}

@@ -1,0 +1,213 @@
+[
+  {
+    "id": "integral-market",
+    "name": "Integral Market",
+    "type": "Platform",
+    "url": "https://integralmarket.com",
+    "canonical": "https://integralmarket.com",
+    "keywords": [
+      "Integral Market",
+      "trading platform",
+      "AI fintech",
+      "copy trading",
+      "trading journal"
+    ],
+    "faqCount": 2
+  },
+  {
+    "id": "im-academy",
+    "name": "IM Academy",
+    "type": "Course",
+    "url": "https://integralmarket.com/academy",
+    "canonical": "https://integralmarket.com/academy",
+    "keywords": [
+      "trading courses",
+      "forex education",
+      "stock trading course",
+      "crypto trading course",
+      "AI trading education",
+      "online trading academy"
+    ],
+    "faqCount": 2
+  },
+  {
+    "id": "im-library",
+    "name": "IM Library",
+    "type": "Book",
+    "url": "https://integralmarket.com/library",
+    "canonical": "https://integralmarket.com/library",
+    "keywords": [
+      "trading books",
+      "research papers",
+      "trading strategies",
+      "digital library",
+      "market analysis reports"
+    ],
+    "faqCount": 1
+  },
+  {
+    "id": "ai-journal",
+    "name": "AI Journal",
+    "type": "Product",
+    "url": "https://integralmarket.com/journal",
+    "canonical": "https://integralmarket.com/journal",
+    "keywords": [
+      "AI trading journal",
+      "trade logging",
+      "performance analytics",
+      "trading psychology",
+      "automated journal"
+    ],
+    "faqCount": 2
+  },
+  {
+    "id": "trading-journal",
+    "name": "Trading Journal",
+    "type": "Product",
+    "url": "https://integralmarket.com/journal",
+    "canonical": "https://integralmarket.com/journal",
+    "keywords": [
+      "trading journal",
+      "MT5 journal",
+      "trade history",
+      "risk management",
+      "performance tracking"
+    ],
+    "faqCount": 1
+  },
+  {
+    "id": "market-intelligence",
+    "name": "Market Intelligence",
+    "type": "Capability",
+    "url": "https://integralmarket.com/intelligence",
+    "canonical": "https://integralmarket.com/intelligence",
+    "keywords": [
+      "market analysis",
+      "AI analysis",
+      "technical analysis",
+      "fundamental analysis",
+      "sentiment analysis",
+      "news analysis"
+    ],
+    "faqCount": 2
+  },
+  {
+    "id": "copy-trading",
+    "name": "Copy Trading",
+    "type": "Product",
+    "url": "https://integralmarket.com/copy-trading",
+    "canonical": "https://integralmarket.com/copy-trading",
+    "keywords": [
+      "copy trading",
+      "signal providers",
+      "trade replication",
+      "social trading",
+      "automated trading"
+    ],
+    "faqCount": 2
+  },
+  {
+    "id": "imcharts",
+    "name": "imCharts",
+    "type": "Feature",
+    "url": "https://integralmarket.com/charts",
+    "canonical": "https://integralmarket.com/charts",
+    "keywords": [
+      "TradingView charts",
+      "interactive charts",
+      "watchlists",
+      "trade execution",
+      "charting platform"
+    ],
+    "faqCount": 1
+  },
+  {
+    "id": "forex-trading",
+    "name": "Forex Trading",
+    "type": "Topic",
+    "url": "https://integralmarket.com/learn/forex",
+    "canonical": "https://integralmarket.com/learn/forex",
+    "keywords": [
+      "forex trading",
+      "currency pairs",
+      "MT5",
+      "forex broker",
+      "forex strategy"
+    ],
+    "faqCount": 1
+  },
+  {
+    "id": "stock-trading",
+    "name": "Stock Trading",
+    "type": "Topic",
+    "url": "https://integralmarket.com/learn/stocks",
+    "canonical": "https://integralmarket.com/learn/stocks",
+    "keywords": [
+      "stock trading",
+      "equity analysis",
+      "portfolio management",
+      "stock market",
+      "long short strategies"
+    ],
+    "faqCount": 1
+  },
+  {
+    "id": "crypto-trading",
+    "name": "Cryptocurrency Trading",
+    "type": "Topic",
+    "url": "https://integralmarket.com/learn/crypto",
+    "canonical": "https://integralmarket.com/learn/crypto",
+    "keywords": [
+      "cryptocurrency trading",
+      "Bitcoin trading",
+      "DeFi",
+      "crypto strategies",
+      "altcoin trading"
+    ],
+    "faqCount": 1
+  },
+  {
+    "id": "ai-trading-assistant",
+    "name": "AI Trading Assistant",
+    "type": "Capability",
+    "url": "https://integralmarket.com/ai-assistant",
+    "canonical": "https://integralmarket.com/ai-assistant",
+    "keywords": [
+      "AI trading assistant",
+      "LLM trading",
+      "AI analysis",
+      "trading insights",
+      "trade co-pilot"
+    ],
+    "faqCount": 1
+  },
+  {
+    "id": "trading-psychology",
+    "name": "Trading Psychology",
+    "type": "Topic",
+    "url": "https://integralmarket.com/learn/psychology",
+    "canonical": "https://integralmarket.com/learn/psychology",
+    "keywords": [
+      "trading psychology",
+      "behavioral finance",
+      "emotional discipline",
+      "trading mindset"
+    ],
+    "faqCount": 1
+  },
+  {
+    "id": "backtesting",
+    "name": "Backtesting",
+    "type": "Capability",
+    "url": "https://integralmarket.com/backtesting",
+    "canonical": "https://integralmarket.com/backtesting",
+    "keywords": [
+      "backtesting",
+      "strategy validation",
+      "historical data",
+      "quantitative analysis",
+      "strategy testing"
+    ],
+    "faqCount": 1
+  }
+]

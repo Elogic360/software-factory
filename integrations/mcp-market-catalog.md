@@ -142,7 +142,7 @@
 
 # Playwright
 # Via Claude Code:
-npx @anthropic-ai/mcp-server-playwright
+npx -y @playwright/mcp
 
 # N8n
 npx n8n-mcp-server
@@ -154,7 +154,7 @@ npm install -g @obra/superpowers-mcp
 npm install -g @anthropic-ai/task-master-mcp
 
 # Firecrawl
-npm install -g @mendableai/firecrawl-mcp
+npm install -g firecrawl-mcp
 
 # Graphiti
 pip install graphiti-core

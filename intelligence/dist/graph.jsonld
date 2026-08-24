@@ -1,0 +1,381 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "hasPart": "https://schema.org/hasPart",
+    "isPartOf": "https://schema.org/isPartOf",
+    "uses": {
+      "@id": "https://schema.org/uses",
+      "@type": "@id"
+    },
+    "teaches": {
+      "@id": "https://schema.org/teaches",
+      "@type": "@id"
+    },
+    "isFeatureOf": {
+      "@id": "https://schema.org/isBasedOn",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": [
+        "Organization",
+        "EducationalOrganization"
+      ],
+      "@id": "https://integralmarket.com/#organization",
+      "name": "Integral Market",
+      "description": "Institutional-grade AI-native fintech ecosystem — copy trading, journaling, charting, market intelligence, and education.",
+      "url": "https://integralmarket.com",
+      "sameAs": [
+        "https://github.com/integral-market",
+        "https://x.com/integralmarket",
+        "https://linkedin.com/company/integral-market"
+      ],
+      "logo": "https://integralmarket.com/logo.png",
+      "foundingDate": "2025",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "English"
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": [
+        "EducationalOrganization",
+        "Course"
+      ],
+      "@id": "https://integralmarket.com/academy",
+      "name": "IM Academy",
+      "description": "Structured trading education with courses on forex, stocks, crypto, and AI-assisted trading strategies.",
+      "url": "https://integralmarket.com/academy",
+      "keywords": "trading courses, forex education, stock trading course, crypto trading course, AI trading education",
+      "isPartOf": {
+        "@id": "https://integralmarket.com/#organization"
+      },
+      "provider": {
+        "@id": "https://integralmarket.com/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "DigitalDocument",
+      "@id": "https://integralmarket.com/library",
+      "name": "IM Library",
+      "description": "Curated digital library of trading books, research papers, and strategy documentation.",
+      "url": "https://integralmarket.com/library",
+      "keywords": "trading books, research papers, trading strategies, digital library",
+      "isPartOf": {
+        "@id": "https://integralmarket.com/#organization"
+      },
+      "provider": {
+        "@id": "https://integralmarket.com/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": [
+        "SoftwareApplication",
+        "Product"
+      ],
+      "@id": "https://integralmarket.com/journal",
+      "name": "AI Journal",
+      "description": "AI-powered trading journal with automated trade logging, performance analytics, and behavioral insights.",
+      "url": "https://integralmarket.com/journal",
+      "keywords": "AI trading journal, trade logging, performance analytics, trading psychology",
+      "isPartOf": {
+        "@id": "https://integralmarket.com/#organization"
+      },
+      "provider": {
+        "@id": "https://integralmarket.com/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": [
+        "SoftwareApplication",
+        "Product"
+      ],
+      "@id": "https://integralmarket.com/journal",
+      "name": "Trading Journal",
+      "description": "Manual and MT5-synced trading journal with advanced analytics and risk management metrics.",
+      "url": "https://integralmarket.com/journal",
+      "keywords": "trading journal, MT5 journal, trade history, risk management",
+      "isPartOf": {
+        "@id": "https://integralmarket.com/#organization"
+      },
+      "provider": {
+        "@id": "https://integralmarket.com/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": [
+        "SoftwareApplication",
+        "Product"
+      ],
+      "@id": "https://integralmarket.com/intelligence",
+      "name": "Market Intelligence",
+      "description": "Real-time AI-powered market analysis combining technical, fundamental, and sentiment data.",
+      "url": "https://integralmarket.com/intelligence",
+      "keywords": "market analysis, AI analysis, technical analysis, fundamental analysis, sentiment analysis",
+      "isPartOf": {
+        "@id": "https://integralmarket.com/#organization"
+      },
+      "provider": {
+        "@id": "https://integralmarket.com/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": [
+        "SoftwareApplication",
+        "Product"
+      ],
+      "@id": "https://integralmarket.com/copy-trading",
+      "name": "Copy Trading",
+      "description": "Social copy trading platform connecting signal providers with subscribers for automated trade replication.",
+      "url": "https://integralmarket.com/copy-trading",
+      "keywords": "copy trading, signal providers, trade replication, social trading",
+      "isPartOf": {
+        "@id": "https://integralmarket.com/#organization"
+      },
+      "provider": {
+        "@id": "https://integralmarket.com/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": [
+        "SoftwareApplication",
+        "Feature"
+      ],
+      "@id": "https://integralmarket.com/charts",
+      "name": "imCharts",
+      "description": "Advanced charting suite with TradingView integration, watchlists, and trade execution directly from charts.",
+      "url": "https://integralmarket.com/charts",
+      "keywords": "TradingView charts, interactive charts, watchlists, trade execution, charting platform",
+      "isPartOf": {
+        "@id": "https://integralmarket.com/#organization"
+      },
+      "provider": {
+        "@id": "https://integralmarket.com/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Topic",
+      "@id": "https://integralmarket.com/learn/forex",
+      "name": "Forex Trading",
+      "description": "Foreign exchange trading — currency pairs, market hours, broker integration, and MT5 connectivity.",
+      "url": "https://integralmarket.com/learn/forex",
+      "keywords": "forex trading, currency pairs, MT5, forex broker, forex strategy",
+      "isPartOf": {
+        "@id": "https://integralmarket.com/#organization"
+      },
+      "provider": {
+        "@id": "https://integralmarket.com/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Topic",
+      "@id": "https://integralmarket.com/learn/stocks",
+      "name": "Stock Trading",
+      "description": "Equity market trading — stock analysis, portfolio management, and long/short strategies.",
+      "url": "https://integralmarket.com/learn/stocks",
+      "keywords": "stock trading, equity analysis, portfolio management, stock market",
+      "isPartOf": {
+        "@id": "https://integralmarket.com/#organization"
+      },
+      "provider": {
+        "@id": "https://integralmarket.com/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Topic",
+      "@id": "https://integralmarket.com/learn/crypto",
+      "name": "Cryptocurrency Trading",
+      "description": "Digital asset trading — BTC, ETH, altcoins, DeFi strategies, and exchange integrations.",
+      "url": "https://integralmarket.com/learn/crypto",
+      "keywords": "cryptocurrency trading, Bitcoin trading, DeFi, crypto strategies",
+      "isPartOf": {
+        "@id": "https://integralmarket.com/#organization"
+      },
+      "provider": {
+        "@id": "https://integralmarket.com/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "@id": "https://integralmarket.com/ai-assistant",
+      "name": "AI Trading Assistant",
+      "description": "LLM-powered trading assistant for trade journaling, strategy analysis, and real-time market Q&A.",
+      "url": "https://integralmarket.com/ai-assistant",
+      "keywords": "AI trading assistant, LLM trading, AI analysis, trading insights",
+      "isPartOf": {
+        "@id": "https://integralmarket.com/#organization"
+      },
+      "provider": {
+        "@id": "https://integralmarket.com/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Topic",
+      "@id": "https://integralmarket.com/learn/psychology",
+      "name": "Trading Psychology",
+      "description": "Behavioral finance, emotional discipline, and psychological frameworks for consistent trading performance.",
+      "url": "https://integralmarket.com/learn/psychology",
+      "keywords": "trading psychology, behavioral finance, emotional discipline, trading mindset",
+      "isPartOf": {
+        "@id": "https://integralmarket.com/#organization"
+      },
+      "provider": {
+        "@id": "https://integralmarket.com/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "@id": "https://integralmarket.com/backtesting",
+      "name": "Backtesting",
+      "description": "Strategy backtesting engine for validating trading strategies against historical market data.",
+      "url": "https://integralmarket.com/backtesting",
+      "keywords": "backtesting, strategy validation, historical data, quantitative analysis",
+      "isPartOf": {
+        "@id": "https://integralmarket.com/#organization"
+      },
+      "provider": {
+        "@id": "https://integralmarket.com/#organization"
+      }
+    }
+  ],
+  "_edges": [
+    {
+      "source": "https://integralmarket.com/#organization",
+      "relation": "hasPart",
+      "target": "https://integralmarket.com/academy"
+    },
+    {
+      "source": "https://integralmarket.com/#organization",
+      "relation": "hasPart",
+      "target": "https://integralmarket.com/library"
+    },
+    {
+      "source": "https://integralmarket.com/#organization",
+      "relation": "hasPart",
+      "target": "https://integralmarket.com/journal"
+    },
+    {
+      "source": "https://integralmarket.com/#organization",
+      "relation": "hasPart",
+      "target": "https://integralmarket.com/intelligence"
+    },
+    {
+      "source": "https://integralmarket.com/#organization",
+      "relation": "hasPart",
+      "target": "https://integralmarket.com/copy-trading"
+    },
+    {
+      "source": "https://integralmarket.com/#organization",
+      "relation": "hasPart",
+      "target": "https://integralmarket.com/charts"
+    },
+    {
+      "source": "https://integralmarket.com/#organization",
+      "relation": "hasPart",
+      "target": "https://integralmarket.com/ai-assistant"
+    },
+    {
+      "source": "https://integralmarket.com/academy",
+      "relation": "isPartOf",
+      "target": "https://integralmarket.com/#organization"
+    },
+    {
+      "source": "https://integralmarket.com/library",
+      "relation": "isPartOf",
+      "target": "https://integralmarket.com/#organization"
+    },
+    {
+      "source": "https://integralmarket.com/journal",
+      "relation": "isPartOf",
+      "target": "https://integralmarket.com/#organization"
+    },
+    {
+      "source": "https://integralmarket.com/intelligence",
+      "relation": "isPartOf",
+      "target": "https://integralmarket.com/#organization"
+    },
+    {
+      "source": "https://integralmarket.com/copy-trading",
+      "relation": "isPartOf",
+      "target": "https://integralmarket.com/#organization"
+    },
+    {
+      "source": "https://integralmarket.com/charts",
+      "relation": "isPartOf",
+      "target": "https://integralmarket.com/#organization"
+    },
+    {
+      "source": "https://integralmarket.com/ai-assistant",
+      "relation": "isPartOf",
+      "target": "https://integralmarket.com/#organization"
+    },
+    {
+      "source": "https://integralmarket.com/journal",
+      "relation": "uses",
+      "target": "https://integralmarket.com/ai-assistant"
+    },
+    {
+      "source": "https://integralmarket.com/journal",
+      "relation": "uses",
+      "target": "https://integralmarket.com/intelligence"
+    },
+    {
+      "source": "https://integralmarket.com/charts",
+      "relation": "uses",
+      "target": "https://integralmarket.com/intelligence"
+    },
+    {
+      "source": "https://integralmarket.com/copy-trading",
+      "relation": "uses",
+      "target": "https://integralmarket.com/charts"
+    },
+    {
+      "source": "https://integralmarket.com/copy-trading",
+      "relation": "uses",
+      "target": "https://integralmarket.com/journal"
+    },
+    {
+      "source": "https://integralmarket.com/academy",
+      "relation": "teaches",
+      "target": "https://integralmarket.com/learn/forex"
+    },
+    {
+      "source": "https://integralmarket.com/academy",
+      "relation": "teaches",
+      "target": "https://integralmarket.com/learn/stocks"
+    },
+    {
+      "source": "https://integralmarket.com/academy",
+      "relation": "teaches",
+      "target": "https://integralmarket.com/learn/crypto"
+    },
+    {
+      "source": "https://integralmarket.com/academy",
+      "relation": "teaches",
+      "target": "https://integralmarket.com/learn/psychology"
+    },
+    {
+      "source": "https://integralmarket.com/backtesting",
+      "relation": "isFeatureOf",
+      "target": "https://integralmarket.com/charts"
+    }
+  ]
+}

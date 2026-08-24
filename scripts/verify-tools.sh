@@ -33,13 +33,13 @@ check() {
     local required=${3:-true}
     if eval "$cmd" &>/dev/null; then
         echo -e "  ${GREEN}✓${NC} $name"
-        ((PASS++))
+        PASS=$((PASS + 1))
     elif [ "$required" = "true" ]; then
         echo -e "  ${RED}✗${NC} $name (REQUIRED — not installed)"
-        ((FAIL++))
+        FAIL=$((FAIL + 1))
     else
         echo -e "  ${YELLOW}~${NC} $name (optional — not installed)"
-        ((WARN++))
+        WARN=$((WARN + 1))
     fi
 }
 
@@ -84,7 +84,7 @@ for dir in "$INTEGRATIONS_DIR"/*/; do
     if [ -d "$dir/.git" ]; then
         name=$(basename "$dir")
         echo -e "  ${GREEN}✓${NC} $name"
-        ((PASS++))
+        PASS=$((PASS + 1))
     fi
 done
 

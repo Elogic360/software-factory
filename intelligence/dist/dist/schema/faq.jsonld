@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Integral Market?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Integral Market is an AI-native financial intelligence ecosystem that provides automated trade logging, risk analytics, trading education, and market intelligence in a single platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best AI trading journal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Integral Market offers the most comprehensive AI trading journal with automated trade syncing, psychological pattern analysis, and institutional-grade risk metrics."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Integral Market compare to spreadsheet journaling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike spreadsheets, Integral Market automates trade logging via broker APIs, provides AI-powered psychological insights, tracks risk metrics in real-time, and generates performance analytics automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Integral Market free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Integral Market offers a freemium model with core features available at no cost. Premium features like advanced analytics and AI coaching are available via subscription."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What trading platforms does Integral Market support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Integral Market supports MetaTrader 5, MetaTrader 4, cTrader, Match-Trade, and more broker connections for automated trade syncing."
+      }
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+import * as fs from 'fs';
+import * as path from 'path';
+
+type ContentCategory =
+  | 'Trading Psychology'
+  | 'Risk Management'
+  | 'AI-Assisted Trading'
+  | 'Platform Updates'
+  | 'Tutorials'
+  | 'Research';
+
+type SchemaType =
+  | 'Article'
+  | 'BlogPosting'
+  | 'TechArticle'
+  | 'HowTo'
+  | 'NewsArticle';
+
+interface ArticleTemplate {
+  title: string;
+  metaDescription: string;
+  keywords: string[];
+  schemaType: SchemaType;
+  wordCountTarget: number;
+}
+
+interface ContentPlan {
+  category: ContentCategory;
+  articles: ArticleTemplate[];
+}
+
+interface MonthlyTopic {
+  month: string;
+  year: number;
+  topics: {
+    category: ContentCategory;
+    title: string;
+    publishDate: string;
+  }[];
+}
+
+interface ContentCalendar {
+  year: number;
+  months: MonthlyTopic[];
+}
+
+const CONTENT_CATEGORIES: Record<ContentCategory, { keywords: string[]; baseWordCount: number }> = {
+  'Trading Psychology': {
+    keywords: ['trading mindset', 'discipline', 'emotional control', 'cognitive bias', 'behavioral finance'],
+    baseWordCount: 1800,
+  },
+  'Risk Management': {
+    keywords: ['risk management', 'position sizing', 'stop loss', 'drawdown', 'portfolio risk'],
+    baseWordCount: 2000,
+  },
+  'AI-Assisted Trading': {
+    keywords: ['AI trading', 'machine learning', 'algorithmic trading', 'neural networks', 'backtesting'],
+    baseWordCount: 2200,
+  },
+  'Platform Updates': {
+    keywords: ['platform update', 'new features', 'release notes', 'changelog', 'product update'],
+    baseWordCount: 800,
+  },
+  'Tutorials': {
+    keywords: ['how to', 'step by step', 'guide', 'tutorial', 'walkthrough'],
+    baseWordCount: 1500,
+  },
+  Research: {
+    keywords: ['research paper', 'market analysis', 'quantitative analysis', 'data analysis', 'findings'],
+    baseWordCount: 2500,
+  },
+};
+
+const ARTICLE_TEMPLATES: Record<ContentCategory, ArticleTemplate[]> = {
+  'Trading Psychology': [
+    {
+      title: 'The Psychology of Winning: How Top Traders Think',
+      metaDescription: 'Discover the psychological principles that separate winning traders from the rest. Learn mental frameworks for consistent trading performance.',
+      keywords: ['trading psychology', 'winning mindset', 'trader discipline', 'mental models'],
+      schemaType: 'Article',
+      wordCountTarget: 1800,
+    },
+    {
+      title: 'Overcoming Fear and Greed: The Two Emotions That Destroy Portfolios',
+      metaDescription: 'Learn how fear and greed impact your trading decisions and practical strategies to manage emotional responses in volatile markets.',
+      keywords: ['fear greed trading', 'emotional trading', 'psychology of money', 'behavioral trading'],
+      schemaType: 'BlogPosting',
+      wordCountTarget: 1600,
+    },
+    {
+      title: 'Cognitive Biases Every Trader Must Recognize',
+      metaDescription: 'A comprehensive guide to cognitive biases affecting trading performance, with actionable techniques to counteract them.',
+      keywords: ['cognitive biases', 'confirmation bias', 'anchoring', 'trading errors'],
+      schemaType: 'TechArticle',
+      wordCountTarget: 2000,
+    },
+  ],
+  'Risk Management': [
+    {
+      title: 'Position Sizing: The Mathematics of Survival',
+      metaDescription: 'Master position sizing techniques including Kelly Criterion, fixed fractional, and volatility-adjusted sizing for long-term trading survival.',
+      keywords: ['position sizing', 'kelly criterion', 'money management', 'trade sizing'],
+      schemaType: 'TechArticle',
+      wordCountTarget: 2000,
+    },
+    {
+      title: 'Building a Risk Management Framework That Works',
+      metaDescription: 'Step-by-step guide to creating a comprehensive risk management framework for individual and institutional traders.',
+      keywords: ['risk framework', 'portfolio management', 'risk assessment', 'hedging strategies'],
+      schemaType: 'HowTo',
+      wordCountTarget: 2200,
+    },
+  ],
+  'AI-Assisted Trading': [
+    {
+      title: 'Machine Learning for Trading: From Theory to Production',
+      metaDescription: 'How to implement machine learning models for trading, from data preparation to live deployment and monitoring.',
+      keywords: ['ML trading', 'machine learning finance', 'predictive models', 'feature engineering'],
+      schemaType: 'TechArticle',
+      wordCountTarget: 2500,
+    },
+    {
+      title: 'Building Your First AI Trading Bot: A Complete Guide',
+      metaDescription: 'Learn to build an AI-powered trading bot from scratch, covering data pipelines, model training, and live execution.',
+      keywords: ['AI trading bot', 'algorithmic trading', 'automated trading', 'Python trading'],
+      schemaType: 'HowTo',
+      wordCountTarget: 2200,
+    },
+  ],
+  'Platform Updates': [
+    {
+      title: 'Introducing [Feature Name]: What\'s New in Integral Market',
+      metaDescription: 'Get the latest update on Integral Market platform features, improvements, and what they mean for your trading.',
+      keywords: ['platform update', 'new features', 'integral market update', 'product release'],
+      schemaType: 'NewsArticle',
+      wordCountTarget: 800,
+    },
+  ],
+  Tutorials: [
+    {
+      title: 'How to Set Up Your Trading Journal in 10 Minutes',
+      metaDescription: 'Quick guide to setting up your personalized trading journal for tracking performance and improving your edge.',
+      keywords: ['trading journal setup', 'performance tracking', 'trade logging', 'journal guide'],
+      schemaType: 'HowTo',
+      wordCountTarget: 1500,
+    },
+    {
+      title: 'Using AI Analytics to Identify High-Probability Trades',
+      metaDescription: 'Step-by-step tutorial on leveraging AI analytics tools to find and validate high-probability trade setups.',
+      keywords: ['AI analytics', 'trade analysis', 'probability', 'setup identification'],
+      schemaType: 'HowTo',
+      wordCountTarget: 1800,
+    },
+  ],
+  Research: [
+    {
+      title: 'Market Microstructure Analysis: Patterns in Order Flow',
+      metaDescription: 'Research findings on order flow patterns and their predictive value for short-term price movements.',
+      keywords: ['order flow', 'market microstructure', 'price discovery', 'liquidity analysis'],
+      schemaType: 'TechArticle',
+      wordCountTarget: 2500,
+    },
+  ],
+};
+
+function generateArticleTemplate(category: ContentCategory): ArticleTemplate[] {
+  const config = CONTENT_CATEGORIES[category];
+  const templates = ARTICLE_TEMPLATES[category] || [];
+
+  return templates.map((tpl) => ({
+    ...tpl,
+    keywords: [...tpl.keywords, ...config.keywords.slice(0, 2)],
+    wordCountTarget: tpl.wordCountTarget || config.baseWordCount,
+  }));
+}
+
+function generateContentPlan(category: ContentCategory): ContentPlan {
+  return {
+    category,
+    articles: generateArticleTemplate(category),
+  };
+}
+
+function generateMonthlyTopics(year: number, month: number): MonthlyTopic {
+  const monthNames = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December',
+  ];
+
+  const categories: ContentCategory[] = [
+    'Trading Psychology',
+    'Risk Management',
+    'AI-Assisted Trading',
+    'Platform Updates',
+    'Tutorials',
+    'Research',
+  ];
+
+  const topicsPerMonth = 4;
+  const topics: MonthlyTopic['topics'] = [];
+
+  for (let week = 0; week < topicsPerMonth; week++) {
+    const categoryIndex = (month + week) % categories.length;
+    const category = categories[categoryIndex];
+    const templates = ARTICLE_TEMPLATES[category];
+    const template = templates[week % templates.length];
+
+    const publishDay = 1 + week * 7;
+    const publishDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(publishDay).padStart(2, '0')}`;
+
+    topics.push({
+      category,
+      title: template.title,
+      publishDate,
+    });
+  }
+
+  return {
+    month: monthNames[month],
+    year,
+    topics,
+  };
+}
+
+function generateContentCalendar(year: number): ContentCalendar {
+  const months: MonthlyTopic[] = [];
+
+  for (let m = 0; m < 12; m++) {
+    months.push(generateMonthlyTopics(year, m));
+  }
+
+  return { year, months };
+}
+
+function generateFullPlan(): {
+  plans: ContentPlan[];
+  calendar: ContentCalendar;
+} {
+  const categories: ContentCategory[] = [
+    'Trading Psychology',
+    'Risk Management',
+    'AI-Assisted Trading',
+    'Platform Updates',
+    'Tutorials',
+    'Research',
+  ];
+
+  const plans = categories.map(generateContentPlan);
+  const calendar = generateContentCalendar(new Date().getFullYear());
+
+  return { plans, calendar };
+}
+
+function writeContentPlan(outputDir: string): void {
+  const plan = generateFullPlan();
+  const outputPath = path.join(outputDir, 'content-plan.json');
+  fs.mkdirSync(outputDir, { recursive: true });
+  fs.writeFileSync(outputPath, JSON.stringify(plan, null, 2));
+  console.log(`Content plan written to ${outputPath}`);
+}
+
+export {
+  ContentCategory,
+  SchemaType,
+  ArticleTemplate,
+  ContentPlan,
+  MonthlyTopic,
+  ContentCalendar,
+  generateArticleTemplate,
+  generateContentPlan,
+  generateMonthlyTopics,
+  generateContentCalendar,
+  generateFullPlan,
+  writeContentPlan,
+  CONTENT_CATEGORIES,
+  ARTICLE_TEMPLATES,
+};
+
+if (require.main === module) {
+  const outputDir = path.join(__dirname, '..', '..', '..', 'output');
+  writeContentPlan(outputDir);
+}

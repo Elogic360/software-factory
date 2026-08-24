@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Topic",
+  "@id": "https://integralmarket.com/learn/forex",
+  "name": "Forex Trading",
+  "description": "Foreign exchange trading — currency pairs, market hours, and MT5 connectivity.",
+  "url": "https://integralmarket.com/learn/forex",
+  "isPartOf": {
+    "@id": "https://integralmarket.com/academy"
+  }
+}

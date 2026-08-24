@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://integralmarket.tech/#organization",
+  "name": "Integral Market",
+  "url": "https://integralmarket.tech",
+  "logo": "https://integralmarket.tech/logos/favicon/android-chrome-512x512.png",
+  "description": "AI-native financial intelligence ecosystem providing trading analytics, institutional-grade journaling, education, and market intelligence.",
+  "foundingDate": "2025",
+  "sameAs": [
+    "https://github.com/integral-market",
+    "https://x.com/Integral_Market"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "availableLanguage": [
+      "English"
+    ]
+  }
+}

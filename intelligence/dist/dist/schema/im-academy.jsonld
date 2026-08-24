@@ -1,0 +1,12 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "IM Academy",
+  "description": "Expert-led trading education courses in forex, crypto, and technical analysis.",
+  "url": "https://integralmarket.tech/academy",
+  "provider": {
+    "@id": "https://integralmarket.tech/#organization"
+  },
+  "educationalLevel": "Beginner to Advanced",
+  "inLanguage": "en"
+}

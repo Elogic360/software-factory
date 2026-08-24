@@ -1,0 +1,127 @@
+@prefix schema: <https://schema.org/> .
+@prefix kg:     <https://integralmarket.com/graph/> .
+
+<https://integralmarket.com/#organization> a schema:Organization, schema:EducationalOrganization ;
+  schema:name "Integral Market" ;
+  schema:description "Institutional-grade AI-native fintech ecosystem — copy trading, journaling, charting, market intelligence, and education." ;
+  schema:url <https://integralmarket.com> ;
+  schema:sameAs <https://github.com/integral-market> ;
+  schema:sameAs <https://x.com/integralmarket> ;
+  schema:sameAs <https://linkedin.com/company/integral-market> ;
+  .
+
+<https://integralmarket.com/academy> a schema:EducationalOrganization, schema:Course ;
+  schema:name "IM Academy" ;
+  schema:description "Structured trading education with courses on forex, stocks, crypto, and AI-assisted trading strategies." ;
+  schema:url <https://integralmarket.com/academy> ;
+  schema:keyword "trading courses, forex education, stock trading course, crypto trading course, AI trading education" ;
+  .
+
+<https://integralmarket.com/library> a schema:DigitalDocument ;
+  schema:name "IM Library" ;
+  schema:description "Curated digital library of trading books, research papers, and strategy documentation." ;
+  schema:url <https://integralmarket.com/library> ;
+  schema:keyword "trading books, research papers, trading strategies, digital library" ;
+  .
+
+<https://integralmarket.com/journal> a schema:SoftwareApplication, schema:Product ;
+  schema:name "AI Journal" ;
+  schema:description "AI-powered trading journal with automated trade logging, performance analytics, and behavioral insights." ;
+  schema:url <https://integralmarket.com/journal> ;
+  schema:keyword "AI trading journal, trade logging, performance analytics, trading psychology" ;
+  .
+
+<https://integralmarket.com/journal> a schema:SoftwareApplication, schema:Product ;
+  schema:name "Trading Journal" ;
+  schema:description "Manual and MT5-synced trading journal with advanced analytics and risk management metrics." ;
+  schema:url <https://integralmarket.com/journal> ;
+  schema:keyword "trading journal, MT5 journal, trade history, risk management" ;
+  .
+
+<https://integralmarket.com/intelligence> a schema:SoftwareApplication, schema:Product ;
+  schema:name "Market Intelligence" ;
+  schema:description "Real-time AI-powered market analysis combining technical, fundamental, and sentiment data." ;
+  schema:url <https://integralmarket.com/intelligence> ;
+  schema:keyword "market analysis, AI analysis, technical analysis, fundamental analysis, sentiment analysis" ;
+  .
+
+<https://integralmarket.com/copy-trading> a schema:SoftwareApplication, schema:Product ;
+  schema:name "Copy Trading" ;
+  schema:description "Social copy trading platform connecting signal providers with subscribers for automated trade replication." ;
+  schema:url <https://integralmarket.com/copy-trading> ;
+  schema:keyword "copy trading, signal providers, trade replication, social trading" ;
+  .
+
+<https://integralmarket.com/charts> a schema:SoftwareApplication, schema:Feature ;
+  schema:name "imCharts" ;
+  schema:description "Advanced charting suite with TradingView integration, watchlists, and trade execution directly from charts." ;
+  schema:url <https://integralmarket.com/charts> ;
+  schema:keyword "TradingView charts, interactive charts, watchlists, trade execution, charting platform" ;
+  .
+
+<https://integralmarket.com/learn/forex> a schema:Topic ;
+  schema:name "Forex Trading" ;
+  schema:description "Foreign exchange trading — currency pairs, market hours, broker integration, and MT5 connectivity." ;
+  schema:url <https://integralmarket.com/learn/forex> ;
+  schema:keyword "forex trading, currency pairs, MT5, forex broker, forex strategy" ;
+  .
+
+<https://integralmarket.com/learn/stocks> a schema:Topic ;
+  schema:name "Stock Trading" ;
+  schema:description "Equity market trading — stock analysis, portfolio management, and long/short strategies." ;
+  schema:url <https://integralmarket.com/learn/stocks> ;
+  schema:keyword "stock trading, equity analysis, portfolio management, stock market" ;
+  .
+
+<https://integralmarket.com/learn/crypto> a schema:Topic ;
+  schema:name "Cryptocurrency Trading" ;
+  schema:description "Digital asset trading — BTC, ETH, altcoins, DeFi strategies, and exchange integrations." ;
+  schema:url <https://integralmarket.com/learn/crypto> ;
+  schema:keyword "cryptocurrency trading, Bitcoin trading, DeFi, crypto strategies" ;
+  .
+
+<https://integralmarket.com/ai-assistant> a schema:SoftwareApplication ;
+  schema:name "AI Trading Assistant" ;
+  schema:description "LLM-powered trading assistant for trade journaling, strategy analysis, and real-time market Q&A." ;
+  schema:url <https://integralmarket.com/ai-assistant> ;
+  schema:keyword "AI trading assistant, LLM trading, AI analysis, trading insights" ;
+  .
+
+<https://integralmarket.com/learn/psychology> a schema:Topic ;
+  schema:name "Trading Psychology" ;
+  schema:description "Behavioral finance, emotional discipline, and psychological frameworks for consistent trading performance." ;
+  schema:url <https://integralmarket.com/learn/psychology> ;
+  schema:keyword "trading psychology, behavioral finance, emotional discipline, trading mindset" ;
+  .
+
+<https://integralmarket.com/backtesting> a schema:SoftwareApplication ;
+  schema:name "Backtesting" ;
+  schema:description "Strategy backtesting engine for validating trading strategies against historical market data." ;
+  schema:url <https://integralmarket.com/backtesting> ;
+  schema:keyword "backtesting, strategy validation, historical data, quantitative analysis" ;
+  .
+
+<https://integralmarket.com/#organization> kg:hasPart <https://integralmarket.com/academy> .
+<https://integralmarket.com/#organization> kg:hasPart <https://integralmarket.com/library> .
+<https://integralmarket.com/#organization> kg:hasPart <https://integralmarket.com/journal> .
+<https://integralmarket.com/#organization> kg:hasPart <https://integralmarket.com/intelligence> .
+<https://integralmarket.com/#organization> kg:hasPart <https://integralmarket.com/copy-trading> .
+<https://integralmarket.com/#organization> kg:hasPart <https://integralmarket.com/charts> .
+<https://integralmarket.com/#organization> kg:hasPart <https://integralmarket.com/ai-assistant> .
+<https://integralmarket.com/academy> kg:isPartOf <https://integralmarket.com/#organization> .
+<https://integralmarket.com/library> kg:isPartOf <https://integralmarket.com/#organization> .
+<https://integralmarket.com/journal> kg:isPartOf <https://integralmarket.com/#organization> .
+<https://integralmarket.com/intelligence> kg:isPartOf <https://integralmarket.com/#organization> .
+<https://integralmarket.com/copy-trading> kg:isPartOf <https://integralmarket.com/#organization> .
+<https://integralmarket.com/charts> kg:isPartOf <https://integralmarket.com/#organization> .
+<https://integralmarket.com/ai-assistant> kg:isPartOf <https://integralmarket.com/#organization> .
+<https://integralmarket.com/journal> kg:uses <https://integralmarket.com/ai-assistant> .
+<https://integralmarket.com/journal> kg:uses <https://integralmarket.com/intelligence> .
+<https://integralmarket.com/charts> kg:uses <https://integralmarket.com/intelligence> .
+<https://integralmarket.com/copy-trading> kg:uses <https://integralmarket.com/charts> .
+<https://integralmarket.com/copy-trading> kg:uses <https://integralmarket.com/journal> .
+<https://integralmarket.com/academy> kg:teaches <https://integralmarket.com/learn/forex> .
+<https://integralmarket.com/academy> kg:teaches <https://integralmarket.com/learn/stocks> .
+<https://integralmarket.com/academy> kg:teaches <https://integralmarket.com/learn/crypto> .
+<https://integralmarket.com/academy> kg:teaches <https://integralmarket.com/learn/psychology> .
+<https://integralmarket.com/backtesting> kg:isFeatureOf <https://integralmarket.com/charts> .

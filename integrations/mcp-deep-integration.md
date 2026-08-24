@@ -38,10 +38,10 @@ npx -y @upstash/context7-mcp@latest
 # Already configured in .mcp.json
 
 # 3. Playwright — Browser Automation
-npx -y @anthropic-ai/mcp-server-playwright
+npx -y @playwright/mcp
 
 # 4. Firecrawl — Web Scraping
-npm install -g @mendableai/firecrawl-mcp
+npm install -g firecrawl-mcp
 
 # 5. N8n — Workflow Automation
 npm install -g n8n-mcp-server
@@ -146,7 +146,7 @@ trigger: "run end-to-end tests"
   "mcpServers": {
     "codegraph": {
       "command": "codegraph",
-      "args": ["serve"]
+      "args": ["serve", "--mcp"]
     },
     "context7": {
       "command": "npx",
@@ -154,16 +154,16 @@ trigger: "run end-to-end tests"
     },
     "github": {
       "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-server-github"],
+      "args": ["-y", "@modelcontextprotocol/server-github"],
       "env": { "GITHUB_TOKEN": "${GITHUB_TOKEN}" }
     },
     "playwright": {
       "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-server-playwright"]
+      "args": ["-y", "@playwright/mcp"]
     },
     "firecrawl": {
       "command": "npx",
-      "args": ["-y", "@mendableai/firecrawl-mcp"],
+      "args": ["-y", "firecrawl-mcp"],
       "env": { "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}" }
     },
     "fastapi": {
