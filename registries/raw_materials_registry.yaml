@@ -1,0 +1,58 @@
+raw_materials:
+- id: auth-jwt-rbac
+  name: Universal JWT & RBAC Authentication Subsystem
+  domain: auth
+  description: Production-grade OAuth2 password bearer, bcrypt hashing, JWT access/refresh
+    token rotation, and RBAC middleware.
+  directory: raw-materials/auth
+  contracts:
+  - AuthServiceInterface
+  - UserSchema
+  - TokenResponse
+  database_schemas:
+  - users.sql
+  - roles_permissions.sql
+  tests_included: true
+- id: realtime-websocket-pubsub
+  name: WebSocket ConnectionManager & Redis PubSub Bridge
+  domain: realtime
+  description: High-throughput asynchronous WebSocket connection manager with heartbeat,
+    channel subscriptions, and Redis pub/sub.
+  directory: raw-materials/realtime
+  contracts:
+  - ConnectionManagerInterface
+  - WebSocketMessageSchema
+  tests_included: true
+- id: trading-risk-engine
+  name: Quantitative Trade & Portfolio Risk Engine
+  domain: trading-engine
+  description: Position sizing, maximum drawdown thresholds, Value at Risk (VaR),
+    and real-time pre-trade validation.
+  directory: raw-materials/trading-engine
+  contracts:
+  - RiskEngineInterface
+  - PositionSizingSchema
+  - TradeOrderSchema
+  tests_included: true
+- id: ai-rag-vector-retriever
+  name: Universal Hybrid RAG Vector Retriever
+  domain: ai-rag
+  description: Dense and sparse hybrid vector retriever with document chunking, embeddings
+    generation, and Qdrant/pgvector backend.
+  directory: raw-materials/ai-rag
+  contracts:
+  - DocumentChunkerInterface
+  - VectorRetrieverInterface
+  tests_included: true
+- id: email-agentic-dispatcher
+  name: Multi-Provider Agentic Email Dispatcher
+  domain: email-communications
+  description: Stalwart / Mailflare / Cloudflare / SMTP email dispatcher with template
+    rendering and deliverability tracking.
+  directory: raw-materials/email-communications
+  contracts:
+  - EmailDispatcherInterface
+  - EmailMessageSchema
+  tests_included: true
+total_count: 5
+version: 2.0.0

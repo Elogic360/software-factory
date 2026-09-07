@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SoftwareFactoryCapability",
+  "type": "object",
+  "required": ["id", "name", "category", "description", "tier", "license", "status", "version"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-_]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "agent-skill", "role", "workflow", "mcp-server", "mcp-client",
+        "cli-tool", "library", "framework", "template", "scaffold",
+        "reference", "knowledge-base", "dataset", "research-resource",
+        "architecture-pattern", "design-system", "testing-tool", "security-tool",
+        "observability-tool", "deployment-tool", "automation-tool", "browser-tool",
+        "data-tool", "database-tool", "cloud-tool", "ai-tool", "ml-tool",
+        "quant-tool", "documentation-tool", "developer-tool", "project-integration",
+        "domain-pack", "raw-material"
+      ]
+    },
+    "subcategory": { "type": "string" },
+    "tier": {
+      "type": "string",
+      "enum": ["Tier-0-Core", "Tier-1-Universal", "Tier-2-Specialized", "Tier-3-Domain", "Tier-4-Experimental", "Tier-5-Reference"]
+    },
+    "description": { "type": "string" },
+    "source": { "type": "string" },
+    "source_type": {
+      "type": "string",
+      "enum": ["github", "npm", "pypi", "cargo", "apt", "binary", "internal", "documentation"]
+    },
+    "license": { "type": "string" },
+    "license_classification": {
+      "type": "string",
+      "enum": ["safe-to-integrate", "reference-only", "requires-review", "incompatible", "unknown"]
+    },
+    "version": { "type": "string" },
+    "language": { "type": "string" },
+    "runtime": { "type": "string" },
+    "platforms": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "installation": {
+      "type": "object",
+      "properties": {
+        "command": { "type": "string" },
+        "method": { "type": "string" },
+        "path": { "type": "string" }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "required_credentials": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "mcp": {
+      "type": "object",
+      "properties": {
+        "server_name": { "type": "string" },
+        "command": { "type": "string" },
+        "args": { "type": "array", "items": { "type": "string" } },
+        "env": { "type": "object" }
+      }
+    },
+    "cli": { "type": "string" },
+    "skill_path": { "type": "string" },
+    "agent_compatibility": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "security_level": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical", "sandboxed"]
+    },
+    "production_status": {
+      "type": "string",
+      "enum": ["production-ready", "validated", "active-development", "experimental", "research-only", "deprecated"]
+    },
+    "quality_score": {
+      "type": "object",
+      "properties": {
+        "grade": { "type": "string", "enum": ["A", "B", "C", "D", "REJECTED"] },
+        "numeric": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "depends_on": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

@@ -424,6 +424,27 @@ def score_skills(query: str, skills: list[dict]) -> list[SkillMatch]:
 
 # ── CLI ────────────────────────────────────────────────────────────────────────
 
+
+MCP_MAPPINGS = {
+    'backend-fastapi': ['codegraph', 'context7'],
+    'frontend-react': ['playwright', 'context7'],
+    'database-postgresql': ['codegraph'],
+    'testing-e2e': ['playwright'],
+    'quant-research': ['ziplime'],
+    'im-backtesting': ['ziplime'],
+    'drawio-diagrams': ['playwright'],
+    'architect-principal': ['codegraph', 'gortex'],
+    'security-audit': ['prowler'],
+}
+
+TOOL_MAPPINGS = {
+    'backend-fastapi': ['rtk', 'pytest'],
+    'frontend-react': ['rtk', 'vite', 'drawio-ai-kit'],
+    'quant-research': ['gs-quant', 'openbb', 'financepy'],
+    'security-audit': ['prowler', 'ecc-agentshield'],
+    'testing-e2e': ['playwright', 'scrapling'],
+}
+
 def cmd_query(query: str, top: int, load: bool, verbose: bool) -> None:
     matches = score_skills(query, SKILLS)
 

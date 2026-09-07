@@ -1,0 +1,90 @@
+domain_packs:
+- id: quantitative-finance
+  name: Quantitative Finance & Trading Engine Pack
+  version: 2.0.0
+  description: End-to-end quant research, pricing models, backtesting, market data
+    normalization, and broker adapters.
+  skills:
+  - quant-research
+  - copytrading-engine
+  - journal-analytics
+  - tradingview-integration
+  - im-backtesting
+  - im-trading-risk
+  libraries:
+  - gs-quant
+  - openbb
+  - ziplime
+  - financepy
+  - ffn
+  - vollib
+  - pysabr
+  mcps:
+  - ziplime
+  templates:
+  - backtest_pipeline_template.py
+  - pricing_model_template.py
+  test_suite: tests/domains/test_quant_pack.py
+- id: ai-ml
+  name: AI/ML, LLMs & Neural Engineering Pack
+  version: 2.0.0
+  description: State-of-the-art transformer modeling, RAG architectures, evaluation
+    harnesses, and inference optimization.
+  skills:
+  - prompt-engineering
+  - ai-optimization
+  - context-engineering
+  - im-rag
+  - im-sensei
+  libraries:
+  - transformers
+  - llama_index
+  - langchain
+  - ragas
+  - docetl
+  mcps:
+  - context7
+  templates:
+  - rag_pipeline_template.py
+  - eval_harness_template.py
+  test_suite: tests/domains/test_ai_ml_pack.py
+- id: web-fullstack
+  name: Full-Stack Web & Design Systems Pack
+  version: 2.0.0
+  description: Modern React 19, Tailwind CSS v4, FastAPI, WebSocket realtime streaming,
+    and draw.io architecture diagrams.
+  skills:
+  - frontend-react
+  - backend-fastapi
+  - ui-ux-premium
+  - drawio-diagrams
+  - websocket-realtime
+  libraries:
+  - drawio-ai-kit
+  - ui-ux-pro-max-skill
+  - scrapling
+  mcps:
+  - playwright
+  templates:
+  - fastapi_service_template.py
+  - react_module_template.tsx
+  test_suite: tests/domains/test_web_pack.py
+- id: security-redteam
+  name: Security, Compliance & Red-Team Audit Pack
+  version: 2.0.0
+  description: Comprehensive SAST, DAST, cloud compliance audits, secret scanning,
+    and automated vulnerability triage.
+  skills:
+  - security-audit
+  - im-security
+  - im-tool-risk-policy
+  libraries:
+  - claude-bughunter
+  - prowler
+  mcps: []
+  templates:
+  - threat_model_template.md
+  - security_audit_checklist.md
+  test_suite: tests/domains/test_security_pack.py
+total_count: 4
+version: 2.0.0

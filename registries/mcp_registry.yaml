@@ -1,0 +1,97 @@
+mcp_servers:
+- id: codegraph
+  name: CodeGraph AST Intelligence Server
+  command: codegraph
+  args:
+  - mcp
+  env: {}
+  transport: stdio
+  description: Pre-indexed AST code knowledge graph supporting 20+ languages.
+  security_level: low
+  tools:
+  - explore
+  - query
+  - context
+  - impact
+  - callers
+  - callees
+  health_check: codegraph status
+- id: gortex
+  name: Gortex Multilingual Code Intelligence
+  command: gortex
+  args:
+  - mcp
+  env: {}
+  transport: stdio
+  description: Graph-based code intelligence supporting 257 languages.
+  security_level: low
+  tools:
+  - search
+  - impact
+  - graph_query
+  health_check: gortex version
+- id: context7
+  name: Context7 Up-to-Date Documentation Server
+  command: npx
+  args:
+  - -y
+  - '@upstash/context7-mcp'
+  env: {}
+  transport: stdio
+  description: Live up-to-date documentation and code samples for frameworks.
+  security_level: low
+  tools:
+  - get_docs
+  - search_docs
+  health_check: npx -y @upstash/context7-mcp --version
+- id: playwright
+  name: Playwright Browser Automation Server
+  command: npx
+  args:
+  - -y
+  - '@executeautomation/playwright-mcp-server'
+  env: {}
+  transport: stdio
+  description: Headless browser control, screenshot capture, and E2E validation.
+  security_level: medium
+  tools:
+  - navigate
+  - click
+  - fill
+  - screenshot
+  - evaluate
+  health_check: npx -y @executeautomation/playwright-mcp-server --help
+- id: github
+  name: GitHub API MCP Server
+  command: npx
+  args:
+  - -y
+  - '@modelcontextprotocol/server-github'
+  env:
+    GITHUB_PERSONAL_ACCESS_TOKEN: ${GITHUB_TOKEN}
+  transport: stdio
+  description: GitHub PR creation, issue tracking, and repository operations.
+  security_level: medium
+  tools:
+  - create_pull_request
+  - get_issue
+  - create_issue
+  - get_file_contents
+  health_check: npx -y @modelcontextprotocol/server-github --version
+- id: ziplime
+  name: Ziplime Quantitative Backtesting MCP
+  command: python3
+  args:
+  - -m
+  - ziplime.mcp_server
+  env: {}
+  transport: stdio
+  description: Financial simulation, backtesting execution, and risk calculations.
+  security_level: medium
+  tools:
+  - run_backtest
+  - calculate_sharpe
+  - simulate_portfolio
+  health_check: python3 -c 'import ziplime; print(ziplime.__version__)'
+total_count: 6
+version: 2.0.0
