@@ -1,0 +1,19 @@
+category: mcp
+health_check:
+  command: echo 'mcp-healthy'
+id: factory-context-mcp
+installation:
+  command: python3 -m pip install mcp fastmcp
+  method: python
+  prerequisites:
+  - python >= 3.11
+license: MIT
+name: Factory Context Optimizer MCP
+rollback:
+  strategy: git-revert
+source: custom-mcp/factory_context_server.py
+uninstall:
+  command: echo 'uninstall-mcp'
+verification:
+  command: python3 factory.py verify mcp factory-context-mcp
+version: 1.0.0

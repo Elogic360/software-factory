@@ -1,0 +1,17 @@
+category: frameworks
+health_check:
+  command: echo 'ok'
+id: fastapi-framework
+installation:
+  command: pip install fastapi[all]
+  method: pip
+license: MIT
+name: FastAPI Web Framework
+rollback:
+  strategy: version-pin
+source: pypi:fastapi
+uninstall:
+  command: pip uninstall -y fastapi
+verification:
+  command: python3 -c 'import fastapi; print(fastapi.__version__)'
+version: 0.115.0

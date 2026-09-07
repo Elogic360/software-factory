@@ -1,0 +1,17 @@
+category: libraries
+health_check:
+  command: echo 'ok'
+id: pydantic-v2
+installation:
+  command: pip install pydantic>=2.9.0
+  method: pip
+license: MIT
+name: Pydantic V2 Data Validation
+rollback:
+  strategy: version-pin
+source: pypi:pydantic
+uninstall:
+  command: pip uninstall -y pydantic
+verification:
+  command: python3 -c 'import pydantic; print(pydantic.__version__)'
+version: 2.9.2

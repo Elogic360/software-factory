@@ -1,0 +1,17 @@
+category: domain-packs
+health_check:
+  command: echo 'quant-pack-ok'
+id: quant-finance-pack
+installation:
+  command: python3 factory.py install pack quant-finance
+  method: pack
+license: Apache-2.0
+name: Quantitative Finance & Trading Engine Pack
+rollback:
+  strategy: version-pin
+source: software-factory/domains/quant-finance
+uninstall:
+  command: echo 'uninstalled'
+verification:
+  command: python3 factory.py verify pack quant-finance
+version: 2.0.0

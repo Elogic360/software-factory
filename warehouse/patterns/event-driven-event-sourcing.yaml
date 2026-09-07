@@ -1,0 +1,17 @@
+category: patterns
+health_check:
+  command: echo 'ok'
+id: event-driven-event-sourcing
+installation:
+  command: cat memory/patterns/event_sourcing.md
+  method: view
+license: MIT
+name: Event-Driven Event Sourcing & CQRS Pattern
+rollback:
+  strategy: git-checkout
+source: memory/patterns/event_sourcing.md
+uninstall:
+  command: echo 'noop'
+verification:
+  command: test -f memory/patterns/event_sourcing.md
+version: 1.0.0

@@ -1,0 +1,19 @@
+category: skills
+health_check:
+  command: echo 'skill-healthy'
+id: sdd-task-orchestrator
+installation:
+  command: python3 factory.py install skill sdd-task-orchestrator
+  method: git
+  prerequisites:
+  - python >= 3.11
+license: Apache-2.0
+name: SDD Task Orchestrator
+rollback:
+  strategy: version-pin
+source: https://github.com/Elogic360/software-factory/skills/sdd-pipeline
+uninstall:
+  command: rm -rf skills/sdd-task-orchestrator
+verification:
+  command: python3 factory.py verify skill sdd-task-orchestrator
+version: 2.1.0

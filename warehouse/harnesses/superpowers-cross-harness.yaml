@@ -1,0 +1,17 @@
+category: harnesses
+health_check:
+  command: echo 'harness-ready'
+id: superpowers-cross-harness
+installation:
+  command: git submodule add https://github.com/obra/superpowers
+  method: git
+license: MIT
+name: Superpowers Cross-Harness Abstraction
+rollback:
+  strategy: git-submodule-update
+source: https://github.com/obra/superpowers
+uninstall:
+  command: rm -rf harnesses/superpowers
+verification:
+  command: test -d harnesses/superpowers
+version: 1.2.0

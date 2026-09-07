@@ -1,0 +1,17 @@
+category: raw-materials
+health_check:
+  command: curl http://localhost:8000/health
+id: fastapi-enterprise-scaffold
+installation:
+  command: cp -r raw-materials/backend/fastapi ./backend
+  method: copy
+license: MIT
+name: FastAPI Enterprise Backend Scaffold
+rollback:
+  strategy: git-checkout
+source: software-factory/raw-materials/backend/fastapi
+uninstall:
+  command: rm -rf ./backend
+verification:
+  command: pytest backend/tests
+version: 3.1.0

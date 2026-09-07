@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "dimensions": {
+    "PROJECT": [],
+    "ARCHITECTURE": [],
+    "DECISION": [],
+    "REQUIREMENT": [],
+    "TASK": [],
+    "AGENT": [],
+    "SKILL": [],
+    "FAILURE": [],
+    "TEST": [],
+    "SECURITY": [],
+    "DEPLOYMENT": [],
+    "INCIDENT": []
+  },
+  "genealogy": [
+    {
+      "product": "Integral Market",
+      "release": "2.0.0",
+      "commit_sha": "5da02b43",
+      "task_id": "WO-001",
+      "agent": "Principal Architect",
+      "skill": "fastapi-patterns",
+      "mcp": "factory-context-mcp",
+      "raw_material": "fastapi-enterprise-scaffold",
+      "upstream_license": "MIT",
+      "recorded_at": 1788776170.6112597
+    }
+  ]
+}

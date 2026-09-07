@@ -1,0 +1,17 @@
+category: agents
+health_check:
+  command: echo 'health-ok'
+id: principal-architect-agent
+installation:
+  command: python3 factory.py install agent architect
+  method: config
+license: MIT
+name: Principal Software Architect Agent
+rollback:
+  strategy: git-checkout
+source: software-factory/prompts/agents/architect.md
+uninstall:
+  command: echo 'uninstalled'
+verification:
+  command: echo 'agent-ok'
+version: 1.0.0

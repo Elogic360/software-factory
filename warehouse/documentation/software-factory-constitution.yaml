@@ -1,0 +1,17 @@
+category: documentation
+health_check:
+  command: echo 'ok'
+id: software-factory-constitution
+installation:
+  command: cat constitution/CONSTITUTION.md
+  method: view
+license: CC-BY-4.0
+name: Software Factory Supreme Constitution
+rollback:
+  strategy: git-checkout
+source: constitution/CONSTITUTION.md
+uninstall:
+  command: echo 'noop'
+verification:
+  command: test -f constitution/CONSTITUTION.md
+version: 1.0.0

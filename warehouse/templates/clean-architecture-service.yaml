@@ -1,0 +1,17 @@
+category: templates
+health_check:
+  command: echo 'ok'
+id: clean-architecture-service
+installation:
+  command: cp -r templates/clean-arch ./service
+  method: copy
+license: MIT
+name: Clean Architecture Microservice Template
+rollback:
+  strategy: git-checkout
+source: software-factory/templates/clean-arch
+uninstall:
+  command: rm -rf ./service
+verification:
+  command: test -d ./service/domain
+version: 1.1.0

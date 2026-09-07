@@ -1,0 +1,19 @@
+category: tools
+health_check:
+  command: npx playwright test --version
+id: playwright-cli
+installation:
+  command: npm install -D playwright && npx playwright install --with-deps
+  method: npm
+  prerequisites:
+  - node >= 20
+license: Apache-2.0
+name: Playwright Browser Testing CLI
+rollback:
+  strategy: package-lock
+source: npm:playwright
+uninstall:
+  command: npm uninstall playwright
+verification:
+  command: npx playwright --version
+version: 1.49.0

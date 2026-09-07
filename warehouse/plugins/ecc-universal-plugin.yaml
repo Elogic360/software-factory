@@ -1,0 +1,19 @@
+category: plugins
+health_check:
+  command: npx ecc-universal doctor
+id: ecc-universal-plugin
+installation:
+  command: npm install -g ecc-universal
+  method: npm
+  prerequisites:
+  - node >= 20
+license: MIT
+name: Everything Claude Code Universal Plugin
+rollback:
+  strategy: version-pin
+source: npm:ecc-universal
+uninstall:
+  command: npm uninstall -g ecc-universal
+verification:
+  command: npx ecc-universal --version
+version: 2.2.1

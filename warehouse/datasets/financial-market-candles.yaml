@@ -1,0 +1,17 @@
+category: datasets
+health_check:
+  command: echo 'ok'
+id: financial-market-candles
+installation:
+  command: python3 datasets/sync_candles.py
+  method: download
+license: CC-BY-4.0
+name: Financial Market OHLCV Reference Dataset
+rollback:
+  strategy: git-checkout
+source: software-factory/datasets/market_ohlcv
+uninstall:
+  command: rm -rf datasets/sample_candles.parquet
+verification:
+  command: test -f datasets/sample_candles.parquet
+version: 1.0.0

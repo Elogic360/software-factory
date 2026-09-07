@@ -1,0 +1,17 @@
+category: benchmarks
+health_check:
+  command: echo 'ok'
+id: trading-latency-benchmark
+installation:
+  command: pytest benchmarks/test_latency.py
+  method: run
+license: Apache-2.0
+name: Trading Latency & Throughput Benchmark Suite
+rollback:
+  strategy: none
+source: software-factory/benchmarks/latency
+uninstall:
+  command: echo 'noop'
+verification:
+  command: echo 'benchmark-ok'
+version: 1.0.0
