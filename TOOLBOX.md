@@ -183,6 +183,24 @@
 
 ---
 
+## 11. Production-Ready Raw Materials & Factory Subsystems
+
+All raw materials reside in `raw-materials/` with machine-readable manifests in `.factory/raw-materials/manifest.json` and tooling catalog in `.factory/toolbox/index.json`.
+
+| Raw Material | Description | Key Artifacts | Reusability |
+| :--- | :--- | :--- | :--- |
+| **Auth & Security** | Universal RBAC, JWT, session, MFA engine | `raw-materials/auth/`, `raw_materials/auth.py` | Universal (FastAPI, Flask, Node) |
+| **User Management** | Complete CRUD, profile, lifecycle, state machine | `raw-materials/user-management/user_service.py` | Universal database/ORM |
+| **Admin Panel** | Admin inspection, moderation, metric dashboard | `raw-materials/admin-panel/admin_service.py` | Framework agnostic |
+| **DB Patterns** | Multi-tenant schema, temporal tables, audit logs | `raw-materials/db-patterns/schema_patterns.sql` | PostgreSQL / SQLite / MySQL |
+| **UI/UX Primitives** | Design system tokens, responsive components | `raw-materials/ui-ux/ui_primitives.json` | React / Vue / Web standards |
+| **Realtime Gateway**| Pub/sub WebSocket broker with reconnection | `raw-materials/realtime/` | Redis, Valkey, WebSockets |
+| **Trading Engine**  | Order routing, tick matching, risk checks | `raw-materials/trading-engine/` | FinTech / Algo trading |
+| **AI & RAG Hub**    | Vector indexing, semantic search, cache | `raw-materials/ai-rag/` | Qdrant, Chroma, PGVector |
+| **Email & Comms**   | Templated transactional notifications | `raw-materials/email-communications/` | Cloudflare, SMTP, SendGrid |
+
+---
+
 ## 🛠️ How to Provision Any Tool in a New Project
 
 When spinning up a new project or adding capabilities to an existing repository:

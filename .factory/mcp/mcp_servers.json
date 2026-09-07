@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "factory-memory": {
+      "command": "python3",
+      "args": [
+        "/home/elogic360/Desktop/little QUANTUM/IntegralMarket/software-factory/core/multi_neuron_memory.py"
+      ]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-chrome-devtools"
+      ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-playwright"
+      ]
+    }
+  }
+}

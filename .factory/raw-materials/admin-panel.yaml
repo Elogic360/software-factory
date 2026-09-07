@@ -1,0 +1,7 @@
+components:
+- CRUD Views
+- Metrics
+- User Impersonation
+id: admin-panel
+name: Administrative Control Panel
+status: PRODUCTION-READY

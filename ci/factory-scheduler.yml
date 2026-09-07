@@ -1,0 +1,58 @@
+name: Software Factory Scheduled Intelligence & Maintenance
+
+on:
+  schedule:
+    - cron: '0 3 * * *'    # Daily at 03:00 UTC
+    - cron: '0 4 * * 1'    # Weekly on Monday at 04:00 UTC
+    - cron: '0 5 1 * *'    # Monthly on 1st at 05:00 UTC
+  workflow_dispatch:
+    inputs:
+      job:
+        description: 'Job to execute'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - factory.discovery.daily
+          - factory.security.daily
+          - factory.skill.evaluation.weekly
+          - factory.component.mining.weekly
+          - factory.deep.audit.monthly
+
+jobs:
+  scheduled-factory-cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install pytest pyyaml httpx
+
+      - name: Run Factory Doctor
+        run: |
+          python3 factory.py doctor
+
+      - name: Execute Daily / Weekly Intelligence Radar
+        run: |
+          python3 factory.py radar --period daily
+          python3 factory.py security
+          python3 factory.py audit
+
+      - name: Run Full Test Suite
+        run: |
+          pytest tests/ -v

@@ -1,0 +1,20 @@
+{
+  "url": "https://integralmarket.com",
+  "standard": "WCAG 2.2 Level AA",
+  "evaluated_at": 1788781586.0349061,
+  "total_violations": 2,
+  "critical_violations": 1,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "minor",
+      "description": "Element has insufficient color contrast"
+    },
+    {
+      "id": "button-name",
+      "impact": "critical",
+      "description": "Buttons must have discernible text"
+    }
+  ],
+  "verdict": "FAILED"
+}

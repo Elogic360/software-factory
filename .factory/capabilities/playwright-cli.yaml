@@ -1,0 +1,9 @@
+category: browser-qa
+id: playwright-cli
+install_command: npm install -g @playwright/test
+license: Apache-2.0
+name: Playwright CLI & Browser Harness
+source: https://github.com/microsoft/playwright
+status: VERIFIED
+tier: Core
+verification_command: playwright --version

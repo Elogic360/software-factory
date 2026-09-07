@@ -1,0 +1,52 @@
+{
+  "design_system": "Quantum Universal UI Primitives",
+  "version": "2.0.0",
+  "tokens": {
+    "colors": {
+      "primary": "#3b82f6",
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "danger": "#ef4444",
+      "background_dark": "#0b0f19",
+      "surface_dark": "#111827",
+      "border_dark": "#1f2937"
+    },
+    "typography": {
+      "font_sans": "Inter, system-ui, sans-serif",
+      "font_mono": "JetBrains Mono, Menlo, monospace"
+    }
+  },
+  "primitives": [
+    {
+      "name": "NavigationHeader",
+      "type": "layout",
+      "props": ["brand", "links", "user_profile", "theme_toggle"],
+      "accessibility": "role='banner', nav role='navigation', aria-label='Main Navigation'"
+    },
+    {
+      "name": "DataTable",
+      "type": "data-display",
+      "props": ["columns", "data", "sortable", "paginated", "loading"],
+      "states": ["loading", "empty", "error", "ready"],
+      "accessibility": "table role='table', th scope='col', aria-sort on active header"
+    },
+    {
+      "name": "ModalDialog",
+      "type": "overlay",
+      "props": ["open", "title", "onClose", "confirmAction"],
+      "accessibility": "role='dialog', aria-modal='true', trap-focus enabled, escape key handler"
+    },
+    {
+      "name": "MetricCard",
+      "type": "dashboard",
+      "props": ["title", "value", "trend", "trend_direction", "sparkline_data"],
+      "states": ["loading", "ready"]
+    },
+    {
+      "name": "FormInput",
+      "type": "input",
+      "props": ["label", "type", "name", "value", "error", "required"],
+      "accessibility": "explicit <label for='...'>, aria-invalid='true', aria-describedby for error message"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+components:
+- Navbar
+- Forms
+- Tables
+- Modals
+- Empty States
+id: ui-ux-primitives
+name: Universal UI/UX Component Library
+status: PRODUCTION-READY

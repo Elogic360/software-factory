@@ -1,0 +1,61 @@
+id: ecc-universal
+name: Everything Claude Code (ECC)
+category: agent-harness
+subcategory: universal-harness
+tier: Tier-0-Core
+description: >-
+  Universal agent harness performance optimization system providing 328+ curated engineering skills,
+  adaptive instincts, cross-agent memory, security scanning via AgentShield, and research-first pipelines
+  for Claude Code, Codex, Cursor, Gemini, Copilot, OpenCode, and Antigravity.
+source: https://github.com/affaan-m/ECC
+source_type: npm/github
+license: MIT
+license_classification: safe-to-integrate
+version: 2.2.1
+language: JavaScript/TypeScript/Python
+runtime: node>=18/python3>=3.10
+platforms:
+  - linux
+  - darwin
+  - windows
+installation:
+  command: bash capabilities/agent-harness/ecc/install.sh
+  method: hybrid-npm-vendored
+  offline_supported: true
+dependencies:
+  - node>=18
+  - npm
+  - git
+  - python3>=3.10
+verification:
+  healthcheck: python3 capabilities/agent-harness/ecc/healthcheck.py
+  functional_test: pytest capabilities/agent-harness/ecc/test_ecc.py -v
+cli_tools:
+  - ecc
+  - ecc-control-pane
+  - ecc-install
+  - ecc-agentshield
+security:
+  isolation: in-process / sub-process
+  sandboxed: true
+  credential_requirements: none
+  network_access: optional (for auto-updates and npm packages)
+integrations:
+  agents:
+    - Claude Code
+    - Codex
+    - OpenCode
+    - Cursor
+    - GitHub Copilot
+    - Gemini CLI
+    - Antigravity
+quality_score:
+  grade: A+
+  numeric: 99
+tags:
+  - agent-harness
+  - skills
+  - security
+  - instincts
+  - multi-agent
+  - research-first

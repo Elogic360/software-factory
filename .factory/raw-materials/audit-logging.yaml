@@ -1,0 +1,7 @@
+components:
+- Event Store
+- Tamper Detection
+- Query API
+id: audit-logging
+name: Immutable Audit Logging
+status: PRODUCTION-READY

@@ -1,7 +1,8 @@
 """
 Software Factory Central Multi-Neuron Memory System.
 Manages 28 specialized memory neurons across Global, Project, Task, and Session scopes.
-Provides Memory Router, Promotion Pipeline, and executable memory verbs.
+Provides Memory Router, Promotion Pipeline, Quality Control, and 12 executable memory verbs:
+remember, recall, search, retrieve, summarize, link, promote, demote, invalidate, supersede, forget, archive.
 """
 
 import json
@@ -19,6 +20,15 @@ MEMORY_NEURONS = [
     "Research", "Learning", "Factory"
 ]
 
+FORBIDDEN_PATTERNS = [
+    r"bearer\s+[a-zA-Z0-9_\-\.]{20,}",
+    r"ghp_[a-zA-Z0-9]{36}",
+    r"sk-[a-zA-Z0-9]{20,}",
+    r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----",
+    r"aws_secret_access_key\s*=",
+    r"password\s*[:=]\s*['\"][^'\"]{6,}['\"]",
+]
+
 class MemoryNeuron:
     """Represents an active memory node with confidence, provenance, and lifecycle."""
 
@@ -28,7 +38,14 @@ class MemoryNeuron:
         self.project_id = project_id
         self.records: List[Dict[str, Any]] = []
 
-    def add(self, topic: str, content: str, provenance: str = "agent", confidence: float = 1.0, metadata: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    def add(
+        self,
+        topic: str,
+        content: str,
+        provenance: str = "agent",
+        confidence: float = 1.0,
+        metadata: Optional[Dict[str, Any]] = None
+    ) -> Dict[str, Any]:
         entry = {
             "id": f"{self.neuron_type.lower()}-{int(time.time()*1000)}-{len(self.records)+1}",
             "neuron": self.neuron_type,
@@ -39,7 +56,8 @@ class MemoryNeuron:
             "provenance": provenance,
             "confidence": max(0.0, min(1.0, confidence)),
             "timestamp": time.time(),
-            "status": "ACTIVE",  # ACTIVE, SUPERSEDED, ARCHIVED, PROMOTED
+            "updated_at": time.time(),
+            "status": "ACTIVE",  # ACTIVE, SUPERSEDED, ARCHIVED, PROMOTED, INVALIDATED
             "metadata": metadata or {},
             "links": []
         }
@@ -97,29 +115,64 @@ class CentralEngineeringMemory:
                         except Exception:
                             continue
 
-    # ── Executable Memory Verbs ──────────────────────────────────────────────
+    def is_safe_to_remember(self, content: str, topic: str = "") -> bool:
+        """Enforces security boundaries: blocks secrets, credentials, and API keys."""
+        combined = f"{topic} {content}"
+        for pat in FORBIDDEN_PATTERNS:
+            if re.search(pat, combined, re.IGNORECASE):
+                return False
+        return True
 
-    def remember(self, neuron_type: str, topic: str, content: str, project_id: str = "default", provenance: str = "agent", confidence: float = 1.0, metadata: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    # ── 12 Executable Memory Verbs ──────────────────────────────────────────
+
+    def remember(
+        self,
+        neuron_type: str,
+        topic: str,
+        content: str,
+        project_id: str = "default",
+        provenance: str = "agent",
+        confidence: float = 1.0,
+        metadata: Optional[Dict[str, Any]] = None
+    ) -> Dict[str, Any]:
+        """1. remember(): Safely adds record with secret filtering and deduplication."""
+        if not self.is_safe_to_remember(content, topic):
+            raise ValueError("Security violation: Memory content contains secrets, tokens, or credentials.")
+
         self._init_neurons(project_id)
         matching_nt = next((nt for nt in MEMORY_NEURONS if nt.lower() == neuron_type.lower()), "Factory")
         key = f"{project_id}:{matching_nt}"
+
+        # Dedup check
+        for r in self.neurons[key].records:
+            if r["topic"].lower() == topic.lower() and r["content"].strip() == content.strip():
+                r["updated_at"] = time.time()
+                self._save_neuron(project_id, matching_nt)
+                return r
+
         entry = self.neurons[key].add(topic, content, provenance=provenance, confidence=confidence, metadata=metadata)
         self._save_neuron(project_id, matching_nt)
         return entry
 
     def recall(self, neuron_type: str, topic_or_id: str, project_id: str = "default") -> Optional[Dict[str, Any]]:
+        """2. recall(): Finds exact matching record by ID or topic."""
         self._init_neurons(project_id)
         matching_nt = next((nt for nt in MEMORY_NEURONS if nt.lower() == neuron_type.lower()), None)
         if not matching_nt:
             return None
         key = f"{project_id}:{matching_nt}"
-        records = self.neurons[key].records
-        for r in records:
+        for r in self.neurons[key].records:
             if r["id"] == topic_or_id or r["topic"].lower() == topic_or_id.lower():
                 return r
         return None
 
-    def search(self, query: str, project_id: str = "default", neuron_types: Optional[List[str]] = None) -> List[Dict[str, Any]]:
+    def search(
+        self,
+        query: str,
+        project_id: str = "default",
+        neuron_types: Optional[List[str]] = None
+    ) -> List[Dict[str, Any]]:
+        """3. search(): Full-text keyword search across active neuron records."""
         self._init_neurons(project_id)
         q_lower = query.lower()
         results = []
@@ -130,36 +183,54 @@ class CentralEngineeringMemory:
                 continue
             key = f"{project_id}:{matching_nt}"
             for r in self.neurons.get(key, MemoryNeuron(matching_nt)).records:
-                if r.get("status") == "ARCHIVED":
+                if r.get("status") in ["ARCHIVED", "INVALIDATED"]:
                     continue
                 if q_lower in r["topic"].lower() or q_lower in r["content"].lower():
                     results.append(r)
         return results
 
-    def link(self, source_id: str, target_id: str, relation: str, project_id: str = "default") -> bool:
-        """Links two memory nodes across neurons with relationship semantics."""
+    def retrieve(self, query: str, project_id: str = "default", limit: int = 5) -> List[Dict[str, Any]]:
+        """4. retrieve(): Relevance-ranked memory retrieval with limit."""
+        hits = self.search(query, project_id=project_id)
+        hits.sort(key=lambda x: x.get("confidence", 1.0), reverse=True)
+        return hits[:limit]
+
+    def summarize(self, neuron_type: str, project_id: str = "default") -> Dict[str, Any]:
+        """5. summarize(): Produces high-level summary of a neuron's contents."""
         self._init_neurons(project_id)
-        found_source = None
+        matching_nt = next((nt for nt in MEMORY_NEURONS if nt.lower() == neuron_type.lower()), None)
+        if not matching_nt:
+            return {"neuron": neuron_type, "total": 0, "topics": []}
+        key = f"{project_id}:{matching_nt}"
+        records = [r for r in self.neurons[key].records if r.get("status") == "ACTIVE"]
+        return {
+            "neuron": matching_nt,
+            "project_id": project_id,
+            "active_count": len(records),
+            "topics": [r["topic"] for r in records],
+            "average_confidence": round(sum(r["confidence"] for r in records) / len(records), 2) if records else 1.0
+        }
+
+    def link(self, source_id: str, target_id: str, relation: str, project_id: str = "default") -> bool:
+        """6. link(): Links two memory nodes across neurons with relationship semantics."""
+        self._init_neurons(project_id)
+        found = False
         for key, neuron in self.neurons.items():
             if key.startswith(f"{project_id}:"):
                 for r in neuron.records:
                     if r["id"] == source_id:
-                        found_source = (neuron.neuron_type, r)
+                        r["links"].append({"target": target_id, "relation": relation, "timestamp": time.time()})
+                        self._save_neuron(project_id, neuron.neuron_type)
+                        found = True
                         break
-        if found_source:
-            n_type, record = found_source
-            record["links"].append({"target": target_id, "relation": relation, "timestamp": time.time()})
-            self._save_neuron(project_id, n_type)
-            return True
-        return False
+        return found
 
     def promote(self, source_id: str, project_id: str = "default", target_scope: str = "GLOBAL") -> Optional[Dict[str, Any]]:
-        """Promotes validated project memory to global factory knowledge."""
+        """7. promote(): Promotes validated project memory to global factory knowledge."""
         for key, neuron in self.neurons.items():
             if key.startswith(f"{project_id}:"):
                 for r in neuron.records:
                     if r["id"] == source_id:
-                        # Copy to global
                         global_entry = self.remember(
                             neuron_type="Factory",
                             topic=f"[Promoted] {r['topic']}",
@@ -174,14 +245,72 @@ class CentralEngineeringMemory:
                         return global_entry
         return None
 
+    def demote(self, record_id: str, project_id: str = "default") -> bool:
+        """8. demote(): Lowers confidence of a record due to uncertainty or conflict."""
+        for key, neuron in self.neurons.items():
+            if key.startswith(f"{project_id}:"):
+                for r in neuron.records:
+                    if r["id"] == record_id:
+                        r["confidence"] = max(0.1, r["confidence"] - 0.3)
+                        r["updated_at"] = time.time()
+                        self._save_neuron(project_id, neuron.neuron_type)
+                        return True
+        return False
+
+    def invalidate(self, record_id: str, reason: str = "", project_id: str = "default") -> bool:
+        """9. invalidate(): Flags record as invalid or contradicted by new findings."""
+        for key, neuron in self.neurons.items():
+            if key.startswith(f"{project_id}:"):
+                for r in neuron.records:
+                    if r["id"] == record_id:
+                        r["status"] = "INVALIDATED"
+                        r["invalidation_reason"] = reason
+                        r["updated_at"] = time.time()
+                        self._save_neuron(project_id, neuron.neuron_type)
+                        return True
+        return False
+
+    def supersede(self, old_record_id: str, new_record_id: str, project_id: str = "default") -> bool:
+        """10. supersede(): Marks old record as superseded by a newer version."""
+        for key, neuron in self.neurons.items():
+            if key.startswith(f"{project_id}:"):
+                for r in neuron.records:
+                    if r["id"] == old_record_id:
+                        r["status"] = "SUPERSEDED"
+                        r["superseded_by"] = new_record_id
+                        r["updated_at"] = time.time()
+                        self._save_neuron(project_id, neuron.neuron_type)
+                        return True
+        return False
+
+    def forget(self, record_id: str, project_id: str = "default") -> bool:
+        """11. forget(): Permanently deletes record."""
+        for key, neuron in self.neurons.items():
+            if key.startswith(f"{project_id}:"):
+                initial_len = len(neuron.records)
+                neuron.records = [r for r in neuron.records if r["id"] != record_id]
+                if len(neuron.records) < initial_len:
+                    self._save_neuron(project_id, neuron.neuron_type)
+                    return True
+        return False
+
+    def archive(self, record_id: str, project_id: str = "default") -> bool:
+        """12. archive(): Moves record to inactive archive status without deletion."""
+        for key, neuron in self.neurons.items():
+            if key.startswith(f"{project_id}:"):
+                for r in neuron.records:
+                    if r["id"] == record_id:
+                        r["status"] = "ARCHIVED"
+                        r["updated_at"] = time.time()
+                        self._save_neuron(project_id, neuron.neuron_type)
+                        return True
+        return False
+
     # ── Memory Router ────────────────────────────────────────────────────────
 
     def route_query(self, query: str, project_id: str = "default") -> Dict[str, Any]:
-        """
-        Determines what knowledge is needed and retrieves minimal high-precision context.
-        """
+        """Determines what knowledge is needed and retrieves minimal high-precision context."""
         q_lower = query.lower()
-        # Heuristic routing
         selected_neurons = []
         if any(w in q_lower for w in ["auth", "login", "jwt", "session", "security", "role", "rbac"]):
             selected_neurons.extend(["Security", "Architecture", "Component", "Decision"])
@@ -194,10 +323,7 @@ class CentralEngineeringMemory:
         else:
             selected_neurons.extend(["Project", "Architecture", "Specification", "Decision"])
 
-        # Deduplicate neuron list
         selected_neurons = list(set(selected_neurons))
-
-        # Query project scope + global factory scope
         project_hits = self.search(query, project_id=project_id, neuron_types=selected_neurons)
         global_hits = self.search(query, project_id="global", neuron_types=["Factory", "Skill", "Component"])
 
@@ -218,7 +344,6 @@ class CentralEngineeringMemory:
         if not p_root.exists():
             return discovered
 
-        # Ingest Markdown documentation
         for md_file in p_root.glob("**/*.md"):
             if ".factory" in str(md_file) or "node_modules" in str(md_file) or ".git" in str(md_file):
                 continue

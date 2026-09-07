@@ -1,0 +1,9 @@
+category: mcp-server
+id: chrome-devtools-mcp
+install_command: npx -y @modelcontextprotocol/server-chrome-devtools
+license: Apache-2.0
+name: Chrome DevTools MCP
+source: https://github.com/modelcontextprotocol/servers
+status: VERIFIED
+tier: Core
+verification_command: npx -y @modelcontextprotocol/server-chrome-devtools --version

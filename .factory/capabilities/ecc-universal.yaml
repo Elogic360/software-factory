@@ -1,0 +1,9 @@
+category: agent-harness
+id: ecc-universal
+install_command: bash capabilities/agent-harness/ecc/install.sh
+license: MIT
+name: Everything Claude Code (ECC)
+source: https://github.com/affaan-m/ECC
+status: VERIFIED
+tier: Core
+verification_command: python3 capabilities/agent-harness/ecc/healthcheck.py

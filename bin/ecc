@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+SF_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+if [ -f "$SF_ROOT/integrations/ecc/scripts/ecc.js" ]; then
+    exec node "$SF_ROOT/integrations/ecc/scripts/ecc.js" "$@"
+elif command -v npx >/dev/null 2>&1; then
+    exec npx ecc-universal "$@"
+else
+    echo "Error: Neither local ECC nor npx is available." >&2
+    exit 1
+fi

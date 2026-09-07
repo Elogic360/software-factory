@@ -1,0 +1,7 @@
+components:
+- JWT
+- bcrypt
+- sessions
+id: auth-foundation
+name: Authentication Foundation
+status: PRODUCTION-READY

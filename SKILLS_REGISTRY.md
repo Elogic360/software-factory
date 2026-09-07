@@ -4,6 +4,11 @@
 > **This file is the single source of truth for the software-factory skill
 > library.** Every agent session should reference this before loading any skill.
 > Use `context-engine/skill_selector.py --query "<task>"` to auto-select skills.
+>
+> ### 🌐 Unified Skill Architecture
+> - **Tier 1 (Core Factory):** 32 curated foundational engineering skills maintained directly in `skills/` (see index below).
+> - **Tier 2 (Universal ECC & Community):** 328 vetted, production-grade skills indexed in `.factory/skills/registry.json` and comprehensively evaluated in [`SKILL_MARKET_INTELLIGENCE.md`](file:///home/elogic360/Desktop/little%20QUANTUM/IntegralMarket/software-factory/SKILL_MARKET_INTELLIGENCE.md).
+> - **Loading Rule:** Progressive disclosure — load only Tier-1 skill triggers or specific high-relevance Tier-2 skill modules on demand to preserve agent context windows.
 
 ---
 

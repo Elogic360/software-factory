@@ -1,7 +1,8 @@
 """
 Software Factory Target-Driven Development (TDD) Engine.
-Manages Target lifecycle state machine (PLANNED -> PROPOSED -> IN_PROGRESS ->
-IMPLEMENTED -> TESTED -> VERIFIED -> OBSERVED) and real-time target metrics dashboard.
+Manages 12-state Target lifecycle state machine:
+PLANNED -> DESIGNED -> READY -> IMPLEMENTING -> IMPLEMENTED -> TESTING -> VERIFIED -> STAGED -> RELEASED -> DEPLOYED -> OBSERVED,
+plus the FAILED -> DIAGNOSING -> FIXING -> RETESTING branch and real-time coverage dashboard.
 """
 
 import json
@@ -10,16 +11,36 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional
 import yaml
 
-TARGET_STATES = [
+PRIMARY_TARGET_STATES = [
     "PLANNED",
-    "PROPOSED",
-    "IN_PROGRESS",
+    "DESIGNED",
+    "READY",
+    "IMPLEMENTING",
     "IMPLEMENTED",
-    "TESTED",
+    "TESTING",
     "VERIFIED",
+    "STAGED",
+    "RELEASED",
+    "DEPLOYED",
     "OBSERVED"
 ]
 
+FAILURE_BRANCH_STATES = [
+    "FAILED",
+    "DIAGNOSING",
+    "FIXING",
+    "RETESTING"
+]
+
+# Aliases for backwards compatibility with earlier prompts
+STATE_ALIASES = {
+    "PROPOSED": "DESIGNED",
+    "IN_PROGRESS": "IMPLEMENTING",
+    "TESTED": "VERIFIED"
+}
+
+ALL_TARGET_STATES = PRIMARY_TARGET_STATES + FAILURE_BRANCH_STATES + list(STATE_ALIASES.keys())
+TARGET_STATES = ALL_TARGET_STATES
 VALID_CATEGORIES = ["ui", "api", "database", "performance", "security", "integration", "general"]
 
 class TargetEngine:
@@ -66,7 +87,7 @@ class TargetEngine:
                     "from_status": None,
                     "to_status": "PLANNED",
                     "timestamp": time.time(),
-                    "note": "Target created."
+                    "note": "Target created in PLANNED state."
                 }
             ]
         }
@@ -108,19 +129,49 @@ class TargetEngine:
         return results
 
     def validate_transition(self, current_status: str, next_status: str) -> bool:
-        """Enforces valid state machine transitions."""
-        if current_status not in TARGET_STATES or next_status not in TARGET_STATES:
+        """Enforces valid state machine transitions across primary chain and failure branch."""
+        curr = current_status.upper()
+        nxt = next_status.upper()
+
+        if curr not in ALL_TARGET_STATES or nxt not in ALL_TARGET_STATES:
             return False
 
-        current_idx = TARGET_STATES.index(current_status)
-        next_idx = TARGET_STATES.index(next_status)
-
-        # Forward progression by 1 step
-        if next_idx == current_idx + 1:
+        # Direct transition to FAILED branch from any testing/gate state
+        if nxt == "FAILED":
+            return True
+        if curr == "FAILED" and nxt == "DIAGNOSING":
+            return True
+        if curr == "DIAGNOSING" and nxt == "FIXING":
+            return True
+        if curr == "FIXING" and nxt == "RETESTING":
+            return True
+        if curr == "RETESTING" and nxt in ["TESTING", "VERIFIED", "IMPLEMENTED", "FAILED"]:
             return True
 
-        # Rollback to IN_PROGRESS on verification or testing failure
-        if next_status in ["IN_PROGRESS", "PROPOSED"] and current_idx > TARGET_STATES.index(next_status):
+        # Normalized comparison in primary pipeline
+        curr_norm = STATE_ALIASES.get(curr, curr)
+        nxt_norm = STATE_ALIASES.get(nxt, nxt)
+
+        if curr_norm in PRIMARY_TARGET_STATES and nxt_norm in PRIMARY_TARGET_STATES:
+            curr_idx = PRIMARY_TARGET_STATES.index(curr_norm)
+            nxt_idx = PRIMARY_TARGET_STATES.index(nxt_norm)
+            # Step forward
+            if nxt_idx == curr_idx + 1:
+                return True
+            # Rollback to IMPLEMENTING or READY on test failure
+            if nxt_idx < curr_idx and nxt_norm in ["IMPLEMENTING", "READY", "DESIGNED"]:
+                return True
+
+        # Allow alias-to-alias direct transition (e.g. IN_PROGRESS -> IMPLEMENTED)
+        if curr in ["IN_PROGRESS", "IMPLEMENTING"] and nxt == "IMPLEMENTED":
+            return True
+        if curr == "IMPLEMENTED" and nxt in ["TESTED", "TESTING"]:
+            return True
+        if curr in ["TESTED", "TESTING"] and nxt == "VERIFIED":
+            return True
+        if curr == "VERIFIED" and nxt in ["STAGED", "OBSERVED"]:
+            return True
+        if curr in ["PLANNED", "DESIGNED", "PROPOSED"] and nxt in ["PROPOSED", "DESIGNED", "READY", "IN_PROGRESS", "IMPLEMENTING"]:
             return True
 
         return False
@@ -143,7 +194,7 @@ class TargetEngine:
         if not self.validate_transition(current_status, next_status):
             raise ValueError(
                 f"Invalid transition from '{current_status}' to '{next_status}'. "
-                f"State progression must be sequential or roll back to IN_PROGRESS."
+                f"State progression must be sequential or follow failure recovery branch."
             )
 
         target["status"] = next_status
@@ -166,21 +217,18 @@ class TargetEngine:
         return target
 
     def generate_dashboard(self) -> Dict[str, Any]:
-        """Calculates real-time health and progress metrics across all targets."""
+        """Calculates real-time health, coverage, and progress metrics across all targets."""
         all_targets = self.list_targets()
-        counts_by_status = {state: 0 for state in TARGET_STATES}
-        counts_by_category = {c: 0 for c in VALID_CATEGORIES}
+        counts_by_status = {state: 0 for state in PRIMARY_TARGET_STATES + FAILURE_BRANCH_STATES}
 
         for t in all_targets:
             s = t.get("status", "PLANNED")
-            if s in counts_by_status:
-                counts_by_status[s] += 1
-            cat = t.get("category", "general")
-            if cat in counts_by_category:
-                counts_by_category[cat] += 1
+            s_norm = STATE_ALIASES.get(s, s)
+            if s_norm in counts_by_status:
+                counts_by_status[s_norm] += 1
 
         total = len(all_targets)
-        completed = counts_by_status["OBSERVED"]
+        completed = counts_by_status.get("OBSERVED", 0)
         progress_pct = (completed / total * 100.0) if total > 0 else 0.0
 
         return {
@@ -188,7 +236,7 @@ class TargetEngine:
             "completed_observed": completed,
             "progress_percentage": round(progress_pct, 2),
             "by_status": counts_by_status,
-            "by_category": counts_by_category,
-            "in_progress": [t["id"] for t in all_targets if t.get("status") == "IN_PROGRESS"],
+            "in_progress": [t["id"] for t in all_targets if t.get("status") in ["IN_PROGRESS", "IMPLEMENTING"]],
+            "in_failure_recovery": [t["id"] for t in all_targets if t.get("status") in FAILURE_BRANCH_STATES],
             "timestamp": time.time()
         }

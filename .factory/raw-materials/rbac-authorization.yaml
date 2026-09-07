@@ -1,0 +1,7 @@
+components:
+- Roles
+- Permissions
+- Middleware Guard
+id: rbac-authorization
+name: Role-Based Access Control (RBAC)
+status: PRODUCTION-READY

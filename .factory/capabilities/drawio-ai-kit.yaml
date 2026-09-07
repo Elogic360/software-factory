@@ -1,0 +1,9 @@
+category: architecture
+id: drawio-ai-kit
+install_command: npm install -g drawio-ai-kit
+license: MIT
+name: Draw.io AI Kit
+source: https://github.com/sparklabx/drawio-ai-kit
+status: VERIFIED
+tier: Core
+verification_command: node -e 'require("drawio-ai-kit")'

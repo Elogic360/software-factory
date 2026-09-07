@@ -1,0 +1,7 @@
+components:
+- Profile
+- Settings
+- Account Lifecycle
+id: user-management
+name: User Management Service
+status: PRODUCTION-READY

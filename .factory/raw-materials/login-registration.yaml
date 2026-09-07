@@ -1,0 +1,8 @@
+components:
+- Sign In
+- Sign Up
+- OAuth2
+- Rate Limiting
+id: login-registration
+name: Login & Registration Flows
+status: PRODUCTION-READY

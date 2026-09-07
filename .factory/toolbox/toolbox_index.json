@@ -1,0 +1,32 @@
+[
+  {
+    "name": "ecc",
+    "command": "bin/ecc",
+    "description": "ECC agent harness and skills CLI",
+    "status": "VERIFIED"
+  },
+  {
+    "name": "factory",
+    "command": "bin/software-factory",
+    "description": "Universal Software Factory master operating system CLI",
+    "status": "VERIFIED"
+  },
+  {
+    "name": "pytest",
+    "command": "pytest",
+    "description": "Automated Python test runner and TDD assertion engine",
+    "status": "VERIFIED"
+  },
+  {
+    "name": "node",
+    "command": "node",
+    "description": "JavaScript and TypeScript execution environment",
+    "status": "VERIFIED"
+  },
+  {
+    "name": "playwright",
+    "command": "playwright",
+    "description": "Headless browser automation and visual testing engine",
+    "status": "VERIFIED"
+  }
+]

@@ -1,0 +1,7 @@
+components:
+- Timescale Hypertable
+- PostgreSQL Indexes
+- Audit Triggers
+id: db-schema-patterns
+name: Relational & Time-Series DB Patterns
+status: PRODUCTION-READY

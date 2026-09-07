@@ -124,3 +124,39 @@ class ArchitectureEngine:
             "missing_expected_services": missing,
             "status": "DRIFT_DETECTED" if has_drift else "SYNCHRONIZED"
         }
+
+    def generate_drawio_architecture(self, c4_model: Dict[str, Any]) -> str:
+        """Generates Draw.io XML (mxGraphModel) from C4 model."""
+        product = c4_model.get("product", "System")
+        containers = c4_model.get("c2_containers", [])
+
+        cells = [
+            '<mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">',
+            '  <root>',
+            '    <mxCell id="0"/>',
+            '    <mxCell id="1" parent="0"/>',
+            f'    <mxCell id="2" value="&lt;b&gt;{product} Architecture Boundary&lt;/b&gt;" style="swimlane;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#3b82f6;fontColor=#f8fafc;" vertex="1" parent="1">',
+            '      <mxGeometry x="40" y="40" width="800" height="480" as="geometry"/>',
+            '    </mxCell>'
+        ]
+
+        x = 70
+        y = 90
+        cell_id = 3
+        for c in containers:
+            label = f"&lt;b&gt;{c.get('name')}&lt;/b&gt;&lt;br/&gt;[{c.get('tech')}]&lt;br/&gt;{c.get('description')}"
+            cells.append(
+                f'    <mxCell id="{cell_id}" value="{label}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#64748b;fontColor=#ffffff;" vertex="1" parent="2">'
+            )
+            cells.append(f'      <mxGeometry x="{x}" y="{y}" width="180" height="90" as="geometry"/>')
+            cells.append('    </mxCell>')
+            cell_id += 1
+            x += 210
+            if x > 600:
+                x = 70
+                y += 120
+
+        cells.append('  </root>')
+        cells.append('</mxGraphModel>')
+        return "\n".join(cells)
+
