@@ -1,0 +1,36 @@
+browser_backends:
+  - id: playwright-cli
+    name: Microsoft Playwright CLI
+    type: cli
+    capabilities: [navigation, dom_snapshot, click, fill, screenshot, tracing, e2e]
+    strengths: [low_token_overhead, headless, ci_compatible, fast]
+    supported_agents: [Antigravity, Claude Code, Cursor, Codex]
+    health: HEALTHY
+  - id: chrome-devtools-mcp
+    name: Chrome DevTools MCP
+    type: mcp
+    capabilities: [console_errors, network_inspection, source_maps, performance, live_debugging]
+    strengths: [deep_inspection, source_mapped_stacktraces, request_response_payloads]
+    supported_agents: [Antigravity, Claude Code, Cursor]
+    health: HEALTHY
+  - id: playwright-mcp
+    name: Microsoft Playwright MCP
+    type: mcp
+    capabilities: [interactive_browser, browser_tools, accessibility_snapshots]
+    strengths: [mcp_native, agent_direct_interaction]
+    supported_agents: [Antigravity, Claude Code, Cline, Roo Code]
+    health: HEALTHY
+  - id: browser-use
+    name: Browser Use Agentic Controller
+    type: agent_library
+    capabilities: [agentic_exploration, visual_reasoning, automated_task_completion]
+    strengths: [complex_multi_page_navigation, exploration]
+    supported_agents: [Antigravity, Python]
+    health: HEALTHY
+  - id: antigravity-browser
+    name: Antigravity Native Browser Interface
+    type: native_capability
+    capabilities: [navigation, screenshots, dom_analysis, console_logs]
+    strengths: [built_in, zero_dependency_overhead]
+    supported_agents: [Antigravity]
+    health: HEALTHY

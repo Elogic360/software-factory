@@ -1,0 +1,81 @@
+schema_version: 2.2.0
+project:
+  name: IntegralMarket-Ecosystem
+  slug: integralmarket-ecosystem
+  version: 0.1.0
+  archetype: python-fastapi
+  language: python
+  framework: fastapi
+  database: postgresql
+  cache: valkey-redis
+  auth_strategy: jwt-bearer
+boundaries:
+- module: core
+  responsibility: Shared domain models, events, and utility primitives
+  exported_symbols:
+  - EventBus
+  - BaseModel
+  - Config
+  forbidden_imports:
+  - controllers
+  - web
+- module: api
+  responsibility: HTTP handlers, OpenAPI routing, and request validation
+  exported_symbols:
+  - router
+  - dependencies
+  forbidden_imports:
+  - database_internal
+- module: services
+  responsibility: Business logic and transactional orchestration
+  exported_symbols:
+  - DomainService
+  forbidden_imports:
+  - web_controllers
+routes:
+- method: GET
+  path: /api/v1/health
+  module: api
+  auth_required: false
+  rate_limit: 100/min
+  db_operations:
+  - read_health
+- method: GET
+  path: /api/v1/items
+  module: api
+  auth_required: true
+  rate_limit: 60/min
+  db_operations:
+  - select_items
+data_models:
+- name: Item
+  table: items
+  fields:
+    id: UUID
+    title: VARCHAR(255)
+    created_at: TIMESTAMP
+  indexes:
+  - idx_items_created_at
+invariants:
+- id: NO_CROSS_SCHEMA_WRITES
+  rule: A service or module must never perform direct writes across DB schemas.
+- id: ALL_ROUTES_VERSIONED_V1
+  rule: All public and internal API endpoints must be prefixed with /api/v1/.
+- id: STRICT_MODULE_EXPORTS
+  rule: Modules must only consume external domain internals via public index exports.
+- id: NO_RAW_QUERIES_IN_CONTROLLERS
+  rule: Controllers and HTTP handlers must delegate data access to service/repository
+    layers.
+- id: NO_HARDCODED_SECRETS
+  rule: Configuration and secrets must be injected via environment or secure keyrings.
+verification_gates:
+- GATE_0_SPEC_AND_ARCHITECTURE
+- GATE_1_STATIC_ANALYSIS
+- GATE_2_UNIT_AND_CONTRACT_TESTS
+- GATE_3_BROWSER_AND_ACCESSIBILITY
+- GATE_4_SECURITY_AND_SUPPLY_CHAIN
+- GATE_5_PRODUCTION_READINESS
+metadata:
+  created_at: 1788779641.1228786
+  last_modified: 1788779641.1228807
+  architect_agent: Antigravity-Software-Factory
