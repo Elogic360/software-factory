@@ -1,3 +1,8 @@
+---
+name: context-engineering
+description: Context Engineering — Institutional capability and runbook for context-engineering.
+---
+
 # SKILL: Context Engineering
 ## Domain: Context Compression, Retrieval, Agent Memory, Session State
 

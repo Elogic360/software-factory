@@ -1,3 +1,8 @@
+---
+name: ui-ux-premium
+description: UI/UX Designer — Premium Trading Interface — Institutional capability and runbook for ui-ux-premium.
+---
+
 # SKILL: UI/UX Designer — Premium Trading Interface
 ## Domain: Design System, Glassmorphism, Dark Mode, Trading UI
 

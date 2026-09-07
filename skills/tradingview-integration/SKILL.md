@@ -1,3 +1,8 @@
+---
+name: tradingview-integration
+description: TradingView Integration Engineer — Institutional capability and runbook for tradingview-integration.
+---
+
 # SKILL: TradingView Integration Engineer
 ## Domain: Charting Library, Custom Data Feeds, Broker Integration
 

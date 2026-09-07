@@ -1,3 +1,8 @@
+---
+name: seo-optimizer
+description: SEO Engineer — Fintech Platform — Institutional capability and runbook for seo-optimizer.
+---
+
 # SKILL: SEO Engineer — Fintech Platform
 ## Domain: Technical SEO, Meta Tags, Structured Data, Core Web Vitals
 

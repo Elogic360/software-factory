@@ -1,3 +1,8 @@
+---
+name: architect-discovery
+description: Architecture Discovery Skill — Institutional capability and runbook for architect-discovery.
+---
+
 # Architecture Discovery Skill
 
 **Level:** Principal / Enterprise Architect  

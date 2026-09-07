@@ -1,3 +1,8 @@
+---
+name: ai-optimization
+description: AI Optimization Engineer — Institutional capability and runbook for ai-optimization.
+---
+
 # SKILL: AI Optimization Engineer
 ## Domain: LLM Cost, Latency, Quality Optimization, Model Selection
 

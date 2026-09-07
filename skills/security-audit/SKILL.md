@@ -1,3 +1,8 @@
+---
+name: security-audit
+description: Security Audit Engineer — Institutional capability and runbook for security-audit.
+---
+
 # SKILL: Security Audit Engineer
 ## Domain: Authentication, Authorization, API Security, Data Protection
 

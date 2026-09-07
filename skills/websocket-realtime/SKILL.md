@@ -1,3 +1,8 @@
+---
+name: websocket-realtime
+description: WebSocket & Realtime Engineer — Institutional capability and runbook for websocket-realtime.
+---
+
 # SKILL: WebSocket & Realtime Engineer
 ## Domain: Unified Stream, Pub/Sub, Live Data, Redis Channels
 

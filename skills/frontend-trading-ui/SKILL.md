@@ -1,3 +1,8 @@
+---
+name: frontend-trading-ui
+description: Frontend Trading UI Engineer — Institutional capability and runbook for frontend-trading-ui.
+---
+
 # SKILL: Frontend Trading UI Engineer
 ## Domain: imCharts, imJournal, imCopying — Module-Specific Patterns
 

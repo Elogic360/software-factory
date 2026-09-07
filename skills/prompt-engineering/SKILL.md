@@ -1,3 +1,8 @@
+---
+name: prompt-engineering
+description: Prompt Engineering — Institutional capability and runbook for prompt-engineering.
+---
+
 # SKILL: Prompt Engineering
 ## Domain: LLM Prompt Design, Agent Orchestration, Context Management
 

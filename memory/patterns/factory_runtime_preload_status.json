@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T15:50:33.318890+00:00",
+  "generated_at": "2026-09-04T06:49:28.924860+00:00",
   "mcp": {
     "catalog_count": 13,
     "active_count": 14,
@@ -113,7 +113,7 @@
     }
   },
   "skills": {
-    "count": 236,
+    "count": 256,
     "entries": [
       {
         "path": "software-factory/skills/ai-optimization/SKILL.md",
@@ -162,6 +162,86 @@
       {
         "path": "software-factory/skills/frontend-trading-ui/SKILL.md",
         "skill": "frontend-trading-ui"
+      },
+      {
+        "path": "software-factory/skills/im-agent-orchestration/SKILL.md",
+        "skill": "im-agent-orchestration"
+      },
+      {
+        "path": "software-factory/skills/im-api-contracts/SKILL.md",
+        "skill": "im-api-contracts"
+      },
+      {
+        "path": "software-factory/skills/im-architecture/SKILL.md",
+        "skill": "im-architecture"
+      },
+      {
+        "path": "software-factory/skills/im-backtesting/SKILL.md",
+        "skill": "im-backtesting"
+      },
+      {
+        "path": "software-factory/skills/im-fastapi/SKILL.md",
+        "skill": "im-fastapi"
+      },
+      {
+        "path": "software-factory/skills/im-market-data/SKILL.md",
+        "skill": "im-market-data"
+      },
+      {
+        "path": "software-factory/skills/im-observability/SKILL.md",
+        "skill": "im-observability"
+      },
+      {
+        "path": "software-factory/skills/im-postgres/SKILL.md",
+        "skill": "im-postgres"
+      },
+      {
+        "path": "software-factory/skills/im-rag/SKILL.md",
+        "skill": "im-rag"
+      },
+      {
+        "path": "software-factory/skills/im-react/SKILL.md",
+        "skill": "im-react"
+      },
+      {
+        "path": "software-factory/skills/im-redis/SKILL.md",
+        "skill": "im-redis"
+      },
+      {
+        "path": "software-factory/skills/im-release-gate/SKILL.md",
+        "skill": "im-release-gate"
+      },
+      {
+        "path": "software-factory/skills/im-repository-analysis/SKILL.md",
+        "skill": "im-repository-analysis"
+      },
+      {
+        "path": "software-factory/skills/im-security/SKILL.md",
+        "skill": "im-security"
+      },
+      {
+        "path": "software-factory/skills/im-sensei/SKILL.md",
+        "skill": "im-sensei"
+      },
+      {
+        "path": "software-factory/skills/im-software-factory/SKILL.md",
+        "skill": "im-software-factory"
+      },
+      {
+        "path": "software-factory/skills/im-timescaledb/SKILL.md",
+        "skill": "im-timescaledb"
+      },
+      {
+        "path": "software-factory/skills/im-tool-risk-policy/SKILL.md",
+        "skill": "im-tool-risk-policy"
+      },
+      {
+        "path": "software-factory/skills/im-trading-journal/SKILL.md",
+        "skill": "im-trading-journal"
+      },
+      {
+        "path": "software-factory/skills/im-trading-risk/SKILL.md",
+        "skill": "im-trading-risk"
       },
       {
         "path": "software-factory/skills/interactive-dev/SKILL.md",

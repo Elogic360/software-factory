@@ -1,3 +1,8 @@
+---
+name: change-detective
+description: Change Detective — Institutional capability and runbook for change-detective.
+---
+
 # SKILL: Change Detective
 ## Domain: Autonomous Change Detection, Auto-Documentation, Drift Analysis
 

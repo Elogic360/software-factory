@@ -1,3 +1,8 @@
+---
+name: architect-principal
+description: Principal Software Architect — Institutional capability and runbook for architect-principal.
+---
+
 # SKILL: Principal Software Architect
 ## Domain: System Architecture & Engineering Governance
 

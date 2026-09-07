@@ -1,3 +1,8 @@
+---
+name: copytrading-engine
+description: Copy Trading Engine Engineer — Institutional capability and runbook for copytrading-engine.
+---
+
 # SKILL: Copy Trading Engine Engineer
 ## Domain: imCopying — Provider/Subscriber System, Signal Routing, Risk Engine
 

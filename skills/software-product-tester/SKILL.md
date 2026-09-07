@@ -1,3 +1,8 @@
+---
+name: software-product-tester
+description: Software & Product Tester — Institutional capability and runbook for software-product-tester.
+---
+
 # SKILL: Software & Product Tester
 ## Domain: End-to-End Quality Engineering — UI, API, DB, Regression, Accessibility
 

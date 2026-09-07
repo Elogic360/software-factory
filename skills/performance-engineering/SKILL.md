@@ -1,3 +1,8 @@
+---
+name: performance-engineering
+description: Performance Engineering — Institutional capability and runbook for performance-engineering.
+---
+
 # SKILL: Performance Engineering
 ## Domain: Query Optimization, Caching, Response Budgets, Profiling
 

@@ -1,3 +1,8 @@
+---
+name: journal-analytics
+description: Journal Analytics Engineer — Institutional capability and runbook for journal-analytics.
+---
+
 # SKILL: Journal Analytics Engineer
 ## Domain: imJournal — Trading Performance Analytics, TimescaleDB, Metrics
 

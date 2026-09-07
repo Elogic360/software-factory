@@ -1,3 +1,8 @@
+---
+name: testing-load
+description: Load Testing Engineer — Institutional capability and runbook for testing-load.
+---
+
 # SKILL: Load Testing Engineer
 ## Domain: Locust, Performance Benchmarking, Capacity Planning, Bottleneck Analysis
 

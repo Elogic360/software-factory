@@ -1,3 +1,8 @@
+---
+name: skill-builder
+description: Skill Builder — Meta-Skill — Institutional capability and runbook for skill-builder.
+---
+
 # SKILL: Skill Builder — Meta-Skill
 ## Domain: Skill Creation, Skill Quality, Skill Registry, Agentic Knowledge Design
 

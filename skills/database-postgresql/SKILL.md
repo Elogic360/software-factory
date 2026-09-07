@@ -1,3 +1,8 @@
+---
+name: database-postgresql
+description: Database Engineer — PostgreSQL / TimescaleDB — Institutional capability and runbook for database-postgresql.
+---
+
 # SKILL: Database Engineer — PostgreSQL / TimescaleDB
 ## Domain: Schema Design, Migrations, Query Optimization
 

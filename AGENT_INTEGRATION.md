@@ -33,6 +33,29 @@ rtk pytest
 
 ## Agent-Specific Setup
 
+### Antigravity (Google DeepMind) — Primary Pair Programming Agent
+
+```bash
+# Entry points (auto-discovered & progressive disclosure):
+#   GEMINI.md / AGENTS.md             — workspace root & software-factory entry points
+#   .agents/skills/                    — 328+ indexed skills (57 software-factory + 271 ECC)
+#   software-factory/constitution/     — Supreme Engineering Law
+#   software-factory/CLAUDE.md         — full orchestrator OS
+
+# Task Bootstrap:
+python3 software-factory/context-engine/skill_selector.py --query "<task>" --top 3
+# Load targeted skill: .agents/skills/<skill-name>/SKILL.md
+
+# ECC Ecosystem Integration:
+npx ecc-universal status
+npx ecc-agentshield scan
+claude plugin list  # ecc@ecc enabled
+
+# Memory & CodeGraph:
+#   software-factory/memory/decisions/
+#   software-factory/memory/patterns/
+```
+
 ### Grok Build (xAI) — Primary integrated harness (2026-07)
 
 ```bash

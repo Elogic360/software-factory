@@ -1,3 +1,8 @@
+---
+name: event-driven-architecture
+description: Event-Driven Architecture Engineer — Institutional capability and runbook for event-driven-architecture.
+---
+
 # SKILL: Event-Driven Architecture Engineer
 ## Domain: Domain Events, Event Bus, CQRS, Saga Pattern
 

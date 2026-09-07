@@ -1,3 +1,8 @@
+---
+name: quant-research
+description: Quantitative Research Engineer — Institutional capability and runbook for quant-research.
+---
+
 # SKILL: Quantitative Research Engineer
 ## Domain: Strategy Development, Backtesting, Signal Generation, Statistical Analysis
 

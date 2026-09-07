@@ -1,3 +1,8 @@
+---
+name: interactive-dev
+description: Interactive Development — Institutional capability and runbook for interactive-dev.
+---
+
 # SKILL: Interactive Development
 ## Domain: Full-Stack Live Debugging — UI → Backend → Database
 

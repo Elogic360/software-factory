@@ -498,30 +498,35 @@ so the library grows and self-modifies as the project grows. Install the hook wi
 > post-commit hook). It tracks how the skill library is auto-scaling with the
 > codebase. Do not edit by hand — changes here are overwritten.
 
-- **Last sync:** 2026-05-31 05:35 UTC
-- **Commit range:** `66c5599b2a6c3f3e29b7dd77e45f56bce3d3768e..c72ae0e0`
-- **Files changed:** 216
-- **Breaking changes:** 9
+- **Last sync:** 2026-09-02 13:41 UTC
+- **Commit range:** `66c5599b2a6c3f3e29b7dd77e45f56bce3d3768e..2a44ada3`
+- **Files changed:** 377964
+- **Breaking changes:** 0
 - **Graph:** skipped
 
 ### Skills to review (auto-mapped from changed domains)
 
 | Skill | Files touched | Examples |
 |-------|---------------|----------|
-| `backend-fastapi` | 87 | integral-expert-backend/.env, integral-expert-backend/.env.example, integral-expert-backend/README.md … |
-| `copytrading-engine` | 60 | integral-expert-backend/.env, integral-expert-backend/.env.example, integral-expert-backend/README.md … |
-| `mt5-integration` | 60 | integral-expert-backend/.env, integral-expert-backend/.env.example, integral-expert-backend/README.md … |
-| `frontend-react` | 36 | app/src/core/router/AppRouter.tsx, app/src/core/services/gateway/UnifiedWebSocket.ts, app/src/modules/academy/AcademyRouter.tsx … |
-| `ui-ux-premium` | 34 | app/src/modules/academy/AcademyRouter.tsx, app/src/modules/academy/pages/AcademyPage.tsx, app/src/modules/academy/pages/CoursesPage.tsx … |
-| `security-audit` | 27 | integral-market-backend/.env, integral-market-backend/README.md, integral-market-backend/app/__pycache__/main.cpython-312.pyc … |
-| `frontend-trading-ui` | 24 | app/src/modules/expert/ExpertRouter.tsx, app/src/modules/expert/api/imcharts.api.ts, app/src/modules/expert/api/journal.api.ts … |
-| `journal-analytics` | 24 | app/src/modules/expert/ExpertRouter.tsx, app/src/modules/expert/api/imcharts.api.ts, app/src/modules/expert/api/journal.api.ts … |
-| `tradingview-integration` | 24 | app/src/modules/expert/ExpertRouter.tsx, app/src/modules/expert/api/imcharts.api.ts, app/src/modules/expert/api/journal.api.ts … |
-| `change-detective` | 3 | schema_files/05_journal.sql, schema_files/10_broker_connections.sql, schema_files/12_journal_enhancements.sql |
-| `database-postgresql` | 3 | schema_files/05_journal.sql, schema_files/10_broker_connections.sql, schema_files/12_journal_enhancements.sql |
-| `architect-principal` | 2 | app/src/core/router/AppRouter.tsx, app/src/core/services/gateway/UnifiedWebSocket.ts |
-| `devops-engineer` | 2 | docker-compose.prod.yml, docker-compose.yml |
-| `microservices` | 2 | docker-compose.prod.yml, docker-compose.yml |
+| `backend-fastapi` | 6766 | integral-expert-backend/.env, integral-expert-backend/.env.example, integral-expert-backend/Dockerfile … |
+| `security-audit` | 6601 | integral-market-backend/.env, integral-market-backend/.env.example, integral-market-backend/.python-version … |
+| `frontend-react` | 336 | app/src/core/config/app.config.ts, app/src/core/config/env.ts, app/src/core/config/routes.config.ts … |
+| `ui-ux-premium` | 323 | app/src/modules/academy-topics/AcademyTopicsRouter.tsx, app/src/modules/academy-topics/QuantsRouter.tsx, app/src/modules/academy-topics/data/academyTopics.ts … |
+| `copytrading-engine` | 165 | integral-expert-backend/.env, integral-expert-backend/.env.example, integral-expert-backend/Dockerfile … |
+| `mt5-integration` | 165 | integral-expert-backend/.env, integral-expert-backend/.env.example, integral-expert-backend/Dockerfile … |
+| `ai-optimization` | 103 | integral-market-intelligence/.env, integral-market-intelligence/.env.example, integral-market-intelligence/Dockerfile … |
+| `prompt-engineering` | 103 | integral-market-intelligence/.env, integral-market-intelligence/.env.example, integral-market-intelligence/Dockerfile … |
+| `quant-research` | 103 | integral-market-intelligence/.env, integral-market-intelligence/.env.example, integral-market-intelligence/Dockerfile … |
+| `change-detective` | 86 | schema_files/00_init.sql, schema_files/01_iam.sql, schema_files/05_journal.sql … |
+| `database-postgresql` | 86 | schema_files/00_init.sql, schema_files/01_iam.sql, schema_files/05_journal.sql … |
+| `frontend-trading-ui` | 72 | app/src/modules/expert/ExpertRouter.tsx, app/src/modules/expert/api/client.ts, app/src/modules/expert/api/imcharts.api.ts … |
+| `journal-analytics` | 72 | app/src/modules/expert/ExpertRouter.tsx, app/src/modules/expert/api/client.ts, app/src/modules/expert/api/imcharts.api.ts … |
+| `tradingview-integration` | 72 | app/src/modules/expert/ExpertRouter.tsx, app/src/modules/expert/api/client.ts, app/src/modules/expert/api/imcharts.api.ts … |
+| `architect-principal` | 13 | app/src/core/config/app.config.ts, app/src/core/config/env.ts, app/src/core/config/routes.config.ts … |
+| `devops-engineer` | 5 | docker-compose.dev.yml, docker-compose.local.yml, docker-compose.prod.yml … |
+| `microservices` | 5 | docker-compose.dev.yml, docker-compose.local.yml, docker-compose.prod.yml … |
+| `observability` | 4 | monitoring/alerts/integral_market.yml, monitoring/alerts/integral_market_alerts.yml, monitoring/dashboards/microservices-overview.json … |
+| `skill-builder` | 1 | software-factoryBuild.md |
 
 *New domains with no owning skill are candidates for `skill-builder` to codify
 into a new SKILL.md — keeping the library growing as the project grows.*

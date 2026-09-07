@@ -1,3 +1,8 @@
+---
+name: software-developer
+description: Software Developer (General) — Institutional capability and runbook for software-developer.
+---
+
 # SKILL: Software Developer (General)
 ## Domain: Code Quality, Patterns, Debugging, Code Review, Refactoring
 

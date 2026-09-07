@@ -1,3 +1,8 @@
+---
+name: redis-streams
+description: Redis Streams Engineer — Institutional capability and runbook for redis-streams.
+---
+
 # SKILL: Redis Streams Engineer
 ## Domain: Durable Messaging, Consumer Groups, Rate Limiting, Cache Patterns
 

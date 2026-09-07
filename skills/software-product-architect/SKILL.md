@@ -1,3 +1,8 @@
+---
+name: software-product-architect
+description: Software Product Architect — Institutional capability and runbook for software-product-architect.
+---
+
 # SKILL: Software Product Architect
 ## Domain: Product Vision, Feature Scoping, Roadmap, User Stories, PRD
 
