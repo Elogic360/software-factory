@@ -1,0 +1,348 @@
+{
+  "updated_at": 1788778646.367101,
+  "count": 57,
+  "items": [
+    {
+      "id": "ai-optimization",
+      "name": "Ai Optimization",
+      "description": "AI Optimization Engineer \u2014 Institutional capability and runbook for ai-optimization.",
+      "path": "skills/ai-optimization"
+    },
+    {
+      "id": "architect-discovery",
+      "name": "Architect Discovery",
+      "description": "Architecture Discovery Skill \u2014 Institutional capability and runbook for architect-discovery.",
+      "path": "skills/architect-discovery"
+    },
+    {
+      "id": "architect-principal",
+      "name": "Architect Principal",
+      "description": "Principal Software Architect \u2014 Institutional capability and runbook for architect-principal.",
+      "path": "skills/architect-principal"
+    },
+    {
+      "id": "backend-fastapi",
+      "name": "Backend Fastapi",
+      "description": "",
+      "path": "skills/backend-fastapi"
+    },
+    {
+      "id": "change-detective",
+      "name": "Change Detective",
+      "description": "Change Detective \u2014 Institutional capability and runbook for change-detective.",
+      "path": "skills/change-detective"
+    },
+    {
+      "id": "context-engineering",
+      "name": "Context Engineering",
+      "description": "Context Engineering \u2014 Institutional capability and runbook for context-engineering.",
+      "path": "skills/context-engineering"
+    },
+    {
+      "id": "copytrading-engine",
+      "name": "Copytrading Engine",
+      "description": "Copy Trading Engine Engineer \u2014 Institutional capability and runbook for copytrading-engine.",
+      "path": "skills/copytrading-engine"
+    },
+    {
+      "id": "database-postgresql",
+      "name": "Database Postgresql",
+      "description": "Database Engineer \u2014 PostgreSQL / TimescaleDB \u2014 Institutional capability and runbook for database-postgresql.",
+      "path": "skills/database-postgresql"
+    },
+    {
+      "id": "devops-engineer",
+      "name": "Devops Engineer",
+      "description": "",
+      "path": "skills/devops-engineer"
+    },
+    {
+      "id": "drawio-diagrams",
+      "name": "Drawio Diagrams",
+      "description": "Generate valid, beautiful draw.io architecture diagrams using declarative layout engines.",
+      "path": "skills/drawio-diagrams"
+    },
+    {
+      "id": "event-driven-architecture",
+      "name": "Event Driven Architecture",
+      "description": "Event-Driven Architecture Engineer \u2014 Institutional capability and runbook for event-driven-architecture.",
+      "path": "skills/event-driven-architecture"
+    },
+    {
+      "id": "frontend-react",
+      "name": "Frontend React",
+      "description": "",
+      "path": "skills/frontend-react"
+    },
+    {
+      "id": "frontend-trading-ui",
+      "name": "Frontend Trading Ui",
+      "description": "Frontend Trading UI Engineer \u2014 Institutional capability and runbook for frontend-trading-ui.",
+      "path": "skills/frontend-trading-ui"
+    },
+    {
+      "id": "im-agent-orchestration",
+      "name": "Im Agent Orchestration",
+      "description": "Multi-agent coordination, handoffs, and token economics",
+      "path": "skills/im-agent-orchestration"
+    },
+    {
+      "id": "im-api-contracts",
+      "name": "Im Api Contracts",
+      "description": "OpenAPI schemas, Pydantic validation, and frontend-backend parity",
+      "path": "skills/im-api-contracts"
+    },
+    {
+      "id": "im-architecture",
+      "name": "Im Architecture",
+      "description": "Architecture patterns, C4 models, and cross-service contracts for Integral Market",
+      "path": "skills/im-architecture"
+    },
+    {
+      "id": "im-backtesting",
+      "name": "Im Backtesting",
+      "description": "Event-driven backtesting, tick simulation, and strategy performance evaluation",
+      "path": "skills/im-backtesting"
+    },
+    {
+      "id": "im-fastapi",
+      "name": "Im Fastapi",
+      "description": "FastAPI async endpoints, lifespan events, middleware, and dependency injection",
+      "path": "skills/im-fastapi"
+    },
+    {
+      "id": "im-market-data",
+      "name": "Im Market Data",
+      "description": "Normalization, streaming, and REST fetching across AlphaVantage, Yahoo, FRED, and Crypto",
+      "path": "skills/im-market-data"
+    },
+    {
+      "id": "im-observability",
+      "name": "Im Observability",
+      "description": "Sentry telemetry, structured logging, latency tracing, and health monitoring",
+      "path": "skills/im-observability"
+    },
+    {
+      "id": "im-postgres",
+      "name": "Im Postgres",
+      "description": "PostgreSQL schema migrations, indexing, and connection pool management",
+      "path": "skills/im-postgres"
+    },
+    {
+      "id": "im-rag",
+      "name": "Im Rag",
+      "description": "RAG vector retrieval, Qdrant indexing, and document chunking for market intelligence",
+      "path": "skills/im-rag"
+    },
+    {
+      "id": "im-react",
+      "name": "Im React",
+      "description": "React 19 / 18, Vite bundling, Tailwind design system, and state management",
+      "path": "skills/im-react"
+    },
+    {
+      "id": "im-redis",
+      "name": "Im Redis",
+      "description": "Valkey / Redis pub/sub, market feed caching, and session storage",
+      "path": "skills/im-redis"
+    },
+    {
+      "id": "im-release-gate",
+      "name": "Im Release Gate",
+      "description": "Zero-regression testing, CI/CD gates, and staging verification",
+      "path": "skills/im-release-gate"
+    },
+    {
+      "id": "im-repository-analysis",
+      "name": "Im Repository Analysis",
+      "description": "Deep analysis and mapping of Integral Market and Elogic360 repositories",
+      "path": "skills/im-repository-analysis"
+    },
+    {
+      "id": "im-security",
+      "name": "Im Security",
+      "description": "JWT identity protection, bcrypt hashing, OWASP top 10 compliance",
+      "path": "skills/im-security"
+    },
+    {
+      "id": "im-sensei",
+      "name": "Im Sensei",
+      "description": "IM-Sensei multi-agent system, reasoning badges, and prompt engineering",
+      "path": "skills/im-sensei"
+    },
+    {
+      "id": "im-software-factory",
+      "name": "Im Software Factory",
+      "description": "Autonomous tool provisioning, MCP registry, and skills catalog management",
+      "path": "skills/im-software-factory"
+    },
+    {
+      "id": "im-timescaledb",
+      "name": "Im Timescaledb",
+      "description": "Hypertables, time-series candle compression, and analytical queries",
+      "path": "skills/im-timescaledb"
+    },
+    {
+      "id": "im-tool-risk-policy",
+      "name": "Im Tool Risk Policy",
+      "description": "Governance, 4-tier risk classification, and boundary enforcement",
+      "path": "skills/im-tool-risk-policy"
+    },
+    {
+      "id": "im-trading-journal",
+      "name": "Im Trading Journal",
+      "description": "Trade logging, psychometric tagging, metrics tracking, and MT5 sync",
+      "path": "skills/im-trading-journal"
+    },
+    {
+      "id": "im-trading-risk",
+      "name": "Im Trading Risk",
+      "description": "Position sizing, portfolio drawdowns, VaR, and risk management policies",
+      "path": "skills/im-trading-risk"
+    },
+    {
+      "id": "interactive-dev",
+      "name": "Interactive Dev",
+      "description": "Interactive Development \u2014 Institutional capability and runbook for interactive-dev.",
+      "path": "skills/interactive-dev"
+    },
+    {
+      "id": "journal-analytics",
+      "name": "Journal Analytics",
+      "description": "Journal Analytics Engineer \u2014 Institutional capability and runbook for journal-analytics.",
+      "path": "skills/journal-analytics"
+    },
+    {
+      "id": "kubernetes-ops",
+      "name": "Kubernetes Ops",
+      "description": "",
+      "path": "skills/kubernetes-ops"
+    },
+    {
+      "id": "microservices",
+      "name": "Microservices",
+      "description": "",
+      "path": "skills/microservices"
+    },
+    {
+      "id": "mt5-integration",
+      "name": "Mt5 Integration",
+      "description": "",
+      "path": "skills/mt5-integration"
+    },
+    {
+      "id": "mt5-scalability",
+      "name": "Mt5 Scalability",
+      "description": "",
+      "path": "skills/mt5-scalability"
+    },
+    {
+      "id": "nvidia",
+      "name": "Nvidia",
+      "description": "NVIDIA GPU acceleration, TAO training workflows, and Omniverse simulation skills pack.",
+      "path": "skills/nvidia"
+    },
+    {
+      "id": "observability",
+      "name": "Observability",
+      "description": "",
+      "path": "skills/observability"
+    },
+    {
+      "id": "performance-engineering",
+      "name": "Performance Engineering",
+      "description": "Performance Engineering \u2014 Institutional capability and runbook for performance-engineering.",
+      "path": "skills/performance-engineering"
+    },
+    {
+      "id": "prompt-engineering",
+      "name": "Prompt Engineering",
+      "description": "Prompt Engineering \u2014 Institutional capability and runbook for prompt-engineering.",
+      "path": "skills/prompt-engineering"
+    },
+    {
+      "id": "quant-research",
+      "name": "Quant Research",
+      "description": "Quantitative Research Engineer \u2014 Institutional capability and runbook for quant-research.",
+      "path": "skills/quant-research"
+    },
+    {
+      "id": "redis-streams",
+      "name": "Redis Streams",
+      "description": "Redis Streams Engineer \u2014 Institutional capability and runbook for redis-streams.",
+      "path": "skills/redis-streams"
+    },
+    {
+      "id": "security-audit",
+      "name": "Security Audit",
+      "description": "Security Audit Engineer \u2014 Institutional capability and runbook for security-audit.",
+      "path": "skills/security-audit"
+    },
+    {
+      "id": "seo-optimizer",
+      "name": "Seo Optimizer",
+      "description": "SEO Engineer \u2014 Fintech Platform \u2014 Institutional capability and runbook for seo-optimizer.",
+      "path": "skills/seo-optimizer"
+    },
+    {
+      "id": "skill-builder",
+      "name": "Skill Builder",
+      "description": "Skill Builder \u2014 Meta-Skill \u2014 Institutional capability and runbook for skill-builder.",
+      "path": "skills/skill-builder"
+    },
+    {
+      "id": "snippe-integration",
+      "name": "Snippe Integration",
+      "description": "Build integrations with Snippe (api.snippe.sh), a Tanzania payment processing API. Use this skill whenever the user mentions Snippe, is working on payment integrations for Tanzania (mobile money via M-Pesa, Airtel Money, Mixx by Yas, Halotel; credit/debit cards via Visa/Mastercard; dynamic QR codes), needs to accept TZS payments, sends payouts to Tanzanian mobile wallets or banks (CRDB, NMB, NBC, ABSA, Equity, KCB, Stanbic, etc.), verifies Snippe webhooks, or handles Snippe errors and idempotency. Covers the v2026-01-25 API \u2014 authentication, payments, hosted checkout sessions, disbursements, webhooks, and error handling.",
+      "path": "skills/snippe-integration"
+    },
+    {
+      "id": "software-developer",
+      "name": "Software Developer",
+      "description": "Software Developer (General) \u2014 Institutional capability and runbook for software-developer.",
+      "path": "skills/software-developer"
+    },
+    {
+      "id": "software-product-architect",
+      "name": "Software Product Architect",
+      "description": "Software Product Architect \u2014 Institutional capability and runbook for software-product-architect.",
+      "path": "skills/software-product-architect"
+    },
+    {
+      "id": "software-product-tester",
+      "name": "Software Product Tester",
+      "description": "Software & Product Tester \u2014 Institutional capability and runbook for software-product-tester.",
+      "path": "skills/software-product-tester"
+    },
+    {
+      "id": "testing-e2e",
+      "name": "Testing E2E",
+      "description": "",
+      "path": "skills/testing-e2e"
+    },
+    {
+      "id": "testing-load",
+      "name": "Testing Load",
+      "description": "Load Testing Engineer \u2014 Institutional capability and runbook for testing-load.",
+      "path": "skills/testing-load"
+    },
+    {
+      "id": "tradingview-integration",
+      "name": "Tradingview Integration",
+      "description": "TradingView Integration Engineer \u2014 Institutional capability and runbook for tradingview-integration.",
+      "path": "skills/tradingview-integration"
+    },
+    {
+      "id": "ui-ux-premium",
+      "name": "Ui Ux Premium",
+      "description": "UI/UX Designer \u2014 Premium Trading Interface \u2014 Institutional capability and runbook for ui-ux-premium.",
+      "path": "skills/ui-ux-premium"
+    },
+    {
+      "id": "websocket-realtime",
+      "name": "Websocket Realtime",
+      "description": "WebSocket & Realtime Engineer \u2014 Institutional capability and runbook for websocket-realtime.",
+      "path": "skills/websocket-realtime"
+    }
+  ]
+}

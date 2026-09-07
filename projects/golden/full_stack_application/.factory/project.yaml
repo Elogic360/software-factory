@@ -1,0 +1,23 @@
+archetype: full_stack_application
+gates:
+- G0
+- G1
+- G2
+- G3
+- G5
+- G6
+- G7
+- G8
+- G9
+- G10
+- G13
+- G14
+- G15
+name: Full-Stack Enterprise Web Application
+status: INITIALIZED
+tech_stack:
+- React 19
+- FastAPI
+- PostgreSQL
+- Docker
+- Playwright

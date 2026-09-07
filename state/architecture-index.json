@@ -1,0 +1,15 @@
+{
+  "updated_at": 1788778646.3816648,
+  "c4_layers": [
+    "C1_Context",
+    "C2_Container",
+    "C3_Component",
+    "C4_Code"
+  ],
+  "supported_diagrams": [
+    "Mermaid",
+    "Draw.io",
+    "C4Context"
+  ],
+  "drift_engine": "ACTIVE"
+}

@@ -1,0 +1,17 @@
+archetype: event_driven
+gates:
+- G0
+- G2
+- G3
+- G7
+- G8
+- G11
+- G14
+- G15
+name: Event-Driven Realtime Streaming Gateway
+status: INITIALIZED
+tech_stack:
+- FastAPI
+- Redis Streams
+- TimescaleDB
+- OpenTelemetry

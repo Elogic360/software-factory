@@ -1,0 +1,42 @@
+{
+  "updated_at": 1788778646.3814738,
+  "active_neurons_count": 28,
+  "neurons": [
+    "Project",
+    "Architecture",
+    "Specification",
+    "Decision",
+    "Task",
+    "Implementation",
+    "CodeKnowledge",
+    "Component",
+    "Skill",
+    "MCP",
+    "Tool",
+    "Documentation",
+    "Dependency",
+    "Test",
+    "Failure",
+    "Incident",
+    "Deployment",
+    "Security",
+    "Performance",
+    "UX",
+    "Domain",
+    "Agent",
+    "Prompt",
+    "Context",
+    "Loop",
+    "Research",
+    "Learning",
+    "Factory"
+  ],
+  "supported_scopes": [
+    "GLOBAL",
+    "PROJECT",
+    "TEAM",
+    "USER",
+    "TASK",
+    "SESSION"
+  ]
+}

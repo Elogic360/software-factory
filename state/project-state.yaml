@@ -1,0 +1,13 @@
+active_work_orders: 0
+current_project: default
+current_stage: STAGE_TESTING_VERIFICATION
+passed_quality_gates:
+- G0
+- G1
+- G2
+- G3
+- G4
+- G5
+- G6
+- G7
+updated_at: 1788778646.3835602

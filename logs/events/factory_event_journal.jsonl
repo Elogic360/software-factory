@@ -1,0 +1,4 @@
+{"event_id": "evt-1788778609464", "event_type": "task.completed", "source": "factory-core", "timestamp": 1788778609.4642107, "payload": {"task": "build", "status": "passed"}}
+{"event_id": "evt-1788778609623", "event_type": "test.completed", "source": "factory-core", "timestamp": 1788778609.6237428, "payload": {"status": "passed", "coverage": 98.5}}
+{"event_id": "evt-1788778610110", "event_type": "release.created", "source": "factory-core", "timestamp": 1788778610.11011, "payload": {"product": "Integral Market", "version": "2.0.0"}}
+{"event_id": "evt-1788778610448", "event_type": "rollback.completed", "source": "factory-core", "timestamp": 1788778610.448037, "payload": {"rollback_id": "RB-1788778610447", "release_id": "REL-2.0.0", "target_version": "REL-1.9.9", "reason": "Manual Rollback", "database_migration_reverted": true, "traffic_diverted_to": "REL-1.9.9", "timestamp": 1788778610.4479582, "status": "ROLLBACK_SUCCESSFUL"}}

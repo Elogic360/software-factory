@@ -1,0 +1,21 @@
+archetype: database_heavy_application
+gates:
+- G0
+- G1
+- G2
+- G3
+- G5
+- G6
+- G7
+- G8
+- G11
+- G14
+- G15
+name: Database-Heavy Analytical Time-Series Platform
+status: INITIALIZED
+tech_stack:
+- TimescaleDB
+- PostgreSQL
+- SQLAlchemy
+- Alembic
+- Pytest

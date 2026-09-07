@@ -1,0 +1,20 @@
+archetype: ai_application
+gates:
+- G0
+- G1
+- G2
+- G3
+- G5
+- G6
+- G7
+- G8
+- G10
+- G14
+- G15
+name: AI Agent & RAG Intelligence Platform
+status: INITIALIZED
+tech_stack:
+- FastAPI
+- Qdrant
+- Sentence-Transformers
+- Pytest

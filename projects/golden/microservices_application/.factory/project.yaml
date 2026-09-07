@@ -1,0 +1,24 @@
+archetype: microservices_application
+gates:
+- G0
+- G1
+- G2
+- G3
+- G4
+- G5
+- G6
+- G7
+- G8
+- G10
+- G11
+- G12
+- G14
+- G15
+name: Distributed Microservices Ecosystem
+status: INITIALIZED
+tech_stack:
+- FastAPI
+- Go
+- gRPC
+- Docker Compose
+- Kong Gateway

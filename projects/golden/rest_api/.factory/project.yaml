@@ -1,0 +1,19 @@
+archetype: rest_api
+gates:
+- G0
+- G1
+- G2
+- G3
+- G5
+- G6
+- G7
+- G10
+- G14
+- G15
+name: Simple REST API
+status: INITIALIZED
+tech_stack:
+- FastAPI
+- Pydantic V2
+- SQLite/PostgreSQL
+- Pytest

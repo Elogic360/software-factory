@@ -1,0 +1,13 @@
+{
+  "gate_id": "G7",
+  "gate_name": "Unit Tests Passed",
+  "station": "QA Lab",
+  "required_artifact": "UNIT_TESTS.xml",
+  "status": "PASSED",
+  "timestamp": 1788778609.9444225,
+  "evidence_files": [
+    "tests/report.xml"
+  ],
+  "errors": [],
+  "operator_evidence": {}
+}

@@ -1,0 +1,17 @@
+archetype: react_application
+gates:
+- G0
+- G1
+- G3
+- G6
+- G7
+- G9
+- G14
+- G15
+name: React Interactive Web App
+status: INITIALIZED
+tech_stack:
+- React 19
+- Vite
+- TailwindCSS
+- Playwright

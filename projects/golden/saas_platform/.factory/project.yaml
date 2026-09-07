@@ -1,0 +1,25 @@
+archetype: saas_platform
+gates:
+- G0
+- G1
+- G2
+- G3
+- G4
+- G5
+- G6
+- G7
+- G8
+- G9
+- G10
+- G12
+- G13
+- G14
+- G15
+name: SaaS Multi-Tenant Application
+status: INITIALIZED
+tech_stack:
+- Next.js
+- FastAPI
+- PostgreSQL
+- Stripe
+- Redis
