@@ -1,0 +1,35 @@
+capability_id: spec-kit
+name: Spec Kit & Speckit Agent Skills
+version: 0.1.0
+category: specification
+status: ACTIVE
+trust_level: VERIFIED
+upstream:
+  spec_kit_repo: https://github.com/github/spec-kit
+  speckit_skills_repo: https://github.com/dceoy/speckit-agent-skills
+  license: MIT
+  agent_agnostic: true
+  supported_agents:
+  - Claude Code
+  - Codex CLI
+  - Cursor
+  - GitHub Copilot CLI
+  - OpenCode
+  - Gemini CLI
+  - Antigravity
+description: Reference Spec-Driven Development toolkit (constitution -> specify ->
+  clarify -> plan -> tasks -> implement). Canonical specification backbone.
+components:
+- speckit-constitution
+- speckit-specify
+- speckit-clarify
+- speckit-plan
+- speckit-tasks
+commands:
+  specify: spec-kit specify --input requirements.md
+  clarify: spec-kit clarify --spec spec.md
+  plan: spec-kit plan --spec spec.md
+  tasks: spec-kit tasks --plan plan.md
+healthcheck:
+  command: python3 capabilities/specification/spec_kit/healthcheck.py
+  expected_status: HEALTHY

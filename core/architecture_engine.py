@@ -160,3 +160,78 @@ class ArchitectureEngine:
         cells.append('</mxGraphModel>')
         return "\n".join(cells)
 
+    def validate_diagram_layout(self, drawio_xml: str) -> Dict[str, Any]:
+        """Validates Draw.io XML for layout collisions, label boundary violations, and orphan nodes."""
+        import re
+        import xml.etree.ElementTree as ET
+
+        collisions = []
+        boundary_violations = []
+        nodes = []
+
+        try:
+            root = ET.fromstring(drawio_xml)
+            for cell in root.iter('mxCell'):
+                geo = cell.find('mxGeometry')
+                if geo is not None and cell.get('vertex') == '1':
+                    try:
+                        x = float(geo.get('x', 0))
+                        y = float(geo.get('y', 0))
+                        w = float(geo.get('width', 0))
+                        h = float(geo.get('height', 0))
+                        node_id = cell.get('id')
+                        nodes.append({'id': node_id, 'x': x, 'y': y, 'w': w, 'h': h})
+                        if x < 0 or y < 0:
+                            boundary_violations.append(f"Node {node_id} has negative coordinates ({x}, {y})")
+                    except ValueError:
+                        continue
+
+            # Collision check between sibling nodes
+            for i in range(len(nodes)):
+                for j in range(i + 1, len(nodes)):
+                    n1, n2 = nodes[i], nodes[j]
+                    # Check if bounding boxes intersect (excluding root boundary container)
+                    if n1['id'] in ['0', '1', '2'] or n2['id'] in ['0', '1', '2']:
+                        continue
+                    if (n1['x'] < n2['x'] + n2['w'] and n1['x'] + n1['w'] > n2['x'] and
+                        n1['y'] < n2['y'] + n2['h'] and n1['y'] + n1['h'] > n2['y']):
+                        collisions.append(f"Collision between Node {n1['id']} and Node {n2['id']}")
+
+        except Exception as e:
+            return {"valid": False, "error": f"Malformed Draw.io XML: {str(e)}"}
+
+        is_valid = len(collisions) == 0 and len(boundary_violations) == 0
+        return {
+            "valid": is_valid,
+            "total_nodes_checked": len(nodes),
+            "collisions": collisions,
+            "boundary_violations": boundary_violations,
+            "verdict": "APPROVED" if is_valid else "LAYOUT_DEFECTS_DETECTED"
+        }
+
+    def convert_mermaid_to_drawio_xml(self, mermaid_code: str) -> str:
+        """Translates Mermaid flowchart/graph syntax into valid Draw.io XML model."""
+        import re
+        lines = [l.strip() for l in mermaid_code.splitlines() if l.strip() and not l.startswith("%%")]
+        nodes = {}
+        edges = []
+
+        for line in lines:
+            if any(line.startswith(k) for k in ["graph", "flowchart"]):
+                continue
+            # Match A[Label] --> B[Label] or A --> B
+            edge_match = re.search(r'([A-Za-z0-9_]+)(?:\[(.*?)\])?\s*-->\s*([A-Za-z0-9_]+)(?:\[(.*?)\])?', line)
+            if edge_match:
+                src_id, src_lbl, dst_id, dst_lbl = edge_match.groups()
+                nodes[src_id] = src_lbl or src_id
+                nodes[dst_id] = dst_lbl or dst_id
+                edges.append((src_id, dst_id))
+            else:
+                node_match = re.search(r'([A-Za-z0-9_]+)\[(.*?)\]', line)
+                if node_match:
+                    nodes[node_match.group(1)] = node_match.group(2)
+
+        containers = [{"name": lbl, "tech": "Service", "description": nid} for nid, lbl in nodes.items()]
+        c4_stub = {"product": "Converted Mermaid System", "c2_containers": containers}
+        return self.generate_drawio_architecture(c4_stub)
+

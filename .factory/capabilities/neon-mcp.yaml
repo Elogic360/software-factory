@@ -1,0 +1,14 @@
+capability_id: neon-mcp
+name: Neon Serverless Postgres MCP
+version: 1.0.0
+category: database
+status: ACTIVE
+trust_level: VERIFIED
+upstream:
+  endpoint: mcp.neon.tech
+  type: Hosted OAuth MCP Server
+  provider: Neon Inc.
+features:
+- Instant branch-based copy-on-write database isolation
+- Safe migration rehearsal against production-shaped clone
+- Automated branch tear-down after test verification

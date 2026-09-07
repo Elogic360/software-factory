@@ -1,0 +1,21 @@
+capability_id: postman-mcp
+name: Postman MCP Contract Testing Server
+version: 1.0.0
+category: api
+status: ACTIVE
+trust_level: VERIFIED
+upstream:
+  repo: https://github.com/postmanlabs/postman-mcp
+  license: Apache-2.0
+default_profile: minimal
+profiles:
+  minimal:
+    tools:
+    - run_collection
+    - verify_contract
+    - inspect_response_schema
+    token_footprint: minimal (< 2k tokens per verification loop)
+  full:
+    tools:
+    - all
+    token_footprint: heavy (escalate only on contract drift)

@@ -1,0 +1,14 @@
+capability_id: anthropic-reference-postgres-mcp
+name: Anthropic Reference Postgres MCP Server
+version: 0.1.0
+category: database
+status: BLOCKED
+trust_level: DEPRECATED_INSECURE
+upstream:
+  repo: https://github.com/modelcontextprotocol/servers/tree/main/src/postgres
+  status: ARCHIVED
+block_reason: 'CRITICAL SAFETY DEFECT: Independent audits proved read-only mode does
+  not prevent multi-statement transaction execution (e.g., COMMIT; DROP SCHEMA public
+  CASCADE). Unsafe for production and agent use.'
+remediation: Use crystaldba/postgres-mcp in restricted mode or Neon MCP branch-based
+  migrations.

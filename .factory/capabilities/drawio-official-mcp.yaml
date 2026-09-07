@@ -1,0 +1,26 @@
+capability_id: drawio-official-mcp
+name: Official draw.io MCP Server (@drawio/mcp)
+version: 1.0.0
+category: architecture
+status: ACTIVE
+trust_level: VERIFIED
+upstream:
+  repo: https://github.com/jgraph/drawio-mcp
+  npm_package: '@drawio/mcp'
+  license: Apache-2.0
+  modes:
+  - Local MCP Tool Server (npx -y @drawio/mcp)
+  - Hosted MCP App Server (https://mcp.draw.io/mcp)
+  - Claude Code / Codex CLI plugin generating .drawio files with PNG/SVG/PDF export
+  - Zero-install Python compression/encoding mode
+features:
+- Native .drawio XML generation and parsing
+- Direct Mermaid.js to draw.io conversion
+- Searchable 10,000+ shape library (AWS, Azure, GCP, Cisco, Kubernetes, BPMN)
+- Diagram layout validation (collision detection, boundary check)
+commands:
+  tool_server: npx -y @drawio/mcp
+  app_server: https://mcp.draw.io/mcp
+healthcheck:
+  command: python3 capabilities/architecture/drawio/healthcheck.py
+  expected_status: HEALTHY

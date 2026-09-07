@@ -1,0 +1,11 @@
+capability_id: docker-container-runtime
+name: Docker Container & Multi-Service Engine
+version: 24.0.0
+category: devops
+status: ACTIVE
+trust_level: VERIFIED
+production_law:
+  observable: true
+  reversible: true
+  rollback_command: docker compose rollback || docker compose down && docker compose
+    up -d --build

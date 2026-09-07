@@ -1,0 +1,22 @@
+capability_id: playwright-mcp
+name: Microsoft Playwright MCP Server (@playwright/mcp)
+version: 1.0.0
+category: browser
+status: ACTIVE
+trust_level: VERIFIED
+upstream:
+  repo: https://github.com/microsoft/playwright-mcp
+  npm_package: '@playwright/mcp'
+  license: Apache-2.0
+  vendor: Microsoft
+role: Driving & E2E Testing
+features:
+- User flow simulation (click, fill, hover, select, drag)
+- Accessibility tree snapshot inspection (no heavy vision model needed)
+- Cross-browser rendering (Chromium, Firefox, WebKit, Edge)
+- Deterministic export into reusable Playwright test suites
+commands:
+  run: npx -y @playwright/mcp
+healthcheck:
+  command: python3 capabilities/browser/playwright-mcp/healthcheck.py
+  expected_status: HEALTHY

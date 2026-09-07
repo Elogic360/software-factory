@@ -1,0 +1,9 @@
+{
+  "url": "http://localhost:3000/orders",
+  "standard": "WCAG 2.2 Level AA",
+  "evaluated_at": 1788782221.9944975,
+  "total_violations": 0,
+  "critical_violations": 0,
+  "violations": [],
+  "verdict": "PASSED"
+}

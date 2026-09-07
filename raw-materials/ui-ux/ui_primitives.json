@@ -9,11 +9,19 @@
       "danger": "#ef4444",
       "background_dark": "#0b0f19",
       "surface_dark": "#111827",
-      "border_dark": "#1f2937"
+      "border_dark": "#1f2937",
+      "text_primary": "#f8fafc",
+      "text_secondary": "#94a3b8"
     },
     "typography": {
       "font_sans": "Inter, system-ui, sans-serif",
       "font_mono": "JetBrains Mono, Menlo, monospace"
+    },
+    "responsive": {
+      "mobile": "320px",
+      "tablet": "768px",
+      "desktop": "1024px",
+      "wide": "1440px"
     }
   },
   "primitives": [

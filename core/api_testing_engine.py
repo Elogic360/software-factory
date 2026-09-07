@@ -256,3 +256,43 @@ class APITestingEngine:
             trace_result["contract_details"] = check
 
         return trace_result
+
+    def generate_contract_tests_from_spec(self, spec: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Generates automated contract test cases from OpenAPI specification."""
+        test_cases = []
+        paths = spec.get("paths", {})
+
+        for path_url, path_item in paths.items():
+            for method, operation in path_item.items():
+                if method.upper() not in ["GET", "POST", "PUT", "PATCH", "DELETE"]:
+                    continue
+                op_id = operation.get("operationId", f"{method}_{path_url.replace('/', '_').strip('_')}")
+                responses = operation.get("responses", {})
+                for status_code in responses.keys():
+                    try:
+                        code_int = int(status_code)
+                    except ValueError:
+                        code_int = 200
+                    test_cases.append({
+                        "test_name": f"test_{op_id}_{code_int}",
+                        "endpoint": path_url,
+                        "method": method.upper(),
+                        "expected_status": code_int,
+                        "description": operation.get("summary", f"Verify {method.upper()} {path_url}")
+                    })
+        return test_cases
+
+    def get_postman_mcp_config(self, mode: str = "minimal") -> Dict[str, Any]:
+        """Returns Postman MCP server configuration with token-conserving Minimal profile."""
+        return {
+            "mode": mode,
+            "toolset": "minimal" if mode == "minimal" else "full",
+            "token_budget_impact": "low" if mode == "minimal" else "high",
+            "features_enabled": [
+                "run_collection",
+                "verify_contract",
+                "inspect_response_schema"
+            ],
+            "verbose_body_inspection": mode != "minimal"
+        }
+

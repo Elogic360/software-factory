@@ -1,0 +1,28 @@
+capability_id: postgres-mcp-pro
+name: Postgres MCP Pro (crystaldba/postgres-mcp)
+version: 1.2.0
+category: database
+status: ACTIVE
+trust_level: VERIFIED
+upstream:
+  repo: https://github.com/crystaldba/postgres-mcp
+  docker_image: crystaldba/postgres-mcp
+  license: MIT
+security_policy:
+  default_access_mode: restricted
+  enforce_restricted_by_default: true
+  unrestricted_requires_human_confirmation: true
+  disposable_sandbox_required_for_ddl: true
+features:
+- Schema-aware SQL generation
+- Cost-based index tuning recommendations
+- EXPLAIN plan analysis and query bottleneck isolation
+- Vacuum health and table bloat detection
+- Strict restricted read-only SQL AST verification
+commands:
+  docker_run: docker run -i --rm -e DATABASE_URI="$DATABASE_URI" crystaldba/postgres-mcp
+    --access-mode=restricted
+  npx_run: npx -y postgres-mcp --access-mode=restricted
+healthcheck:
+  command: python3 capabilities/database/postgres-mcp/healthcheck.py
+  expected_status: HEALTHY

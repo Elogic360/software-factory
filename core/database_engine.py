@@ -272,3 +272,65 @@ class DatabaseEngine:
 
         report["evidence_file"] = str(artifact_path)
         return report
+
+    def validate_query_safety(
+        self,
+        sql: str,
+        access_mode: str = "restricted",
+        is_disposable_dev: bool = False,
+        human_confirmed: bool = False
+    ) -> Dict[str, Any]:
+        """Enforces database access mode invariants and prevents SQL injection/destructive actions."""
+        mode = access_mode.lower()
+
+        # Split multi-statements by semicolon (outside quotes)
+        statements = [s.strip() for s in re.split(r';(?=(?:[^\'"]*[\'"][^\'"]*[\'"])*[^\'"]*$)', sql) if s.strip()]
+
+        write_verbs = ["INSERT", "UPDATE", "DELETE", "DROP", "ALTER", "CREATE", "TRUNCATE", "GRANT", "REVOKE", "COMMIT", "ROLLBACK"]
+
+        if mode == "restricted":
+            for stmt in statements:
+                first_word = stmt.split()[0].upper() if stmt.split() else ""
+                if any(re.search(rf"\b{verb}\b", stmt, re.IGNORECASE) for verb in write_verbs):
+                    return {
+                        "allowed": False,
+                        "access_mode": "restricted",
+                        "verdict": "BLOCKED",
+                        "statement": stmt,
+                        "reason": f"Prohibited write/DDL verb in restricted read-only mode.",
+                        "remediation": "Switch to unrestricted mode only with explicit human authorization on disposable environments."
+                    }
+
+            return {
+                "allowed": True,
+                "access_mode": "restricted",
+                "verdict": "PERMITTED",
+                "statement_count": len(statements),
+                "reason": "Safe read-only / EXPLAIN query verified."
+            }
+
+        elif mode == "unrestricted":
+            if not (is_disposable_dev or human_confirmed):
+                return {
+                    "allowed": False,
+                    "access_mode": "unrestricted",
+                    "verdict": "BLOCKED_UNAUTHORIZED",
+                    "reason": "Unrestricted database write access requires explicit human confirmation or disposable development sandbox flag.",
+                    "remediation": "Provide --human-confirmed or execute against disposable dev instance."
+                }
+
+            return {
+                "allowed": True,
+                "access_mode": "unrestricted",
+                "verdict": "PERMITTED",
+                "human_confirmed": human_confirmed,
+                "is_disposable_dev": is_disposable_dev,
+                "reason": "Unrestricted write query authorized."
+            }
+
+        return {
+            "allowed": False,
+            "access_mode": access_mode,
+            "verdict": "UNKNOWN_MODE",
+            "reason": f"Unknown access mode '{access_mode}'. Must be 'restricted' or 'unrestricted'."
+        }

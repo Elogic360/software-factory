@@ -1,0 +1,10 @@
+capability_id: opentelemetry-collector
+name: OpenTelemetry Observability Collector & Exporter
+version: 1.0.0
+category: observability
+status: ACTIVE
+trust_level: VERIFIED
+features:
+- W3C distributed trace context propagation
+- Prometheus metrics exposition (/metrics endpoint)
+- Structured JSON logging with trace ID correlation

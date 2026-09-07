@@ -1,0 +1,19 @@
+capability_id: claude-bughunter
+name: Claude BugHunter Red-Team Vulnerability Auditor
+version: 1.0.0
+category: security
+status: ACTIVE
+trust_level: VERIFIED
+operational_boundary:
+  defensive_only: true
+  prohibited_use: Must never be used against third-party or unauthorized infrastructure.
+    Strictly restricted to pre-commit repository scanning and local sandbox penetration
+    audits.
+  authorized_target: Local codebase and staging environments
+upstream:
+  repo: https://github.com/elementalsouls/Claude-BugHunter
+  license: MIT
+features:
+- 82 red-team vulnerability detection skills
+- 24 vulnerability classes (SQLi, SSRF, IDOR, XSS, RCE, Auth bypass)
+- 681 bug pattern matching heuristics

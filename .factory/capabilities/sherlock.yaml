@@ -1,0 +1,14 @@
+capability_id: sherlock-osint
+name: Sherlock Defensive Exposure Auditor
+version: 0.14.3
+category: security
+status: ACTIVE
+trust_level: VERIFIED
+operational_boundary:
+  defensive_only: true
+  prohibited_use: Strictly for verifying that project-associated accounts or leaked
+    handles do not expose internal administrative surfaces.
+  authorized_target: Self-audited brand accounts and credentials
+upstream:
+  repo: https://github.com/sherlock-project/sherlock
+  license: MIT

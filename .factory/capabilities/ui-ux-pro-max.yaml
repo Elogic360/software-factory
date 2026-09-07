@@ -1,0 +1,17 @@
+capability_id: ui-ux-pro-max-skill
+name: UI/UX Pro Max Design Intelligence Skill
+version: 1.0.0
+category: ui-ux
+status: ACTIVE
+trust_level: VERIFIED
+upstream:
+  repo: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+  license: MIT
+features:
+- Accessible color palettes (WCAG 2.2 AA compliant contrast ratios >= 4.5:1)
+- Responsive typography scales and 8pt grid layout systems
+- Glassmorphism and dark/light mode token definitions
+- State progression (hover, focus, active, disabled, loading) specifications
+healthcheck:
+  command: python3 capabilities/ui-ux/ui-ux-pro-max/healthcheck.py
+  expected_status: HEALTHY
