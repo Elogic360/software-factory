@@ -1,0 +1,10 @@
+{
+  "drift_detected": true,
+  "total_inspected": 2,
+  "undocumented_endpoints": [
+    "POST /api/v1/unmapped_endpoint"
+  ],
+  "undocumented_statuses": [],
+  "schema_failures": [],
+  "timestamp": 1788789242.53806
+}

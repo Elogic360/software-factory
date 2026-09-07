@@ -1,0 +1,14 @@
+id: trading-engine
+name: Trading Engine
+category: backend
+status: REFERENCE
+language: Python
+version: "1.0.0"
+description: >
+  Reference implementation for trading-engine functionality. Single-file prototype
+  ready to be expanded into a full production module.
+entry_point: risk_engine.py
+dependencies: []
+use_cases:
+  - Baseline trading-engine implementation for new projects
+  - Reference for team conventions and patterns

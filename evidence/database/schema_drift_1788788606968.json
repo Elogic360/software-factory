@@ -1,0 +1,12 @@
+{
+  "drift_detected": true,
+  "missing_tables": [],
+  "extra_tables": [
+    "old_logs"
+  ],
+  "column_mismatches": [
+    "Table 'users': missing column 'is_active'."
+  ],
+  "status": "DRIFT_DETECTED",
+  "timestamp": 1788788606.968075
+}

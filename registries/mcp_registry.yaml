@@ -1,4 +1,5 @@
 mcp_servers:
+# ── CONTEXT INTELLIGENCE ───────────────────────────────────────────────────
 - id: codegraph
   name: CodeGraph AST Intelligence Server
   command: codegraph
@@ -6,8 +7,10 @@ mcp_servers:
   - mcp
   env: {}
   transport: stdio
-  description: Pre-indexed AST code knowledge graph supporting 20+ languages.
+  description: Pre-indexed AST code knowledge graph supporting 20+ languages. Auto-syncs on code changes. Targets Claude, Antigravity, Codex, Gemini, Cursor.
   security_level: low
+  permission_tier: T1
+  evaluation_status: PRODUCTION_APPROVED
   tools:
   - explore
   - query
@@ -16,6 +19,8 @@ mcp_servers:
   - callers
   - callees
   health_check: codegraph status
+  notes: "Requires git repo + AST index to be pre-initialized (codegraph init). Non-portable without init step."
+
 - id: gortex
   name: Gortex Multilingual Code Intelligence
   command: gortex
@@ -23,13 +28,17 @@ mcp_servers:
   - mcp
   env: {}
   transport: stdio
-  description: Graph-based code intelligence supporting 257 languages.
+  description: Graph-based code intelligence supporting 257 languages. Fallback for codegraph on non-JS/TS repos.
   security_level: low
+  permission_tier: T1
+  evaluation_status: VERIFIED
   tools:
   - search
   - impact
   - graph_query
   health_check: gortex version
+
+# ── DOCUMENTATION ──────────────────────────────────────────────────────────
 - id: context7
   name: Context7 Up-to-Date Documentation Server
   command: npx
@@ -40,10 +49,14 @@ mcp_servers:
   transport: stdio
   description: Live up-to-date documentation and code samples for frameworks.
   security_level: low
+  permission_tier: T1
+  evaluation_status: VERIFIED
   tools:
   - get_docs
   - search_docs
   health_check: npx -y @upstash/context7-mcp --version
+
+# ── BROWSER / QA ────────────────────────────────────────────────────────────
 - id: playwright
   name: Playwright Browser Automation Server
   command: npx
@@ -54,6 +67,8 @@ mcp_servers:
   transport: stdio
   description: Headless browser control, screenshot capture, and E2E validation.
   security_level: medium
+  permission_tier: T2
+  evaluation_status: VERIFIED
   tools:
   - navigate
   - click
@@ -61,6 +76,8 @@ mcp_servers:
   - screenshot
   - evaluate
   health_check: npx -y @executeautomation/playwright-mcp-server --help
+
+# ── SOURCE CONTROL ──────────────────────────────────────────────────────────
 - id: github
   name: GitHub API MCP Server
   command: npx
@@ -72,12 +89,16 @@ mcp_servers:
   transport: stdio
   description: GitHub PR creation, issue tracking, and repository operations.
   security_level: medium
+  permission_tier: T2
+  evaluation_status: VERIFIED
   tools:
   - create_pull_request
   - get_issue
   - create_issue
   - get_file_contents
   health_check: npx -y @modelcontextprotocol/server-github --version
+
+# ── QUANT / FINANCE ─────────────────────────────────────────────────────────
 - id: ziplime
   name: Ziplime Quantitative Backtesting MCP
   command: python3
@@ -88,10 +109,214 @@ mcp_servers:
   transport: stdio
   description: Financial simulation, backtesting execution, and risk calculations.
   security_level: medium
+  permission_tier: T2
+  evaluation_status: BLOCKED
   tools:
   - run_backtest
   - calculate_sharpe
   - simulate_portfolio
   health_check: python3 -c 'import ziplime; print(ziplime.__version__)'
-total_count: 6
-version: 2.0.0
+  notes: "Package missing from environment. Install: pip install ziplime"
+
+# ── MEMORY MCPs ─────────────────────────────────────────────────────────────
+- id: factory-memory-mcp
+  name: Factory Central Memory MCP (28-Neuron)
+  command: python3
+  args:
+  - ./mcp/memory_server.py
+  env: {}
+  transport: stdio
+  description: >
+    28-neuron central memory server: recall decisions, patterns, specs, ADRs.
+    Verified live stdio JSON-RPC 2.0 server. Portable to any project directory.
+  security_level: low
+  permission_tier: T1
+  evaluation_status: PRODUCTION_APPROVED
+  tools:
+  - remember
+  - recall
+  - search_memories
+  - promote_to_global
+  health_check: python3 -c "import json,subprocess; p=subprocess.Popen(['python3','./mcp/memory_server.py'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,text=True); p.stdin.write(json.dumps({'jsonrpc':'2.0','id':1,'method':'initialize','params':{}})+'\n'); p.stdin.flush(); print(p.stdout.readline())"
+
+# CANDIDATE — pending full evaluation pipeline
+- id: mcp-memory-service
+  name: MCP Memory Service (doobidoo)
+  command: python3
+  args:
+  - -m
+  - mcp_memory_service
+  env: {}
+  transport: stdio
+  description: >
+    [CANDIDATE] REST API + knowledge graph + autonomous consolidation (merges
+    stale memories). Integrates with LangGraph, CrewAI, AutoGen, and Claude.
+    Autonomous consolidation matches factory Central Memory quality-control design.
+  security_level: low
+  permission_tier: T1
+  evaluation_status: CANDIDATE
+  tools:
+  - store_memory
+  - recall_memory
+  - consolidate_memories
+  - search_graph
+  health_check: python3 -c 'import mcp_memory_service; print("ok")'
+  source: "https://github.com/doobidoo/mcp-memory-service"
+  evaluation_notes: >
+    Priority 1 candidate. Run full pipeline: license check → security scan
+    (SSRF/auth audit) → sandbox → functional test. Benchmark README notes
+    a dispute with MemPalace on LongMemEval — read full README before trusting
+    any benchmark headline. SSRF risk rating: unknown until scanned.
+
+# CANDIDATE — pending evaluation; Antigravity-explicit support
+- id: mcp-memory-fellowgeek
+  name: MCP Memory (fellowgeek — Antigravity-compatible)
+  command: python3
+  args:
+  - -m
+  - mcp_memory
+  env: {}
+  transport: stdio
+  description: >
+    [CANDIDATE] SQLite + FTS5, Markdown+YAML OKF v0.2 on-disk memory.
+    Explicitly targets Antigravity, Claude Desktop, Cursor, Windsurf, Codex.
+    Human-browsable files: strong fit for factory provenance/auditability req.
+  security_level: low
+  permission_tier: T1
+  evaluation_status: CANDIDATE
+  tools:
+  - remember
+  - recall
+  - search
+  - list_memories
+  health_check: python3 -c 'import mcp_memory; print("ok")'
+  source: "https://github.com/fellowgeek/mcp-memory"
+  evaluation_notes: >
+    Priority 2 candidate after doobidoo/mcp-memory-service. Local SQLite,
+    no telemetry, no API calls — lower SSRF surface. Evaluate as fallback or
+    complement (doobidoo for consolidation, fellowgeek for provenance).
+
+# ── CONTEXT-ENGINEERING MCPs ─────────────────────────────────────────────────
+- id: factory-architecture-mcp
+  name: Factory Architecture MCP
+  command: python3
+  args:
+  - ./mcp/architecture_mcp_server.py
+  env: {}
+  transport: stdio
+  description: C1-C4 architecture model generation, Mermaid rendering, Draw.io XML, and drift detection.
+  security_level: low
+  permission_tier: T1
+  evaluation_status: PRODUCTION_APPROVED
+  tools:
+  - generate_c4_model
+  - render_mermaid_diagram
+  - render_drawio_diagram
+  - detect_architecture_drift
+  health_check: python3 -c "import json,subprocess; p=subprocess.Popen(['python3','./mcp/architecture_mcp_server.py'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,text=True); p.stdin.write(json.dumps({'jsonrpc':'2.0','id':1,'method':'initialize','params':{}})+'\n'); p.stdin.flush(); print(p.stdout.readline())"
+
+# CANDIDATE
+- id: smart-context-mcp
+  name: Smart Context MCP (arrayo)
+  command: python3
+  args:
+  - -m
+  - smart_context_mcp
+  env: {}
+  transport: stdio
+  description: >
+    [CANDIDATE] Read/search/manage-context tools that compress instead of
+    dumping full files. Reports up to 46x compression (89% token reduction
+    on own project). Narrowly-scoped "targeted retrieval over full dumps."
+  security_level: low
+  permission_tier: T1
+  evaluation_status: CANDIDATE
+  tools:
+  - read_context
+  - search_context
+  - manage_context
+  health_check: python3 -c 'import smart_context_mcp; print("ok")'
+  source: "https://github.com/arrayo/smart-context-mcp"
+  evaluation_notes: >
+    Priority 1 context candidate. MIT license. Benchmark is self-reported (89%
+    on own project) — validate with factory's own corpus before trusting numbers.
+    No auth surface (read-only tools) → low SSRF exposure.
+
+# ── TOKEN-OPTIMIZATION MCPs ───────────────────────────────────────────────────
+- id: factory-token-optimizer-mcp
+  name: Factory Token Optimization MCP
+  command: python3
+  args:
+  - ./mcp/token_optimization_server.py
+  env: {}
+  transport: stdio
+  description: Context deduplication, tool output compression (head/tail trimming), and token savings measurement. Fixed in Sept 2026 — compress_tool_output bug resolved.
+  security_level: low
+  permission_tier: T1
+  evaluation_status: PRODUCTION_APPROVED
+  tools:
+  - optimize_context
+  - compress_tool_output
+  - measure_token_savings
+  health_check: python3 -c "import json,subprocess; p=subprocess.Popen(['python3','./mcp/token_optimization_server.py'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,text=True); p.stdin.write(json.dumps({'jsonrpc':'2.0','id':1,'method':'initialize','params':{}})+'\n'); p.stdin.flush(); print(p.stdout.readline())"
+
+# CANDIDATE — MCP-layer complement to RTK CLI proxy
+- id: headroom-mcp
+  name: Headroom MCP (log/trace/RAG compressor)
+  command: npx
+  args:
+  - -y
+  - headroom-mcp
+  env: {}
+  transport: stdio
+  description: >
+    [CANDIDATE] MCP-layer compression for large logs, stack traces, file
+    excerpts, RAG chunks, and agent handoff notes. Tools: headroom_compress,
+    headroom_retrieve, headroom_stats. Complements RTK (CLI-layer) — they
+    cover different token-bloat sources.
+  security_level: low
+  permission_tier: T1
+  evaluation_status: CANDIDATE
+  tools:
+  - headroom_compress
+  - headroom_retrieve
+  - headroom_stats
+  health_check: npx -y headroom-mcp --version
+  source: "Referenced in Codex/Claude ecosystem alongside rtk-ai/rtk"
+  evaluation_notes: >
+    Pair with rtk-ai/rtk (CLI layer) — current best-practice stack already
+    uses both together. Confirm exact npm package name before install;
+    referenced by description in ecosystem docs, not always by canonical
+    package name. Run security scan before registering.
+
+# CANDIDATE — narrowly-scoped data-format compressor
+- id: toon-parse-mcp
+  name: TOON Parse MCP (token-oriented notation)
+  command: python3
+  args:
+  - -m
+  - toon_parse_mcp
+  env: {}
+  transport: stdio
+  description: >
+    [CANDIDATE] Strips code comments/redundant spacing, converts
+    JSON/XML/YAML/CSV to compact TOON (Token-Oriented Object Notation).
+    Listed in official MCP Registry. Good for data-heavy tool outputs.
+  security_level: low
+  permission_tier: T1
+  evaluation_status: CANDIDATE
+  tools:
+  - parse_toon
+  - convert_to_toon
+  health_check: python3 -c 'import toon_parse_mcp; print("ok")'
+  source: "https://pypi.org/project/toon-parse-mcp/"
+  evaluation_notes: >
+    Register as specialized optimizer (not general-purpose). Narrow scope =
+    low risk. In official MCP Registry = some baseline vetting. Still run
+    factory security scan before activating.
+
+total_count: 17
+version: 2.1.0
+# Candidates pending evaluation pipeline: mcp-memory-service, mcp-memory-fellowgeek, smart-context-mcp, headroom-mcp, toon-parse-mcp
+# Deferred (duplication/consolidation decision needed): openwolf (memory+token overlap), LeanCTX (76 tools — evaluate vs. replacing narrower tools), ooples/token-optimizer-mcp (74 tools — sample-test before bulk registration)
+# Rejected (commercial-first): Hjarni, Supermemory, Letta, Zep-hosted, Mem0-managed

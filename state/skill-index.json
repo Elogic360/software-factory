@@ -1,12 +1,18 @@
 {
-  "updated_at": 1788782448.3101532,
-  "count": 57,
+  "updated_at": 1788791695.7789705,
+  "count": 68,
   "items": [
     {
       "id": "ai-optimization",
       "name": "Ai Optimization",
       "description": "AI Optimization Engineer \u2014 Institutional capability and runbook for ai-optimization.",
       "path": "skills/ai-optimization"
+    },
+    {
+      "id": "app-flow-mapping",
+      "name": "App Flow Mapping",
+      "description": "App Flow Mapping \u2014 Maps end-to-end user journeys, screen progression, decision branches, error/empty states, and enforces zero-orphan-screen parity with UI/UX specs.",
+      "path": "skills/app-flow-mapping"
     },
     {
       "id": "architect-discovery",
@@ -19,6 +25,12 @@
       "name": "Architect Principal",
       "description": "Principal Software Architect \u2014 Institutional capability and runbook for architect-principal.",
       "path": "skills/architect-principal"
+    },
+    {
+      "id": "backend-architecture-document",
+      "name": "Backend Architecture Document",
+      "description": "Backend Architecture Document Authoring \u2014 Specifies service and module boundaries, API surface, async queues, multi-tier caching, circuit breaking, and security perimeters aligned with C4 Container/Component models.",
+      "path": "skills/backend-architecture-document"
     },
     {
       "id": "backend-fastapi",
@@ -201,6 +213,12 @@
       "path": "skills/im-trading-risk"
     },
     {
+      "id": "implementation-plan-compiler",
+      "name": "Implementation Plan Compiler",
+      "description": "Implementation Plan Compiler \u2014 Compiles PRD, TRD, Architecture, App Flow, UI/UX, and Testing specifications into an ordered dependency DAG with work packages, assigned agents, required skills/MCPs, and rollback strategies.",
+      "path": "skills/implementation-plan-compiler"
+    },
+    {
       "id": "interactive-dev",
       "name": "Interactive Dev",
       "description": "Interactive Development \u2014 Institutional capability and runbook for interactive-dev.",
@@ -255,6 +273,18 @@
       "path": "skills/performance-engineering"
     },
     {
+      "id": "prd-authoring",
+      "name": "Prd Authoring",
+      "description": "Product Requirement Document (PRD) Authoring \u2014 Separates numbered functional requirements with explicit acceptance criteria from strictly measurable non-functional requirements.",
+      "path": "skills/prd-authoring"
+    },
+    {
+      "id": "project-architecture-document",
+      "name": "Project Architecture Document",
+      "description": "Full Project Architecture Document Authoring \u2014 Synthesizes C1-C3 C4 models, deployment topologies, trust boundaries, failure domains, and disaster recovery strategies rendered from architecture-state.yaml.",
+      "path": "skills/project-architecture-document"
+    },
+    {
       "id": "prompt-engineering",
       "name": "Prompt Engineering",
       "description": "Prompt Engineering \u2014 Institutional capability and runbook for prompt-engineering.",
@@ -271,6 +301,18 @@
       "name": "Redis Streams",
       "description": "Redis Streams Engineer \u2014 Institutional capability and runbook for redis-streams.",
       "path": "skills/redis-streams"
+    },
+    {
+      "id": "scaling-plan-authoring",
+      "name": "Scaling Plan Authoring",
+      "description": "Scaling & Capacity Plan Authoring \u2014 Authors threshold-gated scaling strategies, capacity baselines, bottleneck analysis, auto-scaling policies, and tiered infrastructure cost models.",
+      "path": "skills/scaling-plan-authoring"
+    },
+    {
+      "id": "schema-design-document",
+      "name": "Schema Design Document",
+      "description": "Schema & Database Design Document Authoring \u2014 Creates entity catalogs, live-synced Mermaid ERDs, indexing strategies, migration sequences, and PII retention policies with automated schema drift detection.",
+      "path": "skills/schema-design-document"
     },
     {
       "id": "security-audit",
@@ -327,16 +369,40 @@
       "path": "skills/testing-load"
     },
     {
+      "id": "testing-plan-authoring",
+      "name": "Testing Plan Authoring",
+      "description": "Testing Plan Authoring \u2014 Authors multi-layered QA strategies across unit, integration, contract, E2E/browser, accessibility, performance, and security testing, linking 100% of PRD acceptance criteria to executable test suites.",
+      "path": "skills/testing-plan-authoring"
+    },
+    {
       "id": "tradingview-integration",
       "name": "Tradingview Integration",
       "description": "TradingView Integration Engineer \u2014 Institutional capability and runbook for tradingview-integration.",
       "path": "skills/tradingview-integration"
     },
     {
+      "id": "trd-authoring",
+      "name": "Trd Authoring",
+      "description": "Technical Requirement Document (TRD) Authoring \u2014 Translates product requirements into engineering specifications with strict PRD traceability.",
+      "path": "skills/trd-authoring"
+    },
+    {
       "id": "ui-ux-premium",
       "name": "Ui Ux Premium",
       "description": "UI/UX Designer \u2014 Premium Trading Interface \u2014 Institutional capability and runbook for ui-ux-premium.",
       "path": "skills/ui-ux-premium"
+    },
+    {
+      "id": "uiux-brief",
+      "name": "Uiux Brief",
+      "description": "UI/UX Design Brief \u2014 Short-form stakeholder alignment document establishing design personality, differentiators, screen goals, breakpoints, and accessibility bar.",
+      "path": "skills/uiux-brief"
+    },
+    {
+      "id": "uiux-specification",
+      "name": "Uiux Specification",
+      "description": "Full UI/UX Specification \u2014 Author comprehensive design specifications with semantic design tokens, component primitives, per-screen state matrices, responsive behaviors, and WCAG AA accessibility notes.",
+      "path": "skills/uiux-specification"
     },
     {
       "id": "websocket-realtime",

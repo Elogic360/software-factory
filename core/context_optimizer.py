@@ -27,6 +27,30 @@ class ContextOptimizer:
         self.cache_misses: int = 0
         self.token_cost_per_million = token_cost_per_million
 
+    def calculate_metrics(self, tokens_before: int, tokens_after: int) -> OptimizationMetrics:
+        """Calculate optimization metrics.
+
+        Args:
+            tokens_before: Token count before optimization.
+            tokens_after: Token count after optimization.
+
+        Returns:
+            An OptimizationMetrics instance with derived values.
+        """
+        reduction = max(0, tokens_before - tokens_after)
+        ratio = (tokens_after / max(1, tokens_before)) if tokens_before > 0 else 1.0
+        total_lookups = self.cache_hits + self.cache_misses
+        hit_rate = (self.cache_hits / max(1, total_lookups)) if total_lookups > 0 else 0.0
+        cost_saved = (reduction / 1_000_000.0) * self.token_cost_per_million
+        return OptimizationMetrics(
+            tokens_before=tokens_before,
+            tokens_after=tokens_after,
+            compression_ratio=round(ratio, 3),
+            cache_hit_rate=round(hit_rate, 3),
+            tool_output_reduction=round((reduction / max(1, tokens_before)) * 100, 2) if tokens_before else 0.0,
+            cost_saved_usd=round(cost_saved, 5),
+        )
+
     def estimate_tokens(self, text: str) -> int:
         """Heuristic token estimation (~4 chars per token)."""
         if not text:

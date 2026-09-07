@@ -1,0 +1,37 @@
+id: email-communications
+name: Email & Notification Core
+category: communications
+status: REFERENCE
+language: Python
+version: "1.0.0"
+description: >
+  Universal email and notification reference implementation: SMTP email,
+  Jinja2 template rendering, generic webhook notifications, Slack messaging,
+  and factory lifecycle event broadcasting. All credentials loaded from
+  environment variables — zero hardcoding.
+dependencies:
+  - jinja2>=3.0  # optional — only needed for send_template
+use_cases:
+  - User onboarding / welcome emails
+  - Factory lifecycle event alerts (deploy, gate fail, build success)
+  - Slack channel notifications for CI/CD events
+  - Webhook integration with third-party services (PagerDuty, Discord, etc.)
+  - Password reset and transactional emails
+entry_point: email_core.py
+key_functions:
+  - send_email(to, subject, body, html_body)
+  - send_template(template_name, context, to)
+  - send_webhook_notification(url, payload)
+  - send_slack_message(message, channel, webhook_url)
+  - notify_factory_event(event_type, details, channels)
+env_vars:
+  - SMTP_HOST
+  - SMTP_PORT
+  - SMTP_USER
+  - SMTP_PASS
+  - SMTP_FROM
+  - SMTP_TLS
+  - SLACK_WEBHOOK_URL
+  - SLACK_CHANNEL
+  - FACTORY_WEBHOOK_URL
+  - FACTORY_ALERT_EMAIL

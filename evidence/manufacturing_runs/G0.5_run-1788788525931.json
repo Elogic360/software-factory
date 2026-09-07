@@ -1,0 +1,47 @@
+{
+  "gate_id": "G0.5",
+  "gate_name": "Documentation Completeness",
+  "station": "Design / Station 06 Exit",
+  "required_artifact": "DOCUMENTATION_SUITE.json",
+  "status": "PASSED",
+  "timestamp": 1788788525.9316866,
+  "evidence_files": [
+    ".factory/specifications/golden-sample/01_prd.md",
+    ".factory/specifications/golden-sample/02_trd.md",
+    ".factory/specifications/golden-sample/03_app_flow.md",
+    ".factory/specifications/golden-sample/04a_uiux_brief.md",
+    ".factory/specifications/golden-sample/04b_uiux_specification.md",
+    ".factory/specifications/golden-sample/05_schema_document.md",
+    ".factory/specifications/golden-sample/06_backend_architecture.md",
+    ".factory/specifications/golden-sample/07_project_architecture.md",
+    ".factory/specifications/golden-sample/08_implementation_plan.md",
+    ".factory/specifications/golden-sample/09_testing_plan.md",
+    ".factory/specifications/golden-sample/10_scaling_plan.md"
+  ],
+  "errors": [],
+  "operator_evidence": {
+    "project_id": "golden-sample",
+    "suite_directory": ".factory/specifications/golden-sample",
+    "completeness_score": 100.0,
+    "traceability_stats": {
+      "functional_requirements_count": 3,
+      "acceptance_criteria_count": 6,
+      "trd_items_count": 11,
+      "screen_inventory_count": 4,
+      "tested_criteria_count": 6
+    },
+    "verified_artifacts": [
+      "01_prd.md",
+      "02_trd.md",
+      "03_app_flow.md",
+      "04a_uiux_brief.md",
+      "04b_uiux_specification.md",
+      "05_schema_document.md",
+      "06_backend_architecture.md",
+      "07_project_architecture.md",
+      "08_implementation_plan.md",
+      "09_testing_plan.md",
+      "10_scaling_plan.md"
+    ]
+  }
+}

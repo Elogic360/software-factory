@@ -1,0 +1,14 @@
+id: auth
+name: Auth
+category: backend
+status: REFERENCE
+language: Python
+version: "1.0.0"
+description: >
+  Reference implementation for auth functionality. Single-file prototype
+  ready to be expanded into a full production module.
+entry_point: auth_core.py
+dependencies: []
+use_cases:
+  - Baseline auth implementation for new projects
+  - Reference for team conventions and patterns

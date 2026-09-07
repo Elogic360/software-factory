@@ -1,0 +1,25 @@
+{
+  "safe": false,
+  "status": "REJECTED",
+  "hazards_count": 3,
+  "warnings_count": 0,
+  "hazards": [
+    {
+      "rule": "DESTRUCTIVE_DROP_TABLE",
+      "severity": "CRITICAL",
+      "description": "Migration contains DROP TABLE which permanently destroys data."
+    },
+    {
+      "rule": "DESTRUCTIVE_DROP_COLUMN",
+      "severity": "HIGH",
+      "description": "Migration drops a column without backward-compatible transition phase."
+    },
+    {
+      "rule": "NON_NULL_WITHOUT_DEFAULT",
+      "severity": "HIGH",
+      "description": "Adding a NOT NULL column without DEFAULT will fail on tables with existing rows."
+    }
+  ],
+  "warnings": [],
+  "timestamp": 1788788606.9658895
+}

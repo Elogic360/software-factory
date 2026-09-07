@@ -1,0 +1,17 @@
+[
+  {
+    "id": "factory-1788785321315-1",
+    "neuron": "Factory",
+    "scope": "PROJECT",
+    "project_id": "default",
+    "topic": "",
+    "content": "",
+    "provenance": "agent",
+    "confidence": 1.0,
+    "timestamp": 1788785321.3155062,
+    "updated_at": 1788785321.3155065,
+    "status": "ACTIVE",
+    "metadata": {},
+    "links": []
+  }
+]

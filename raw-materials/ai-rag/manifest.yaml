@@ -1,0 +1,27 @@
+id: ai-rag
+name: AI RAG Pipeline
+category: ai-ml
+status: REFERENCE
+language: Python
+version: "1.0.0"
+description: >
+  Universal Retrieval-Augmented Generation pipeline: chunking, embedding,
+  cosine-similarity retrieval, and prompt augmentation. Drop-in ready for
+  any FastAPI service or agent tool. Falls back to deterministic mock
+  embeddings when OPENAI_API_KEY is unset.
+dependencies:
+  - openai>=1.0.0   # optional — only needed for real embeddings
+  - numpy           # optional — stdlib math used if not present
+use_cases:
+  - Document Q&A over internal knowledge bases
+  - Agent memory retrieval augmentation
+  - Product specification search
+  - Code search over indexed repositories
+  - Customer support knowledge retrieval
+entry_point: rag_core.py
+key_functions:
+  - chunk_documents(docs, chunk_size, overlap)
+  - embed_query(text, model)
+  - retrieve(query, corpus, top_k)
+  - augment_prompt(query, retrieved, template)
+  - run_rag_pipeline(query, docs) — end-to-end convenience wrapper

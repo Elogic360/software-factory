@@ -1,0 +1,13 @@
+{
+  "incident_id": "INC-6866",
+  "root_layer": "DATABASE_LAYER",
+  "root_cause_message": "Missing database table or unapplied migration: relation 'orders' does not exist",
+  "remediation_action": "Run database migrations or schema synchronization before changing frontend/backend code.",
+  "evidence_counts": {
+    "browser_logs": 1,
+    "network_logs": 1,
+    "backend_logs": 1,
+    "db_logs": 1
+  },
+  "timestamp": 1788791696.8660586
+}

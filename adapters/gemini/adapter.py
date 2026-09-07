@@ -1,40 +1,52 @@
 """
-Gemini CLI / Antigravity Adapter — Configures GEMINI.md, central memory integration,
-and progressive skills loading from the Software Factory and ECC ecosystems.
+Gemini CLI Adapter — Configures GEMINI.md, central memory integration,
+progressive skills loading, and MCP config to .gemini/settings.json.
 """
-
+import json
 from pathlib import Path
-from typing import Dict, Any
 
-def setup_gemini(target_project_dir: Path, sf_dir: Path) -> Dict[str, Any]:
+try:
+    import yaml; _YAML_OK = True
+except ImportError:
+    _YAML_OK = False
+
+MCP_TRUSTED_STATUSES = {"PRODUCTION_APPROVED", "VERIFIED"}
+
+def _load_mcp_servers(sf_dir):
+    reg = sf_dir / "registries" / "mcp_registry.yaml"
+    if not reg.exists() or not _YAML_OK: return []
+    with open(reg) as f: data = yaml.safe_load(f) or {}
+    return [s for s in data.get("mcp_servers", []) if s.get("evaluation_status") in MCP_TRUSTED_STATUSES]
+
+def _make_mcp_entry(srv, sf_dir):
+    cmd = srv.get("command",""); args = list(srv.get("args") or [])
+    if cmd in ("python3","python") and args:
+        first = args[0]
+        if first.startswith("./") or (first.endswith(".py") and not first.startswith("/")):
+            args = [str(sf_dir / first)] + args[1:]
+    return {"command": cmd, "args": args}
+
+def write_mcp_config(target_project_dir: Path, sf_dir: Path) -> bool:
+    servers = _load_mcp_servers(sf_dir)
+    if not servers: return True
+    gemini_dir = target_project_dir / ".gemini"
+    gemini_dir.mkdir(parents=True, exist_ok=True)
+    settings_path = gemini_dir / "settings.json"
+    existing = {}
+    if settings_path.exists():
+        try: existing = json.loads(settings_path.read_text())
+        except: existing = {}
+    mcp_s = existing.get("mcpServers", {})
+    for srv in servers:
+        mcp_s[srv["id"]] = _make_mcp_entry(srv, sf_dir)
+    existing["mcpServers"] = mcp_s
+    settings_path.write_text(json.dumps(existing, indent=2))
+    return True
+
+def setup_gemini(target_project_dir: Path, sf_dir: Path) -> bool:
     gemini_md = sf_dir / "GEMINI.md"
     target_gemini = target_project_dir / "GEMINI.md"
-
-    if not target_gemini.exists():
-        content = f"""# Gemini CLI & Antigravity Agent Configuration — Software Factory
-
-You are connected to the Software Factory universal capability ecosystem.
-
-## 🏛️ 1. Supreme Engineering Law
-Always adhere to the constitution:
-- **Path**: `{sf_dir}/constitution/CONSTITUTION.md`
-- **Rules**: Strict boundary enforcement, API versioning (/api/v1/), and spec-driven execution.
-
-## 🧠 2. Central Memory & Knowledge Integration
-- Memory Hub: `{sf_dir}/state/memory-index.json`
-- Architecture State: `{sf_dir}/state/architecture-state.yaml`
-- ECC Capability: `{sf_dir}/capabilities/agent-harness/ecc/`
-
-## 🧭 3. Task Bootstrap Protocol
-1. Consult Constitution.
-2. Route skills: `python3 {sf_dir}/context-engine/skill_selector.py --query "<task>" --top 3`.
-3. Verify changes with `bin/software-factory verify`.
-"""
-        target_gemini.write_text(content, encoding="utf-8")
-
-    return {
-        "status": True,
-        "agent": "gemini",
-        "configured_files": [str(target_gemini)],
-        "capabilities_connected": ["central_memory", "ecc_skills", "architecture_state"]
-    }
+    if gemini_md.exists() and not target_gemini.exists():
+        target_gemini.write_text(gemini_md.read_text())
+    write_mcp_config(target_project_dir, sf_dir)
+    return True

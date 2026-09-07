@@ -1,0 +1,14 @@
+id: ui-ux
+name: Ui Ux
+category: backend
+status: REFERENCE
+language: Python
+version: "1.0.0"
+description: >
+  Reference implementation for ui-ux functionality. Single-file prototype
+  ready to be expanded into a full production module.
+entry_point: index.py
+dependencies: []
+use_cases:
+  - Baseline ui-ux implementation for new projects
+  - Reference for team conventions and patterns

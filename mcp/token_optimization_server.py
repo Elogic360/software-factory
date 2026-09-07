@@ -91,22 +91,31 @@ def main():
                     txt = args.get("text", "")
                     max_t = args.get("max_tokens", 2000)
                     opt = optimizer.compress_text(txt, max_tokens=max_t)
-                    m = optimizer.calculate_metrics(tokens_before=optimizer.estimate_tokens(txt), tokens_after=optimizer.estimate_tokens(opt))
+                    tokens_before = optimizer.estimate_tokens(txt)
+                    tokens_after = optimizer.estimate_tokens(opt)
+                    m = optimizer.calculate_metrics(tokens_before=tokens_before, tokens_after=tokens_after)
                     res_content = json.dumps({
                         "optimized_text": opt,
                         "tokens_before": m.tokens_before,
                         "tokens_after": m.tokens_after,
                         "tokens_saved": m.tokens_before - m.tokens_after,
-                        "compression_ratio": f"{m.compression_ratio:.1f}%"
+                        "compression_ratio": f"{(1.0 - m.compression_ratio) * 100:.1f}% reduction"
                     }, indent=2)
                 elif name == "compress_tool_output":
                     out = args.get("tool_output", "")
                     max_l = args.get("max_lines", 25)
-                    comp = optimizer.compress_tool_output(out, max_lines=max_l)
+                    lines = out.splitlines()
+                    if len(lines) > max_l:
+                        half = max_l // 2
+                        omitted = len(lines) - max_l
+                        comp_lines = lines[:half] + [f"... [{omitted} lines omitted] ..."] + lines[-half:]
+                    else:
+                        comp_lines = lines
+                    comp = "\n".join(comp_lines)
                     res_content = json.dumps({
                         "compressed_output": comp,
-                        "lines_before": len(out.splitlines()),
-                        "lines_after": len(comp.splitlines())
+                        "lines_before": len(lines),
+                        "lines_after": len(comp_lines)
                     }, indent=2)
                 elif name == "measure_token_savings":
                     t1 = optimizer.estimate_tokens(args.get("original_text", ""))

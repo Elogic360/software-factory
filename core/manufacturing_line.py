@@ -14,6 +14,7 @@ GATES = [
     {"id": "G2", "name": "Specification Approved", "station": "Specification", "artifact": "SYSTEM_SPEC.md"},
     {"id": "G3", "name": "Architecture Approved", "station": "Architecture", "artifact": "ARCHITECTURE.md"},
     {"id": "G4", "name": "Security Design Approved", "station": "Security Lab", "artifact": "THREAT_MODEL.md"},
+    {"id": "G0.5", "name": "Documentation Completeness", "station": "Design / Station 06 Exit", "artifact": "DOCUMENTATION_SUITE.json"},
     {"id": "G5", "name": "Implementation Plan Approved", "station": "Planning", "artifact": "IMPLEMENTATION_PLAN.md"},
     {"id": "G6", "name": "Production Complete", "station": "Production Floor", "artifact": "WORK_ORDERS.json"},
     {"id": "G7", "name": "Unit Tests Passed", "station": "QA Lab", "artifact": "UNIT_TESTS.xml"},

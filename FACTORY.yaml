@@ -1,10 +1,10 @@
 factory_version: "2.0.0"
-integral_market_root: "/home/elogic360/Desktop/little QUANTUM/IntegralMarket"
-skills_root: "/home/elogic360/Desktop/little QUANTUM/IntegralMarket/software-factory/skills"
-mcp_root: "/home/elogic360/Desktop/little QUANTUM/IntegralMarket/software-factory/mcp"
-custom_mcp_root: "/home/elogic360/Desktop/little QUANTUM/IntegralMarket/software-factory/custom-mcp"
-registries_root: "/home/elogic360/Desktop/little QUANTUM/IntegralMarket/software-factory/registries"
-policies_root: "/home/elogic360/Desktop/little QUANTUM/IntegralMarket/software-factory/policies"
+integral_market_root: ".."
+skills_root: "./skills"
+mcp_root: "./mcp"
+custom_mcp_root: "./custom-mcp"
+registries_root: "./registries"
+policies_root: "./policies"
 
 metrics:
   total_skills: 100

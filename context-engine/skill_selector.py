@@ -369,6 +369,105 @@ SKILLS: list[dict] = [
             "mt5 circuit breaker", "10k users",
         ],
     },
+    {
+        "dir": "prd-authoring",
+        "name": "Product Requirement Document (PRD) Authoring",
+        "layer": "Product",
+        "triggers": [
+            "prd", "prd authoring", "product requirement document", "functional requirements",
+            "non-functional requirements", "acceptance criteria", "user story", "sdd station 02",
+        ],
+    },
+    {
+        "dir": "trd-authoring",
+        "name": "Technical Requirement Document (TRD) Authoring",
+        "layer": "Architecture",
+        "triggers": [
+            "trd", "trd authoring", "technical requirement document", "engineering spec",
+            "technical requirements", "prd traceability", "traceability matrix", "sdd station 02",
+        ],
+    },
+    {
+        "dir": "app-flow-mapping",
+        "name": "App Flow Mapping",
+        "layer": "Design",
+        "triggers": [
+            "app flow", "user journey", "journey map", "screen inventory",
+            "interaction flow", "mermaid flowchart", "navigation graph", "orphan screen",
+        ],
+    },
+    {
+        "dir": "uiux-brief",
+        "name": "UI/UX Design Brief",
+        "layer": "Design",
+        "triggers": [
+            "uiux brief", "design brief", "visual tone", "design personality",
+            "breakpoint matrix", "design alignment", "brand tone", "sdd station 06",
+        ],
+    },
+    {
+        "dir": "uiux-specification",
+        "name": "Full UI/UX Specification",
+        "layer": "Design",
+        "triggers": [
+            "uiux specification", "ui spec", "design tokens", "component inventory",
+            "5 states", "screen states", "wcag aa", "accessibility spec",
+        ],
+    },
+    {
+        "dir": "schema-design-document",
+        "name": "Schema & Database Design Document",
+        "layer": "Data",
+        "triggers": [
+            "schema design document", "database document", "erd", "mermaid erdiagram",
+            "entity catalog", "indexing strategy", "migration sequence", "pii retention",
+        ],
+    },
+    {
+        "dir": "backend-architecture-document",
+        "name": "Backend Architecture Document",
+        "layer": "Backend",
+        "triggers": [
+            "backend architecture document", "service boundaries", "api surface",
+            "caching tiers", "queue design", "circuit breaker", "retry architecture",
+        ],
+    },
+    {
+        "dir": "project-architecture-document",
+        "name": "Full Project Architecture Document",
+        "layer": "Architecture",
+        "triggers": [
+            "project architecture document", "c4 models", "c1 context", "c2 container",
+            "c3 component", "deployment topology", "architecture-state.yaml", "disaster recovery",
+        ],
+    },
+    {
+        "dir": "implementation-plan-compiler",
+        "name": "Implementation Plan Compiler",
+        "layer": "Engineering",
+        "triggers": [
+            "implementation plan", "plan compiler", "work breakdown", "task dag",
+            "ordered tasks", "rollback procedure", "sdd station 07",
+        ],
+    },
+    {
+        "dir": "testing-plan-authoring",
+        "name": "Testing Plan Authoring",
+        "layer": "QA",
+        "triggers": [
+            "testing plan", "test strategy", "test pyramid", "critical user journey tests",
+            "acceptance criteria matrix", "traceability to tests", "qa strategy",
+        ],
+    },
+    {
+        "dir": "scaling-plan-authoring",
+        "name": "Scaling & Capacity Plan Authoring",
+        "layer": "Performance",
+        "triggers": [
+            "scaling plan", "capacity planning", "scale threshold", "bottleneck analysis",
+            "horizontal scaling", "infrastructure cost tiers", "load testing benchmark",
+        ],
+    },
 ]
 
 

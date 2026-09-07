@@ -9,12 +9,17 @@ def test_manufacturing_gates():
     with tempfile.TemporaryDirectory() as tmpdir:
         line = ManufacturingLine(workspace_root=tmpdir)
         gates = line.list_gates()
-        assert len(gates) == 16
+        assert len(gates) == 17
         assert gates[0]["id"] == "G0"
-        assert gates[15]["id"] == "G15"
+        assert any(g["id"] == "G0.5" for g in gates)
+        assert gates[-1]["id"] == "G15"
 
         eval_res = line.evaluate_gate("G7", {"passed": True, "errors": []})
         assert eval_res["status"] == "PASSED"
+
+        eval_g05 = line.evaluate_gate("G0.5", {"passed": True, "errors": []})
+        assert eval_g05["status"] == "PASSED"
+        assert eval_g05["gate_id"] == "G0.5"
 
 def test_generate_work_orders():
     line = ManufacturingLine()

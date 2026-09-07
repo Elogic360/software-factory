@@ -1,0 +1,31 @@
+id: storage
+name: Universal Storage Backend
+category: infrastructure
+status: REFERENCE
+language: Python
+version: "1.0.0"
+description: >
+  Abstract StorageBackend with Local (filesystem) and S3 (boto3) implementations.
+  A factory function reads STORAGE_BACKEND env var to return the correct backend.
+  No lock-in: swap local ↔ S3 by changing one env var.
+dependencies:
+  - boto3>=1.0  # optional — only needed for S3StorageBackend
+use_cases:
+  - File uploads and downloads (user avatars, documents, exports)
+  - Artifact storage for factory build outputs
+  - Log archival and evidence storage
+  - Ephemeral test fixtures (local backend)
+  - Production blob storage (S3 backend)
+entry_point: storage_core.py
+key_classes:
+  - StorageBackend  # abstract base
+  - LocalStorageBackend  # local filesystem
+  - S3StorageBackend  # AWS S3 via boto3
+key_functions:
+  - get_backend(backend_type)  # factory function
+env_vars:
+  - STORAGE_BACKEND  # 'local' or 's3'
+  - S3_BUCKET        # required for S3 backend
+  - AWS_ACCESS_KEY_ID
+  - AWS_SECRET_ACCESS_KEY
+  - AWS_DEFAULT_REGION
