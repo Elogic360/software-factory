@@ -1,0 +1,12 @@
+{
+  "proposal_id": "PROP-1788777334422",
+  "title": "Introduce Automated Database Constraint Linter",
+  "category": "Quality Gate",
+  "rationale": "Eliminates repeated migration errors discovered in 4 projects",
+  "created_at": 1788777334.4227786,
+  "evidence": {
+    "mining_runs": 4,
+    "failures_preventable": 8
+  },
+  "status": "PROPOSED"
+}

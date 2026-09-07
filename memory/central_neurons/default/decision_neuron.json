@@ -1,0 +1,16 @@
+[
+  {
+    "id": "decision-1788777332924-1",
+    "neuron": "Decision",
+    "scope": "PROJECT",
+    "project_id": "default",
+    "topic": "DB Selection",
+    "content": "Used TimescaleDB",
+    "provenance": "cli",
+    "confidence": 1.0,
+    "timestamp": 1788777332.9244666,
+    "status": "ACTIVE",
+    "metadata": {},
+    "links": []
+  }
+]
