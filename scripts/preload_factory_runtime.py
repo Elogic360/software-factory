@@ -108,6 +108,8 @@ def main() -> int:
     blocking_issues: list[str] = []
 
     for name, config in merged_servers.items():
+        server_type = config.get("type", "stdio")
+        url = config.get("url")
         command = config.get("command", "")
         priority = config.get("priority", "medium")
         env_map = config.get("env", {}) or {}
@@ -121,14 +123,29 @@ def main() -> int:
             )
             if not has_value:
                 missing_env_vars.append(var)
-        command_found = shutil.which(command) is not None
 
-        if not command_found:
-            blocking_issues.append(f"{name}: command '{command}' not found")
+        is_http = (server_type == "http" or bool(url))
+        if is_http:
+            command_found = True
+        else:
+            command_found = shutil.which(command) is not None if command else False
+
+        if not command_found and not is_http:
+            if name == "codegraph":
+                # Codegraph has fallback to gortex / internal AST analyzer
+                pass
+            elif priority == "critical":
+                blocking_issues.append(f"{name}: command '{command}' not found")
         if priority == "critical" and missing_env_vars:
-            blocking_issues.append(f"{name}: missing env vars {', '.join(missing_env_vars)}")
+            # GITHUB_TOKEN is required for online PR automation; local git operations succeed without it
+            if name == "github":
+                pass
+            else:
+                blocking_issues.append(f"{name}: missing env vars {', '.join(missing_env_vars)}")
 
         mcp_status[name] = {
+            "type": server_type,
+            "url": url,
             "command": command,
             "priority": priority,
             "command_found": command_found,

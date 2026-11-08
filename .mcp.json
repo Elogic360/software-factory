@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "factory-memory-mcp": {
+      "command": "python3",
+      "args": [
+        "/home/elogic360/Projects/IntegralMarket/software-factory/software-factory/mcp/memory_server.py"
+      ],
+      "priority": "critical",
+      "description": "Factory 28-Neuron Central Memory Server (JSON-RPC 2.0)"
+    },
+    "factory-architecture-mcp": {
+      "command": "python3",
+      "args": [
+        "/home/elogic360/Projects/IntegralMarket/software-factory/software-factory/mcp/architecture_mcp_server.py"
+      ],
+      "priority": "critical",
+      "description": "Factory Architecture-as-Code & C4 Model Server"
+    },
+    "factory-token-optimizer-mcp": {
+      "command": "python3",
+      "args": [
+        "/home/elogic360/Projects/IntegralMarket/software-factory/software-factory/mcp/token_optimization_server.py"
+      ],
+      "priority": "critical",
+      "description": "Factory Token & Context Optimization Engine"
+    }
+  }
+}

@@ -12,5 +12,20 @@
     "status": "ACTIVE",
     "metadata": {},
     "links": []
+  },
+  {
+    "id": "decision-1788952924347-2",
+    "neuron": "Decision",
+    "scope": "PROJECT",
+    "project_id": "default",
+    "topic": "Antigravity Integration",
+    "content": "Antigravity fully integrated with Software Factory on 2026-09-09. Factory doctor: 14/14 healthy. Readiness: 96.7% APPROVED. MCP servers configured in .gemini/settings.json: codegraph, gortex, context7, playwright, github, factory-memory-mcp, factory-architecture-mcp, factory-token-optimizer-mcp. Skills symlinked from software-factory/integrations/ecc/skills and software-factory/skills into .agents/skills/. Active plan: Fix Metrics Display + Merge Overview/Analytics into JournalView (analytics_service.py bug + frontend unification). Git HEAD: 9711fee9 (im-whatsapp OpenWA v0.23.4 install).",
+    "provenance": "Antigravity",
+    "confidence": 1.0,
+    "timestamp": 1788952924.3478198,
+    "updated_at": 1788952924.34782,
+    "status": "ACTIVE",
+    "metadata": {},
+    "links": []
   }
 ]

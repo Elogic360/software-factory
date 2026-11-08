@@ -103,6 +103,17 @@
       "priority": "low",
       "skill_mapping": ["software-developer"],
       "description": "Code search via MCP"
+    },
+    "tunzaa": {
+      "command": "npx",
+      "args": ["-y", "github:Tunzaa/tunzaa_mcp"],
+      "env": {
+        "TUNZAA_API_KEY": "SB_HKVWV3H3WRLRG1O9GKQ2Q1V626099WS9U6IFZKWVR3TCYXGD",
+        "TUNZAA_SECRET_KEY": "uA0jhxFPqF3x1OBW9C-tZR5WbEpv1SxFyrBvqA8P"
+      },
+      "priority": "high",
+      "skill_mapping": ["payments", "ecommerce"],
+      "description": "Tunzaa / Malipo payment gateway MCP server"
     }
   }
 }

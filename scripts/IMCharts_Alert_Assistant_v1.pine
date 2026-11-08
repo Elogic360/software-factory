@@ -1,0 +1,96 @@
+//@version=5
+indicator("IMCharts TradingView Bridge Alert Assistant v1.0", overlay=true, precision=5)
+
+// =============================================================================
+// IMCHARTS TRADINGVIEW -> METATRADER 5 EXECUTION ASSISTANT
+// =============================================================================
+// This indicator calculates position sizing and formats the exact JSON alert
+// payload required by Integral Market's IMCharts Webhook Bridge.
+//
+// HOW TO USE:
+// 1. Add this indicator to your TradingView chart.
+// 2. Adjust your Risk % per trade and Stop Loss / Take Profit offsets.
+// 3. Create a TradingView Alert:
+//    - Condition: "IMCharts TradingView Bridge Alert Assistant v1.0"
+//    - Webhook URL: Check and paste your private IMCharts Webhook URL
+//    - Message: {{plot_0}} or select the alert condition below.
+// =============================================================================
+
+// --- User Inputs ---
+grp_risk = "Risk & Money Management"
+i_risk_pct = input.float(1.0, "Risk % Per Trade", minval=0.1, maxval=10.0, step=0.1, group=grp_risk, tooltip="Percentage of account equity/balance risked.")
+i_use_fixed_lots = input.bool(false, "Use Fixed Lots instead of Risk %", group=grp_risk)
+i_fixed_lot = input.float(0.10, "Fixed Lot Size", minval=0.01, maxval=100.0, step=0.01, group=grp_risk)
+
+grp_levels = "Order Levels (Points / Pips)"
+i_sl_points = input.int(250, "Stop Loss (in points/ticks)", minval=10, group=grp_levels)
+i_tp_points = input.int(500, "Take Profit (in points/ticks)", minval=10, group=grp_levels)
+
+grp_signals = "Signal Conditions"
+i_fast_ma = input.int(9, "Fast EMA Length", minval=1, group=grp_signals)
+i_slow_ma = input.int(21, "Slow EMA Length", minval=1, group=grp_signals)
+
+// --- Indicator Calculations ---
+fast_ema = ta.ema(close, i_fast_ma)
+slow_ema = ta.ema(close, i_slow_ma)
+
+plot(fast_ema, title="Fast EMA", color=color.cyan, linewidth=1)
+plot(slow_ema, title="Slow EMA", color=color.purple, linewidth=1)
+
+// --- Price Offsets for SL / TP ---
+pip_mult = syminfo.mintick
+long_sl = close - (i_sl_points * pip_mult)
+long_tp = close + (i_tp_points * pip_mult)
+short_sl = close + (i_sl_points * pip_mult)
+short_tp = close - (i_tp_points * pip_mult)
+
+// --- Signal Triggers ---
+buy_cross = ta.crossover(fast_ema, slow_ema)
+sell_cross = ta.crossunder(fast_ema, slow_ema)
+
+plotshape(buy_cross, title="Buy Signal", location=location.belowbar, color=color.green, style=shape.triangleup, size=size.small, text="BUY")
+plotshape(sell_cross, title="Sell Signal", location=location.abovebar, color=color.red, style=shape.triangledown, size=size.small, text="SELL")
+
+// --- Payload Formatting Helpers ---
+f_str_price(float price) =>
+    str.tostring(price, "#.#####")
+
+// Build BUY JSON Alert Payload
+var string sizing_buy_str = ""
+if i_use_fixed_lots
+    sizing_buy_str := ',"volume":' + str.tostring(i_fixed_lot, "#.##")
+else
+    sizing_buy_str := ',"risk_percent":' + str.tostring(i_risk_pct, "#.#")
+
+buy_payload = '{"schema_version":"1.0","event_id":"tv_' + str.tostring(time) + '","event_type":"OPEN_MARKET","symbol":"' + syminfo.ticker + '","side":"buy"' + sizing_buy_str + ',"stop_loss":' + f_str_price(long_sl) + ',"take_profit":' + f_str_price(long_tp) + '}'
+
+// Build SELL JSON Alert Payload
+var string sizing_sell_str = ""
+if i_use_fixed_lots
+    sizing_sell_str := ',"volume":' + str.tostring(i_fixed_lot, "#.##")
+else
+    sizing_sell_str := ',"risk_percent":' + str.tostring(i_risk_pct, "#.#")
+
+sell_payload = '{"schema_version":"1.0","event_id":"tv_' + str.tostring(time) + '","event_type":"OPEN_MARKET","symbol":"' + syminfo.ticker + '","side":"sell"' + sizing_sell_str + ',"stop_loss":' + f_str_price(short_sl) + ',"take_profit":' + f_str_price(short_tp) + '}'
+
+// Build CLOSE JSON Alert Payload
+close_payload = '{"schema_version":"1.0","event_id":"tv_close_' + str.tostring(time) + '","event_type":"CLOSE","symbol":"' + syminfo.ticker + '","close_percent":100}'
+
+// --- Alert Triggers ---
+if buy_cross
+    alert(buy_payload, alert.freq_once_per_bar_close)
+
+if sell_cross
+    alert(sell_payload, alert.freq_once_per_bar_close)
+
+// --- On-Chart Status Table ---
+var table status_table = table.new(position.top_right, 2, 4, bgcolor=color.new(#0F1929, 20), border_color=color.new(#2A3A4A, 0), border_width=1)
+if barstate.islast
+    table.cell(status_table, 0, 0, "IMCharts Bridge", bgcolor=color.new(#22D3EE, 80), text_color=color.white, text_size=size.small)
+    table.cell(status_table, 1, 0, "Active v1.0", bgcolor=color.new(#22D3EE, 80), text_color=color.white, text_size=size.small)
+    table.cell(status_table, 0, 1, "Target Symbol", text_color=color.gray, text_size=size.tiny)
+    table.cell(status_table, 1, 1, syminfo.ticker, text_color=color.white, text_size=size.tiny)
+    table.cell(status_table, 0, 2, "Risk / Trade", text_color=color.gray, text_size=size.tiny)
+    table.cell(status_table, 1, 2, i_use_fixed_lots ? str.tostring(i_fixed_lot) + " Lots" : str.tostring(i_risk_pct) + "%", text_color=color.cyan, text_size=size.tiny)
+    table.cell(status_table, 0, 3, "SL / TP Pts", text_color=color.gray, text_size=size.tiny)
+    table.cell(status_table, 1, 3, str.tostring(i_sl_points) + " / " + str.tostring(i_tp_points), text_color=color.white, text_size=size.tiny)

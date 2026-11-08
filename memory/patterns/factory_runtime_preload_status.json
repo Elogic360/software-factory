@@ -1,10 +1,12 @@
 {
-  "generated_at": "2026-09-04T06:49:28.924860+00:00",
+  "generated_at": "2026-11-08T11:27:46.176211+00:00",
   "mcp": {
-    "catalog_count": 13,
-    "active_count": 14,
+    "catalog_count": 14,
+    "active_count": 17,
     "servers": {
       "chrome-devtools": {
+        "type": "stdio",
+        "url": null,
         "command": "npx",
         "priority": "medium",
         "command_found": true,
@@ -12,6 +14,8 @@
         "missing_env_vars": []
       },
       "cloudflare": {
+        "type": "stdio",
+        "url": null,
         "command": "npx",
         "priority": "high",
         "command_found": true,
@@ -19,13 +23,17 @@
         "missing_env_vars": []
       },
       "codegraph": {
+        "type": "stdio",
+        "url": null,
         "command": "codegraph",
         "priority": "critical",
-        "command_found": true,
+        "command_found": false,
         "required_env_vars": [],
         "missing_env_vars": []
       },
       "context7": {
+        "type": "stdio",
+        "url": null,
         "command": "npx",
         "priority": "critical",
         "command_found": true,
@@ -33,6 +41,8 @@
         "missing_env_vars": []
       },
       "drawio": {
+        "type": "stdio",
+        "url": null,
         "command": "npx",
         "priority": "medium",
         "command_found": true,
@@ -40,6 +50,8 @@
         "missing_env_vars": []
       },
       "fastapi": {
+        "type": "stdio",
+        "url": null,
         "command": "python3",
         "priority": "high",
         "command_found": true,
@@ -47,6 +59,8 @@
         "missing_env_vars": []
       },
       "firecrawl": {
+        "type": "stdio",
+        "url": null,
         "command": "npx",
         "priority": "high",
         "command_found": true,
@@ -58,6 +72,8 @@
         ]
       },
       "github": {
+        "type": "stdio",
+        "url": null,
         "command": "npx",
         "priority": "critical",
         "command_found": true,
@@ -69,6 +85,8 @@
         ]
       },
       "grep": {
+        "type": "stdio",
+        "url": null,
         "command": "uvx",
         "priority": "low",
         "command_found": true,
@@ -76,6 +94,8 @@
         "missing_env_vars": []
       },
       "linux-mcp": {
+        "type": "stdio",
+        "url": null,
         "command": "python3",
         "priority": "medium",
         "command_found": true,
@@ -83,13 +103,26 @@
         "missing_env_vars": []
       },
       "lucide-icons": {
+        "type": "stdio",
+        "url": null,
         "command": "npx",
         "priority": "medium",
         "command_found": true,
         "required_env_vars": [],
         "missing_env_vars": []
       },
+      "metaeditor": {
+        "type": "http",
+        "url": "http://127.0.0.1:22345/mcp",
+        "command": "",
+        "priority": "medium",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
       "playwright": {
+        "type": "stdio",
+        "url": null,
         "command": "npx",
         "priority": "high",
         "command_found": true,
@@ -97,15 +130,37 @@
         "missing_env_vars": []
       },
       "sequential-thinking": {
+        "type": "stdio",
+        "url": null,
         "command": "npx",
         "priority": "medium",
         "command_found": true,
         "required_env_vars": [],
         "missing_env_vars": []
       },
+      "terminal": {
+        "type": "http",
+        "url": "http://127.0.0.1:22346/mcp",
+        "command": "",
+        "priority": "medium",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
       "time": {
+        "type": "stdio",
+        "url": null,
         "command": "uvx",
         "priority": "low",
+        "command_found": true,
+        "required_env_vars": [],
+        "missing_env_vars": []
+      },
+      "tunzaa": {
+        "type": "stdio",
+        "url": null,
+        "command": "npx",
+        "priority": "high",
         "command_found": true,
         "required_env_vars": [],
         "missing_env_vars": []
@@ -113,11 +168,15 @@
     }
   },
   "skills": {
-    "count": 256,
+    "count": 269,
     "entries": [
       {
         "path": "software-factory/skills/ai-optimization/SKILL.md",
         "skill": "ai-optimization"
+      },
+      {
+        "path": "software-factory/skills/app-flow-mapping/SKILL.md",
+        "skill": "app-flow-mapping"
       },
       {
         "path": "software-factory/skills/architect-discovery/SKILL.md",
@@ -126,6 +185,10 @@
       {
         "path": "software-factory/skills/architect-principal/SKILL.md",
         "skill": "architect-principal"
+      },
+      {
+        "path": "software-factory/skills/backend-architecture-document/SKILL.md",
+        "skill": "backend-architecture-document"
       },
       {
         "path": "software-factory/skills/backend-fastapi/SKILL.md",
@@ -150,6 +213,10 @@
       {
         "path": "software-factory/skills/devops-engineer/SKILL.md",
         "skill": "devops-engineer"
+      },
+      {
+        "path": "software-factory/skills/drawio-diagrams/SKILL.md",
+        "skill": "drawio-diagrams"
       },
       {
         "path": "software-factory/skills/event-driven-architecture/SKILL.md",
@@ -244,6 +311,10 @@
         "skill": "im-trading-risk"
       },
       {
+        "path": "software-factory/skills/implementation-plan-compiler/SKILL.md",
+        "skill": "implementation-plan-compiler"
+      },
+      {
         "path": "software-factory/skills/interactive-dev/SKILL.md",
         "skill": "interactive-dev"
       },
@@ -266,6 +337,10 @@
       {
         "path": "software-factory/skills/mt5-scalability/SKILL.md",
         "skill": "mt5-scalability"
+      },
+      {
+        "path": "software-factory/skills/nvidia/SKILL.md",
+        "skill": "nvidia"
       },
       {
         "path": "software-factory/skills/nvidia/accelerated-computing-cudf/SKILL.md",
@@ -1080,6 +1155,14 @@
         "skill": "performance-engineering"
       },
       {
+        "path": "software-factory/skills/prd-authoring/SKILL.md",
+        "skill": "prd-authoring"
+      },
+      {
+        "path": "software-factory/skills/project-architecture-document/SKILL.md",
+        "skill": "project-architecture-document"
+      },
+      {
         "path": "software-factory/skills/prompt-engineering/SKILL.md",
         "skill": "prompt-engineering"
       },
@@ -1090,6 +1173,14 @@
       {
         "path": "software-factory/skills/redis-streams/SKILL.md",
         "skill": "redis-streams"
+      },
+      {
+        "path": "software-factory/skills/scaling-plan-authoring/SKILL.md",
+        "skill": "scaling-plan-authoring"
+      },
+      {
+        "path": "software-factory/skills/schema-design-document/SKILL.md",
+        "skill": "schema-design-document"
       },
       {
         "path": "software-factory/skills/security-audit/SKILL.md",
@@ -1128,12 +1219,28 @@
         "skill": "testing-load"
       },
       {
+        "path": "software-factory/skills/testing-plan-authoring/SKILL.md",
+        "skill": "testing-plan-authoring"
+      },
+      {
         "path": "software-factory/skills/tradingview-integration/SKILL.md",
         "skill": "tradingview-integration"
       },
       {
+        "path": "software-factory/skills/trd-authoring/SKILL.md",
+        "skill": "trd-authoring"
+      },
+      {
         "path": "software-factory/skills/ui-ux-premium/SKILL.md",
         "skill": "ui-ux-premium"
+      },
+      {
+        "path": "software-factory/skills/uiux-brief/SKILL.md",
+        "skill": "uiux-brief"
+      },
+      {
+        "path": "software-factory/skills/uiux-specification/SKILL.md",
+        "skill": "uiux-specification"
       },
       {
         "path": "software-factory/skills/websocket-realtime/SKILL.md",
@@ -1159,8 +1266,6 @@
     "gh": true,
     "curl": true
   },
-  "ready": false,
-  "blocking_issues": [
-    "github: missing env vars GITHUB_TOKEN"
-  ]
+  "ready": true,
+  "blocking_issues": []
 }
