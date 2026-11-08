@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T11:27:46.176211+00:00",
+  "generated_at": "2026-11-08T13:52:50.195041+00:00",
   "mcp": {
     "catalog_count": 14,
     "active_count": 17,
@@ -168,7 +168,7 @@
     }
   },
   "skills": {
-    "count": 269,
+    "count": 272,
     "entries": [
       {
         "path": "software-factory/skills/ai-optimization/SKILL.md",
@@ -193,6 +193,14 @@
       {
         "path": "software-factory/skills/backend-fastapi/SKILL.md",
         "skill": "backend-fastapi"
+      },
+      {
+        "path": "software-factory/skills/blockchain-bitcoin-core/SKILL.md",
+        "skill": "blockchain-bitcoin-core"
+      },
+      {
+        "path": "software-factory/skills/blockchain-lightning-network/SKILL.md",
+        "skill": "blockchain-lightning-network"
       },
       {
         "path": "software-factory/skills/change-detective/SKILL.md",
@@ -221,6 +229,10 @@
       {
         "path": "software-factory/skills/event-driven-architecture/SKILL.md",
         "skill": "event-driven-architecture"
+      },
+      {
+        "path": "software-factory/skills/fintech-double-entry-ledger/SKILL.md",
+        "skill": "fintech-double-entry-ledger"
       },
       {
         "path": "software-factory/skills/frontend-react/SKILL.md",
